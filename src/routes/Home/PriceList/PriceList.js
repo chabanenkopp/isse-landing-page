@@ -23,13 +23,21 @@ const BlueBox = styled(Box)`
   );
 `
 
+const DetailsBox = styled(Box)`
+  transform: translateY(-1px);
+  border-bottom-left-radius: ${radius.l};
+  border-bottom-right-radius: ${radius.l};
+  background-color: ${COLORS.WHITE};
+`
+
 const PriceList = () => {
   const [isHoveredFirst, setIsHoveredFirst] = useState(false)
   const [isHoveredSecond, setIsHoveredSecond] = useState(false)
   const [isHoveredThird, setIsHoveredThird] = useState(false)
   return (
     <>
-      <Flex justifyContent="center" data-aos="fade-up" mb="xl">
+      {/* <Flex justifyContent="center" data-aos="fade-up" mb="xl"> */}
+      <Flex justifyContent="center" mb="xl">
         <Text
           color={COLORS.MAJOLICA_BLUE}
           fontWeight={fontWeights.thin}
@@ -61,23 +69,25 @@ const PriceList = () => {
             </Text>
             <AnimatedClouds isHovered={isHoveredFirst} />
           </BlueBox>
-          <Text
-            textAlign="center"
-            fontSize="xl"
-            color={COLORS.MAJOLICA_BLUE}
-            pt="m"
-          >
-            Early bird: € 530
-          </Text>
-          <Text
-            textAlign="center"
-            fontSize="s"
-            color={COLORS.MAJOLICA_BLUE}
-            pt="s"
-            pb="xxl"
-          >
-            (before 25th March, 2020)
-          </Text>
+          <DetailsBox>
+            <Text
+              textAlign="center"
+              fontSize="xl"
+              color={COLORS.MAJOLICA_BLUE}
+              pt="m"
+            >
+              Early bird: € 530
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="s"
+              color={COLORS.MAJOLICA_BLUE}
+              pt="s"
+              pb="xxl"
+            >
+              (before 25th March, 2020)
+            </Text>
+          </DetailsBox>
         </TableBox>
         <TableBox
           onMouseEnter={() => setIsHoveredSecond(true)}
@@ -92,23 +102,25 @@ const PriceList = () => {
             </Text>
             <AnimatedClouds isHovered={isHoveredSecond} />
           </BlueBox>
-          <Text
-            textAlign="center"
-            fontSize="xl"
-            color={COLORS.MAJOLICA_BLUE}
-            pt="l"
-          >
-            Early bird: € 630
-          </Text>
-          <Text
-            textAlign="center"
-            fontSize="s"
-            color={COLORS.MAJOLICA_BLUE}
-            pt="m"
-            pb="xxl"
-          >
-            (before 25th March, 2020)
-          </Text>
+          <DetailsBox>
+            <Text
+              textAlign="center"
+              fontSize="xl"
+              color={COLORS.MAJOLICA_BLUE}
+              pt="l"
+            >
+              Early bird: € 630
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="s"
+              color={COLORS.MAJOLICA_BLUE}
+              pt="m"
+              pb="xxl"
+            >
+              (before 25th March, 2020)
+            </Text>
+          </DetailsBox>
         </TableBox>
         <TableBox
           onMouseEnter={() => setIsHoveredThird(true)}
@@ -130,23 +142,25 @@ const PriceList = () => {
             </Text>
             <AnimatedClouds isHovered={isHoveredThird} />
           </BlueBox>
-          <Text
-            textAlign="center"
-            fontSize="xl"
-            color={COLORS.MAJOLICA_BLUE}
-            pt="m"
-          >
-            Early bird: later
-          </Text>
-          <Text
-            textAlign="center"
-            fontSize="s"
-            color={COLORS.MAJOLICA_BLUE}
-            pt="s"
-            pb="xxl"
-          >
-            (before 25th March, 2020)
-          </Text>
+          <DetailsBox>
+            <Text
+              textAlign="center"
+              fontSize="xl"
+              color={COLORS.MAJOLICA_BLUE}
+              pt="m"
+            >
+              Early bird: later
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="s"
+              color={COLORS.MAJOLICA_BLUE}
+              pt="s"
+              pb="xxl"
+            >
+              (before 25th March, 2020)
+            </Text>
+          </DetailsBox>
         </TableBox>
       </Flex>
     </>

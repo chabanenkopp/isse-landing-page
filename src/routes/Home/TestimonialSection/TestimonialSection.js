@@ -65,6 +65,9 @@ const Avatar = styled.img`
 `
 
 const StyledSlider = styled(Slider)`
+  .slick-slide {
+    outline: none;
+  }
   .slick-slide div div {
     outline: none;
   }

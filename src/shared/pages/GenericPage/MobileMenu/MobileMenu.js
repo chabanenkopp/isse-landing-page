@@ -10,7 +10,7 @@ import { Text } from 'components/atoms/Typography'
 import ChangeColor from 'components/atoms/ChangeFontColorByPathName'
 import Link from 'components/atoms/Link'
 
-const { HOME, OVERVIEW, SPONSORS } = PATHS
+const { HOME, OVERVIEW, SPONSORS, COMMITTEES } = PATHS
 
 const MobileMenuContainer = styled(Box)`
   background-color: ${COLORS.WHITE};
@@ -60,6 +60,20 @@ const MobileMenu = ({ isVisible, pathName, onClick }) => {
               >
                 <ChangeColor pathName={pathName} targetPath={OVERVIEW}>
                   About Us
+                </ChangeColor>
+              </Link>
+            </Box>
+            <Box pt={pxToRem(50)}>
+              <Link
+                to={COMMITTEES}
+                as={GatsbyLink}
+                fontSize="xxxl"
+                fontWeight={`${fontWeights.thin} !important`}
+                px="l"
+                py="m"
+              >
+                <ChangeColor pathName={pathName} targetPath={COMMITTEES}>
+                  Committees
                 </ChangeColor>
               </Link>
             </Box>

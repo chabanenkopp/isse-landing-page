@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { pxToRem } from 'helpers'
-import { Box, Flex } from 'components/atoms/Layout'
+import { Box } from 'components/atoms/Layout'
 import { COLORS } from 'Root/constants'
 import logo from 'assets/images/logo.svg'
 

@@ -48,7 +48,7 @@ const EstateSection = () => (
           mx="xl"
           color={COLORS.WHITE}
           textAlign="center"
-          fontSize={['xl', 'xxl', 'xxxl']}
+          fontSize={['xl', 'xxl', 'xxl']}
         >
           Demänovska Valley, Slovakia
         </Text>

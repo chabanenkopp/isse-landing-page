@@ -12,7 +12,7 @@ import Button from 'components/atoms/Button'
 import Link from 'components/atoms/Link'
 import logo from 'assets/images/logo-line.svg'
 
-const { HOME, OVERVIEW, SPONSORS } = PATHS
+const { HOME, OVERVIEW, SPONSORS, COMMITTEES } = PATHS
 
 const HeaderFixedBox = styled(Flex)`
   background-color: ${COLORS.WHITE};
@@ -52,6 +52,11 @@ const Header = ({
         <Link to={OVERVIEW} as={GatsbyLink} px="l" py="m">
           <ChangeColor pathName={pathName} targetPath={OVERVIEW}>
             About Us
+          </ChangeColor>
+        </Link>
+        <Link to={COMMITTEES} as={GatsbyLink} px="l" py="m">
+          <ChangeColor pathName={pathName} targetPath={COMMITTEES}>
+            Committees
           </ChangeColor>
         </Link>
         <Link to={SPONSORS} as={GatsbyLink} px="l" py="m">

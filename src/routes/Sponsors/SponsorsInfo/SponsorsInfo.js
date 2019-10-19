@@ -12,9 +12,8 @@ import PackageTable from './PackageTable'
 const StyledUL = styled.ul`
   text-indent: -1em;
   list-style: inside url(${listItem});
-  margin-left: ${pxToRem(20)};
-  padding-right: ${pxToRem(20)};
 `
+
 const MILI = [
   'participation of two representatives of the sponsor in the exhibition',
   'a stand with a desk',

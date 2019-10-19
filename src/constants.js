@@ -28,6 +28,7 @@ export const COLORS = {
   MAJOLICA_BLUE: '#244254',
   BLAZE: '#FF9051',
   SELJUK_BLUE: '#4488ee',
+  COTTON_BALL: '#f1f7fc',
   WHITE_SMOKE: 'whitesmoke',
 }
 
@@ -53,4 +54,5 @@ export const PATHS = {
   HOME: '/',
   OVERVIEW: '/overview',
   SPONSORS: '/sponsors',
+  COMMITTEES: '/committees',
 }

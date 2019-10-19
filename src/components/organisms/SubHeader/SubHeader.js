@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { fontWeights } from 'Theme'
 import { COLORS } from 'Root/constants'
 import { Flex, Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import Wave from './Wave'
 
-const SubHeader = () => (
+const SubHeader = ({ children }) => (
   <Flex
     flexDirection="column"
     flex="1"
@@ -29,12 +30,16 @@ const SubHeader = () => (
           px={[0, 0, '50px']}
           py="xl"
         >
-          SPONSORSHIP OFFER
+          {children}
         </Text>
       </Box>
     </Flex>
     <Wave />
   </Flex>
 )
+
+SubHeader.propTypes = {
+  children: PropTypes.string.isRequired,
+}
 
 export default SubHeader
