@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import GenericPage from 'shared/pages/GenericPage'
 import SEO from 'components/atoms/seo'
 import SubHeader from 'components/organisms/SubHeader'
-import GeneralInfo from './GeneralInfor'
+import GeneralInfo from './GeneralInfo'
 import List from './List'
 import IsseHistory from './IsseHistory'
 
