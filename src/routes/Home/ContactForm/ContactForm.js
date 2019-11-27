@@ -30,11 +30,19 @@ const Form = styled.form`
   background-color: ${COLORS.WHITE};
 `
 
-const { FIRST_NAME, LAST_NAME, EMAIL, TEL } = {
-  FIRST_NAME: 'firstName',
-  LAST_NAME: 'lastName',
+const { FULL_NAME, EMAIL, TEL, BODY } = {
+  FULL_NAME: 'fullName',
   EMAIL: 'email',
   TEL: 'tel',
+  BODY: 'body',
+}
+
+const splitName = (name) => {
+  const splitName = name.split(' ')
+  return {
+    firstName: splitName[0],
+    lastName: splitName.length > 1 ? splitName[1] : '',
+  }
 }
 
 const validateInput = (inputValue, isModalOpen) => {
@@ -44,10 +52,11 @@ const validateInput = (inputValue, isModalOpen) => {
 }
 
 const initialState = {
-  [FIRST_NAME]: '',
-  [LAST_NAME]: '',
+  [FULL_NAME]: '',
   [EMAIL]: '',
   [TEL]: '',
+  [BODY]: '',
+  isFullNameValid: true,
   isEmailValid: true,
   isTelValid: true,
   isWarningVisible: false,
@@ -74,18 +83,20 @@ class ContactForm extends Component {
       isWarningVisible,
       email,
       tel,
-      firstName,
-      lastName,
+      fullName,
+      body,
     } = this.state
     if (isWarningVisible) return
     if ((isEmailValid && email !== '') || (isTelValid && tel !== '')) {
       this.setState(initialState)
+      const { firstName, lastName } = splitName(fullName)
       db.collection(FIREBASE_COLLECTIONS.USERS)
         .add({
           firstName,
           lastName,
           email,
           tel,
+          body,
         })
         .then(() => this.handleToggleModal())
         .catch(() => {
@@ -104,6 +115,13 @@ class ContactForm extends Component {
       this.setState({
         isTelValid: validateInput(
           REGEX.TEL_VAL.test(value) && value.length >= 9 && value.length <= 15,
+          isModalOpen
+        ),
+      })
+    if (name === FULL_NAME)
+      this.setState({
+        isFullNameValid: validateInput(
+          value.split(' ').length === 2 && value.split(' ')[1] !== '',
           isModalOpen
         ),
       })
@@ -126,8 +144,10 @@ class ContactForm extends Component {
   }
   render() {
     const {
+      fullName,
       email,
       tel,
+      isFullNameValid,
       isEmailValid,
       isTelValid,
       isWarningVisible,
@@ -147,31 +167,25 @@ class ContactForm extends Component {
                 <Form onSubmit={this.handleSubmitForm}>
                   <Box p={['10px', 'm', 'l']}>
                     <Label>
-                      FIRST NAME
+                      <Flex justifyContent="space-between">
+                        FULL NAME
+                        {!isFullNameValid && (
+                          <Text fontSize="xs" color={COLORS.RED_ORANGE_JUICE}>
+                            invalid name
+                          </Text>
+                        )}
+                      </Flex>
                       <Input
-                        placeholder="First Name"
-                        value={this.state[FIRST_NAME]}
-                        name={FIRST_NAME}
                         onChange={this.handleInputChange}
-                        width={INPUT_WIDTH}
-                        py="m"
-                        pl="m"
+                        onBlur={() => this.handleBlur(fullName, FULL_NAME)}
+                        isValid={isFullNameValid}
+                        placeholder="Full Name"
+                        value={this.state[FULL_NAME]}
+                        name={FULL_NAME}
+                        width="100%"
+                        p="m"
                       />
                     </Label>
-                    <Box mt="l">
-                      <Label>
-                        LAST NAME
-                        <Input
-                          placeholder="Last Name"
-                          value={this.state[LAST_NAME]}
-                          name={LAST_NAME}
-                          onChange={this.handleInputChange}
-                          width={INPUT_WIDTH}
-                          py="m"
-                          pl="m"
-                        />
-                      </Label>
-                    </Box>
                     <Box mt="l">
                       <Label>
                         <Flex justifyContent="space-between">
@@ -214,6 +228,21 @@ class ContactForm extends Component {
                           type="tel"
                           value={this.state[TEL]}
                           name={TEL}
+                          width={INPUT_WIDTH}
+                          py="m"
+                          pl="m"
+                        />
+                      </Label>
+                    </Box>
+                    <Box mt="l">
+                      <Label>
+                        YOUR MESSAGE
+                        <Input.TextArea
+                          placeholder="Your message"
+                          value={this.state[BODY]}
+                          name={BODY}
+                          onChange={this.handleInputChange}
+                          isValid
                           width={INPUT_WIDTH}
                           py="m"
                           pl="m"

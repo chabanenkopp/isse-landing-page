@@ -12,7 +12,7 @@ const PathTwo = styled.path`
 `
 
 const AnimatedClouds = ({ isHovered }) => (
-  <svg preserveAspectRatio="none" viewBox="0 0 300 100">
+  <svg preserveAspectRatio="none" viewBox="0 0 300 60">
     <PathOne
       isHovered={isHovered}
       d="M30.913 43.944s42.911-34.464 87.51-14.191c77.31 35.14 113.304-1.952 146.638-4.729 48.654-4.056 69.94 16.218 69.94 16.218v54.396H30.913V43.944z"

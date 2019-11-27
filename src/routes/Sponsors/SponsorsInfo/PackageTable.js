@@ -39,16 +39,16 @@ const PackageTable = () => (
     <TableFlex>
       <RowTitleFlex bg={COLORS.FLAX_FLOWER_BLUE}>
         <Text color={COLORS.WHITE} px="m">
-          MILI
+          TERA
         </Text>
         <Text color={COLORS.WHITE} px="m">
-          MICRO
+          GIGA
         </Text>
         <Text color={COLORS.WHITE} px="m">
-          NANO
+          MEGA
         </Text>
         <Text color={COLORS.WHITE} px="m">
-          PICO
+          KILO
         </Text>
       </RowTitleFlex>
       <RowValuesFlex>

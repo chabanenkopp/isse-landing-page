@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+// import { Element as ScrollTo } from 'react-scroll'
 import UnfoldTextBar from 'components/molecules/UnfoldTextBar'
 import { fontWeights } from 'Theme'
 import { pxToRem } from 'helpers'
@@ -103,6 +104,7 @@ const PicoList = () => (
 
 const SponsorsInfo = () => (
   <Box my="xl">
+    <Box mt="l" />
     <Text
       data-aos="fade-up"
       textAlign="justify"
@@ -139,7 +141,7 @@ const SponsorsInfo = () => (
         mt="l"
         px="m"
       >
-        <UnfoldTextBar title="MILI" component={<MiliList />} />
+        <UnfoldTextBar title="TERA" component={<MiliList />} />
       </Flex>
       <Flex
         data-aos="fade-up"
@@ -149,7 +151,7 @@ const SponsorsInfo = () => (
         mt="l"
         px="m"
       >
-        <UnfoldTextBar title="MICRO" component={<MicroList />} />
+        <UnfoldTextBar title="GIGA" component={<MicroList />} />
       </Flex>
       <Flex
         data-aos="fade-up"
@@ -159,7 +161,7 @@ const SponsorsInfo = () => (
         mt="l"
         px="m"
       >
-        <UnfoldTextBar title="NANO" component={<NanoList title="NANO" />} />
+        <UnfoldTextBar title="MEGA" component={<NanoList title="NANO" />} />
       </Flex>
       <Flex
         data-aos="fade-up"
@@ -169,7 +171,7 @@ const SponsorsInfo = () => (
         mt="l"
         px="m"
       >
-        <UnfoldTextBar title="PICO" component={<PicoList title="PICO" />} />
+        <UnfoldTextBar title="KILO" component={<PicoList title="PICO" />} />
       </Flex>
     </Box>
   </Box>

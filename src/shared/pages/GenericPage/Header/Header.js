@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
+import { transparentize } from 'polished'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { HamburgerButton } from 'react-hamburger-button'
@@ -10,13 +11,16 @@ import { Flex, Box } from 'components/atoms/Layout'
 import ChangeColor from 'components/atoms/ChangeFontColorByPathName'
 import Button from 'components/atoms/Button'
 import Link from 'components/atoms/Link'
+import Tooltip from 'components/molecules/Tooltip'
 import logo from 'assets/images/logo-line.svg'
 
-const { HOME, OVERVIEW, SPONSORS, COMMITTEES } = PATHS
+const { HOME, OVERVIEW, SPONSORS, COMMITTEES, AUTHORS } = PATHS
 
 const HeaderFixedBox = styled(Flex)`
-  background-color: ${COLORS.WHITE};
-  border-bottom: solid 2px ${COLORS.WHITE_SMOKE};
+  /* background-color: ${transparentize(0.3, COLORS.WHITE)}; */
+  background-color: ${transparentize(0.05, COLORS.WHITE)};
+  /* backdrop-filter: saturate(180%) blur(20px); */
+  border-bottom: solid 1px ${COLORS.WHITE_SMOKE};
 `
 
 const Logo = styled.img`
@@ -29,6 +33,25 @@ const HamburgerContainer = styled(Box)`
   z-index: 1;
   right: 0;
 `
+
+const Links = ({ pathName }) => (
+  <Flex flexDirection="column" textAlign="center">
+    <Link to={OVERVIEW} as={GatsbyLink} px="l" py="m">
+      <ChangeColor pathName={pathName} targetPath={OVERVIEW}>
+        Overview
+      </ChangeColor>
+    </Link>
+    <Link to={COMMITTEES} as={GatsbyLink} px="l" py="m">
+      <ChangeColor pathName={pathName} targetPath={COMMITTEES}>
+        Committees
+      </ChangeColor>
+    </Link>
+  </Flex>
+)
+
+Links.propTypes = {
+  pathName: PropTypes.string,
+}
 
 const Header = ({
   isVisible,
@@ -49,14 +72,14 @@ const Header = ({
         <Logo src={logo} alt="ISSE" />
       </GatsbyLink>
       <Flex alignItems="center" display={['none', 'none', 'flex']}>
-        <Link to={OVERVIEW} as={GatsbyLink} px="l" py="m">
-          <ChangeColor pathName={pathName} targetPath={OVERVIEW}>
-            About Us
-          </ChangeColor>
-        </Link>
-        <Link to={COMMITTEES} as={GatsbyLink} px="l" py="m">
-          <ChangeColor pathName={pathName} targetPath={COMMITTEES}>
-            Committees
+        <Tooltip component={<Links />}>
+          <Link list={1} to={OVERVIEW} as={GatsbyLink} px="l" py="m">
+            About ISSE
+          </Link>
+        </Tooltip>
+        <Link to={AUTHORS} as={GatsbyLink} px="l" py="m">
+          <ChangeColor pathName={pathName} targetPath={AUTHORS}>
+            Authors
           </ChangeColor>
         </Link>
         <Link to={SPONSORS} as={GatsbyLink} px="l" py="m">

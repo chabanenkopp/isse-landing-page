@@ -40,9 +40,9 @@ export const STEERING_COMMITTEE = [
     university: 'University Politehnica of Bucharest',
   },
   {
-    name: 'Martin Bursik',
-    country: 'Czech Republic',
-    university: 'Brno University of Technology',
+    name: 'David Bušek',
+    country: 'Prague',
+    university: 'Czech Technical University',
   },
   {
     name: 'Vlad Cehan',
@@ -75,11 +75,6 @@ export const STEERING_COMMITTEE = [
     university: 'Wrocław University of Science and Technology',
   },
   {
-    name: 'Leszek Golonka',
-    country: 'Poland',
-    university: 'Wrocław University of Science and Technology',
-  },
-  {
     name: 'Karol Malecha',
     country: 'Poland',
     university: 'Wrocław University of Science and Technology',
@@ -88,11 +83,6 @@ export const STEERING_COMMITTEE = [
     name: 'Piotr Markowski',
     country: 'Poland',
     university: 'Wrocław University of Science and Technology',
-  },
-  {
-    name: 'Marko Hrovat',
-    country: 'Ljubljana - Slovenia',
-    university: 'Jožef Stefan Institute',
   },
   {
     name: 'Balazs Illes',
@@ -170,9 +160,9 @@ export const STEERING_COMMITTEE = [
     university: 'Technical University of Cluj-Napoca',
   },
   {
-    name: 'Goran Radosavljevic',
-    country: 'Austria',
-    university: 'Vienna University of Technology',
+    name: 'Frantisek Steiner',
+    country: 'Czech Republic',
+    university: 'University of West Bohemia in Pilsen',
   },
   {
     name: 'Stoyan Stoyanov',
@@ -190,12 +180,6 @@ export const STEERING_COMMITTEE = [
     university: 'Brno University of Technology',
   },
   {
-    name: 'Borys Tsyganok',
-    country: 'Kiev - Ukraine',
-    university:
-      'National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"',
-  },
-  {
     name: 'Klaus-Jürgen Wolter',
     country: 'Germany',
     university: 'Dresden University of Technology',
@@ -205,14 +189,48 @@ export const STEERING_COMMITTEE = [
     country: 'Serbia',
     university: 'University of Novi Sad',
   },
+]
+
+export const GENERAL_CHAIRMAN = [
   {
-    name: 'Frantisek Steiner',
-    country: 'Czech Republic',
-    university: 'University of West Bohemia in Pilsen',
+    name: 'Heinz Wohlrabe',
+    country: 'Germany',
+    university: 'Dresden University of Technology',
   },
+]
+
+export const SECRETARY = [
   {
-    name: 'David Bušek',
-    country: 'Prague',
-    university: 'Czech Technical University',
+    name: 'Oliver Krammer',
+    country: 'Hungary',
+    university: 'Budapest University of Technology and Economics',
+  },
+]
+
+export const CONFERENCE_CHAIRMAN = [
+  {
+    name: 'Alena Pietrikova',
+    country: 'Slovakia',
+    university: 'Technical University of Kosice',
+  },
+]
+export const CHAIRMAN_TPC = [
+  {
+    name: 'Johann Nicolics',
+    country: 'Austria',
+    university: 'Vienna University of Technology',
+  },
+]
+
+export const LOCAL = [
+  {
+    name: 'Alena Pietrikova',
+    people: [
+      'Slavomir Kardos',
+      'Ondrej Kovac',
+      'Igor Vehec',
+      'Emilia Pietrikova',
+      'Pavlo Chabanenko',
+    ],
   },
 ]

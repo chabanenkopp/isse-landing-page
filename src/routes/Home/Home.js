@@ -9,7 +9,6 @@ import { COLORS } from 'Root/constants'
 import GenericPage from 'shared/pages/GenericPage'
 import FloatingBadge from 'shared/FloatingBadge'
 import Popup from 'components/atoms/Popup'
-import RentFormSlider from './RentFormSlider'
 import ContactForm from './ContactForm'
 import EstateSection from './EstateSection'
 import TestimonialSection from './TestimonialSection'
@@ -18,6 +17,8 @@ import LogoLineSeparator from './LogoLineSeparator'
 import PriceList from './PriceList'
 import PaymentDetails from './PaymentDetails'
 import Carousel from './Carousel'
+import GoogleMap from './GoogleMap'
+import RentFormSlider from './RentFormSlider'
 
 const POPUP_ADD_TEXT = `
 PSST! WE ARE HAVING A SPECIAL EVENT SOON! DON'T MISS IT!
@@ -62,12 +63,7 @@ class Home extends Component {
           message={POPUP_ADD_TEXT}
           buttonText={BUTTON_TEXT}
         />
-        <Box mt="m">
-          <ScrollTo name="rent-form">
-            <RentFormSlider />
-          </ScrollTo>
-        </Box>
-        <Box mt={['xl', 'xl', pxToRem(170)]} mb={['l', 'l', pxToRem(100)]}>
+        <Box mt={['l', 'l', 'xl']} mb={['l', 'l', pxToRem(100)]}>
           <BasicInformation />
         </Box>
         <Box my="xl">
@@ -77,6 +73,11 @@ class Home extends Component {
         </Box>
         <Box mb="xl">
           <PaymentDetails />
+        </Box>
+        <Box my="xxl">
+          <ScrollTo name="rent-form">
+            <RentFormSlider />
+          </ScrollTo>
         </Box>
         <Box mb={['xl', 'xl', pxToRem(100)]}>
           <LogoLineSeparator />
@@ -95,7 +96,10 @@ class Home extends Component {
           >
             <Carousel />
           </Box>
-          <Box mt={[0, 0, 'xl']} mb={pxToRem(150)}>
+          <Box mb="xl">
+            <GoogleMap />
+          </Box>
+          <Box mt={[0, 0, 'xxl']} mb={pxToRem(150)}>
             <ContactForm />
           </Box>
         </Flex>

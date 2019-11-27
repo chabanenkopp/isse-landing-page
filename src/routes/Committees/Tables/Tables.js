@@ -6,8 +6,16 @@ import { COLORS } from 'Root/constants'
 import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import Hero from 'components/molecules/Hero'
-import { STEERING_COMMITTEE } from './data'
+import {
+  STEERING_COMMITTEE,
+  GENERAL_CHAIRMAN,
+  SECRETARY,
+  CONFERENCE_CHAIRMAN,
+  CHAIRMAN_TPC,
+  LOCAL,
+} from './data'
 import Bb from '../components/BlueBold'
+import MiniTable from '../components/MiniTable'
 
 const Table = styled(Flex)`
   flex-direction: column;
@@ -66,7 +74,6 @@ const SteeringCommitteeTable = () => (
       {STEERING_COMMITTEE.map(({ name, country, university }, i) => {
         return (
           <Row
-            data-aos="fade-up"
             bg={(i + 1) % 2 === 0 ? COLORS.COTTON_BALL : COLORS.WHITE}
             lastElement={STEERING_COMMITTEE.length === i + 1}
             key={name}
@@ -94,7 +101,32 @@ const SteeringCommitteeTable = () => (
 )
 
 const Tables = () => (
-  <Box mb="xl">
+  <Box my="xxl">
+    <Flex flexDirection={['column', 'column', 'row']} justifyContent="center">
+      <Box mb="xl">
+        <MiniTable data={GENERAL_CHAIRMAN} title="General Chairman of ISSE" />
+      </Box>
+      <Box mb="xl">
+        <MiniTable data={SECRETARY} title="Secretary of ISSE" />
+      </Box>
+    </Flex>
+    <Flex flexDirection={['column', 'column', 'row']} justifyContent="center">
+      <Box mb="xl">
+        <MiniTable data={CONFERENCE_CHAIRMAN} title="Conference Chairman" />
+      </Box>
+      <Box mb="xl">
+        <MiniTable
+          data={CHAIRMAN_TPC}
+          title="Chairman of Technical Program Committee"
+        />
+      </Box>
+    </Flex>
+    <MiniTable.List
+      data={LOCAL}
+      title="Local Organizing Committee (Technical University of Kosice, Slovakia)"
+      position="Conference Chair :"
+      board="Board of Organizers:"
+    />
     <div data-aos="fade-up">
       <Hero>
         International Steering <Bb>Committee</Bb>

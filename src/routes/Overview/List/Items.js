@@ -29,7 +29,6 @@ const STRUCTURE = [
   'Plenary lectures of invited speakers',
   'Oral sessions',
   'Dialog (poster) sessions',
-  'Videoconferencing and virtual presentations',
   'Panel discussions',
 ]
 

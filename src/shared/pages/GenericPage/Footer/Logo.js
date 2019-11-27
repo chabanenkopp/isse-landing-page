@@ -7,20 +7,21 @@ import { pxToRem } from 'helpers'
 
 const LogoElement = styled.img`
   max-height: ${pxToRem(50)};
+  ${({ maxHeight }) => maxHeight && `max-height: ${maxHeight}`};
   margin-bottom: ${theme.space.s};
   display: block;
 `
 
-const Logo = ({ img, href }) => {
+const Logo = ({ img, href, maxHeight }) => {
   if (href)
     return (
       <a href={href}>
-        <LogoElement src={img} alt="isse" />
+        <LogoElement src={img} alt="isse" maxHeight={maxHeight} />
       </a>
     )
   return (
     <GatsbyLink to="/">
-      <LogoElement src={img} alt="isse" />
+      <LogoElement src={img} alt="isse" maxHeight={maxHeight} />
     </GatsbyLink>
   )
 }
@@ -28,6 +29,7 @@ const Logo = ({ img, href }) => {
 Logo.propTypes = {
   img: PropTypes.string.isRequired,
   href: PropTypes.string,
+  maxHeight: PropTypes.string,
 }
 
 export default Logo

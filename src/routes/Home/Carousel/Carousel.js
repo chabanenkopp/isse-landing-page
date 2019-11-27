@@ -8,18 +8,21 @@ import { COLORS } from 'Root/constants'
 import { pxToRem } from 'helpers'
 import { Text } from 'components/atoms/Typography'
 import { Box } from 'components/atoms/Layout'
+import Bb from 'components/atoms/Bb'
 import fountain from 'assets/images/hotel/fountain.jpg'
 import hotelFront from 'assets/images/hotel/hotel-front.jpg'
 import hotelGeneral from 'assets/images/hotel/hotel-general.jpg'
 import room from 'assets/images/hotel/room.jpg'
 
 const VenueImage = styled(Box)`
-  height: 28vh;
+  height: auto;
+  max-width: ${pxToRem(330)};
+  min-height: ${pxToRem(290)};
   border-radius: ${radius.l};
   border: 1px solid ${COLORS.WHITE};
   background-size: cover;
   background-repeat: no-repeat;
-  ${({ image }) => ` background-image: url(${image})`}
+  ${({ image }) => ` background-image: url(${image})`};
 `
 
 const StyledSlider = styled(Slider)`
@@ -56,14 +59,16 @@ const Carousel = () => {
   }
   return (
     <div data-aos="fade-up">
-      <Text
-        fontSize="xxl"
-        fontWeight="thin"
-        color={COLORS.MAJOLICA_BLUE}
-        textAlign="center"
-      >
-        Hotel Grand Jasna
-      </Text>
+      <Box justifyContent="center" mb="xl">
+        <Text
+          textAlign="center"
+          color={COLORS.MAJOLICA_BLUE}
+          fontWeight={fontWeights.thin}
+          fontSize={['xxl', 'xxl', 'xxxxl']}
+        >
+          Venue: Hotel&nbsp; <Bb>Grand Jasna</Bb>
+        </Text>
+      </Box>
       <Box ml={[0, 0, 'l']}>
         <StyledSlider {...settings}>
           <Box mt="l" mb="m" pr={[0, 'm', 'm']}>
@@ -100,7 +105,7 @@ const Carousel = () => {
           fontWeight={fontWeights.thin}
           my="xl"
         >
-          Demanovska Valley, Slovakia - Demänovská dolina, Slovensko.&nbsp;
+          Demanovska Valley, Slovakia - Demänovská Dolina, Slovensko.&nbsp;
           <b>Hotel facilities:</b> each room is equipped with a flat screen
           television, a desk, a direct line telephone and free Wi-Fi access.
           Rooms are also equipped with a bathroom with bathtub or shower and a
