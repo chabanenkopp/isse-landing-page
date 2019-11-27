@@ -1,12 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link as GatsbyLink } from 'gatsby'
 import UnfoldTextBar from 'components/molecules/UnfoldTextBar'
-import { fontSizes, fontWeights } from 'Theme'
+import { fontWeights } from 'Theme'
 import { pxToRem } from 'helpers'
-import { COLORS } from 'Root/constants'
+import { COLORS, PATHS } from 'Root/constants'
 import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
+// import Bb from 'components/atoms/Bb'
+// import TextLink from 'components/atoms/TextLink'
 import listItem from 'assets/images/list-item.svg'
+
+const { AUTHORS } = PATHS
 
 const StyledUL = styled.ul`
   text-indent: -1em;
@@ -29,13 +34,21 @@ const PERSON_FEE = [
   'Gala dinner',
 ]
 
-const BANK_ACCOUNT_DETAILS = [
-  'Bank: Santander Bank Polska S.A.',
-  'Address: Norwida 1/3, 50-373 Wroclaw, Poland',
-  'Account holder: Wroclaw University of Science and Technology',
-  'Swift BIC: WBK PPL PP',
-  'Account number: PL 37 1090 2402 0000 0006 1000 0434',
-  'Subject: ISSE2019_name_person-ID',
+const ACCOUNT_HOLDER_DETAILS = [
+  'Slovenská elektrotechnická spoločnosť, Branch FEI TU Košice',
+  'Letná 9, 042 00 Košice, Slovak Republic',
+  'Business ID: 12665037',
+  'Tax ID: 2020767925',
+  'IBAN: SK55 0900 0000 0000 8212 8234',
+  'Variable symbol: 080',
+  'Constant symbol: 0308',
+  'Subject: ISSE2020_name_person-ID',
+]
+const BANK_DETAILS = [
+  'BIC (SWIFT) Code: GIBASKBX',
+  'Slovenská sporiteľňa, a.s.',
+  'Tomášikova 48, 832 37 Bratislava,',
+  'Slovak Republic',
 ]
 
 const ConferenceFeeList = () => (
@@ -71,63 +84,79 @@ const PersonFeeList = () => (
   </StyledUL>
 )
 const BankDetails = () => (
-  <StyledUL>
-    {BANK_ACCOUNT_DETAILS.map((title) => (
-      <li key={title}>
-        <Text
-          color={COLORS.MAJOLICA_BLUE}
-          display="contents"
-          fontSize={['xs', 's', 'm']}
-          fontWeight={fontWeights.thin}
-        >
-          {title}
-        </Text>
-      </li>
-    ))}
-  </StyledUL>
+  <div>
+    <Text
+      color={COLORS.MAJOLICA_BLUE}
+      fontSize={['s', 'm', 'l']}
+      fontWeight="normal"
+      ml="m"
+      mb="m"
+    >
+      Account Holder
+    </Text>
+    <StyledUL>
+      {ACCOUNT_HOLDER_DETAILS.map((title) => (
+        <li key={title}>
+          <Text
+            color={COLORS.MAJOLICA_BLUE}
+            display="contents"
+            fontSize={['xs', 's', 'm']}
+            fontWeight="thin"
+          >
+            {title}
+          </Text>
+        </li>
+      ))}
+    </StyledUL>
+    <Text
+      color={COLORS.MAJOLICA_BLUE}
+      fontSize={['s', 'm', 'l']}
+      fontWeight="normal"
+      ml="m"
+      mb="s"
+    >
+      Bank
+    </Text>
+    <StyledUL>
+      {BANK_DETAILS.map((title) => (
+        <li key={title}>
+          <Text
+            color={COLORS.MAJOLICA_BLUE}
+            display="contents"
+            fontSize={['xs', 's', 'm']}
+            fontWeight="thin"
+          >
+            {title}
+          </Text>
+        </li>
+      ))}
+    </StyledUL>
+  </div>
 )
 
-const TextLink = styled(Text)`
+const StyledLink = styled(GatsbyLink)`
   text-decoration: none;
-  cursor: pointer;
-  font-size: ${fontSizes.s};
-  font-weight: ${fontWeights.semi_bold};
   color: ${COLORS.FLAX_FLOWER_BLUE};
+  font-weight: ${fontWeights.semi_bold};
 `
 
 const PaymentDetails = () => (
   <React.Fragment>
-    <Box my="xl" m="0 auto" maxWidth={pxToRem(1000)} px="m">
-      <Text
+    <Text textAlign="center" fontSize="xl" mt="xl">
+      Submit your abstract&nbsp;
+      <StyledLink to={AUTHORS}>here</StyledLink>
+    </Text>
+    <Box mt="xxl">
+      <Flex
         data-aos="fade-up"
-        textAlign="center"
-        fontSize="m"
-        fontWeight={fontWeights.thin}
-        my="xl"
+        flexDirection="column"
+        maxWidth={pxToRem(800)}
+        m="0 auto"
+        mt="l"
+        px="m"
       >
-        Conference attendees are requested to complete the &nbsp;
-        <TextLink
-          as="a"
-          href="https://srv-file7.gofile.io/download/kKhfYV/registration_form.xlsx"
-          color={COLORS.FLAX_FLOWER_BLUE}
-        >
-          Participant Registration Form&nbsp;
-        </TextLink>
-        and send it to&nbsp;
-        <TextLink
-          as="a"
-          href="mailto: isse2020@gmail.com"
-          color={COLORS.FLAX_FLOWER_BLUE}
-        >
-          isse2020@gmail.com&nbsp;
-        </TextLink>
-        as soon as possible. Based on this form you will receive an invoice for
-        the the the conference fee where you will be asked to pay by bank
-        transfer (payment should be done before 17th of April, 2019). You will
-        be notified by email about the successful transfer.
-      </Text>
-    </Box>
-    <Box>
+        <UnfoldTextBar title="Bank account:" component={<BankDetails />} />
+      </Flex>
       <Flex
         data-aos="fade-up"
         flexDirection="column"
@@ -153,16 +182,6 @@ const PaymentDetails = () => (
           title="Accompanying person fee details:"
           component={<PersonFeeList />}
         />
-      </Flex>
-      <Flex
-        data-aos="fade-up"
-        flexDirection="column"
-        maxWidth={pxToRem(800)}
-        m="0 auto"
-        mt="l"
-        px="m"
-      >
-        <UnfoldTextBar title="Bank account:" component={<BankDetails />} />
       </Flex>
     </Box>
   </React.Fragment>

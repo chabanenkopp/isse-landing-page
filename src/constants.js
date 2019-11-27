@@ -29,6 +29,7 @@ export const COLORS = {
   BLAZE: '#FF9051',
   SELJUK_BLUE: '#4488ee',
   COTTON_BALL: '#f1f7fc',
+  DAPHNE: '#025b98',
   WHITE_SMOKE: 'whitesmoke',
 }
 
@@ -39,11 +40,13 @@ export const REGEX = {
   TEL_VAL: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
 }
 
-export const TEL_NUMBER = '1-866-289-6868'
+export const TEL_NUMBER = `+421 55 6023194`
 
 export const LINKS = {
-  CRESCENT_HEIGHTS_HOME: 'https://www.crescentheights.com/',
-  CRESCENT_HEIGHTS_PRESS: 'https://www.crescentheights.com/about/press',
+  IEEE: `https://www.ieee.org`,
+  FEI: `http://www.fei.tuke.sk/en`,
+  // GOOGLE_MAPS: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2619.1013916855!2d19.578422315643678!3d48.970594300753866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47157671558baeb5%3A0xdbd7820f6021b391!2sHotel%20Grand%20Jasn%C3%A1!5e0!3m2!1sen!2ssk!4v1571742656636!5m2!1sen!2ssk`,
+  GOOGLE_MAPS: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2619.1013916855!2d19.578422315643678!3d48.970594300753866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47157671558baeb5%3A0xdbd7820f6021b391!2sHotel%20Grand%20Jasn%C3%A1!5e0!3m2!1sen!2ssk!4v1571742656636!5m2!1sen!2ssk`,
 }
 
 export const FIREBASE_COLLECTIONS = {
@@ -55,4 +58,26 @@ export const PATHS = {
   OVERVIEW: '/overview',
   SPONSORS: '/sponsors',
   COMMITTEES: '/committees',
+  AUTHORS: '/authors',
+}
+
+export const DOWNLOAD = {
+  REG_FORM: `https://drive.google.com/uc?authuser=0&id=1IQut2XPxboeP0bPvViU085LJC1cgYVS1&export=download`,
+  ABSTR_FORM: `https://drive.google.com/uc?authuser=0&id=1fOA9aSTCP5Hss-AqaQRNQ_hcsT751SCU&export=download`,
+}
+
+export const CONTACT = {
+  EMAIL: 'isse@fei.tuke.sk',
+}
+
+const SIZE = {
+  MOBILE: '375px',
+  TABLET: '850px',
+  DESKTOP: '850px',
+}
+
+export const DEVICE = {
+  MOBILE: `(max-width: ${SIZE.MOBILE})`,
+  TABLET: `(max-width: ${SIZE.TABLET})`,
+  DESKTOP: `(min-width: ${SIZE.TABLET})`,
 }

@@ -3,17 +3,20 @@ import PropTypes from 'prop-types'
 import GenericPage from 'shared/pages/GenericPage'
 import SEO from 'components/atoms/seo'
 import SubHeader from 'components/organisms/SubHeader'
-import GeneralInfo from './GeneralInfor'
+import FloatingBadge from 'shared/FloatingBadge'
+import GeneralInfo from './GeneralInfo'
 import List from './List'
-import IsseHistory from './IsseHistory'
+import HistoryTable from './IsseHistory/HistoryTable'
+// import IsseHistory from './IsseHistory'x
 
 const Overview = ({ location: { pathname } }) => (
   <GenericPage pathName={pathname}>
     <SEO title="About ISSE conference" />
+    <FloatingBadge />
     <SubHeader>ISSE OVERVIEW</SubHeader>
     <GeneralInfo />
     <List />
-    <IsseHistory />
+    <HistoryTable />
   </GenericPage>
 )
 

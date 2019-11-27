@@ -10,7 +10,7 @@ const Paragraph = (props) => (
     lineHeight="1.8"
     fontSize="m"
     fontWeight={fontWeights.thin}
-    px={[pxToRem(20), pxToRem(30), pxToRem(180)]}
+    px={[pxToRem(20), pxToRem(35), '15%']}
     mb="l"
     {...props}
   />

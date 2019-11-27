@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import { fadeIn } from 'react-animations'
 import { theme, radius, fontSizes, fontWeights } from 'Theme'
 import { pxToRem } from 'helpers'
-import { COLORS, TEL_NUMBER } from 'Root/constants'
+import { COLORS, TEL_NUMBER, CONTACT } from 'Root/constants'
 import { Flex, Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 
@@ -70,12 +70,12 @@ class HiddenText extends Component {
         </Text>
         <TextLink
           as="a"
-          href="mailto: isse2020@gmail.com"
+          href={`mailto: ${CONTACT.EMAIL}`}
           color={COLORS.MAJOLICA_BLUE}
           fontSize="s"
-          fontWeight={theme.fontWeights.semi_bold}
+          fontWeight="semi_bold"
         >
-          ISSE2020@GMAIL.COM
+          {CONTACT.EMAIL.toUpperCase()}
         </TextLink>
       </Box>
     )

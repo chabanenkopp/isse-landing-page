@@ -62,12 +62,16 @@ const UnfoldTextBar = ({ title, component: List }) => {
         borderColor={COLORS.WHITE}
         isShadow
       >
-        <Text fontSize={['m', 'l', 'xl']} ml="m">
+        <Text fontSize={['xs', 'm', 'xl']} mx="m" fontWeight="semi_bold">
           {title}
         </Text>
         <StyledBox src={arrow} isClicked={isClicked} />
       </ButtonLong>
-      {isClicked ? <Box p="l"> {List}</Box> : null}
+      {isClicked ? (
+        <Box py="l" px="s">
+          {List}
+        </Box>
+      ) : null}
     </Flex>
   )
 }

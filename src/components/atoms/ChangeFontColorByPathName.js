@@ -10,8 +10,8 @@ const ChangeFontColorByPathName = ({ children, pathName, targetPath }) => (
 
 ChangeFontColorByPathName.propTypes = {
   children: PropTypes.string.isRequired,
-  pathName: PropTypes.string.isRequired,
   targetPath: PropTypes.string.isRequired,
+  pathName: PropTypes.string,
 }
 
 export default ChangeFontColorByPathName

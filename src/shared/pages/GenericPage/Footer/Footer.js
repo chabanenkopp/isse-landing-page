@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from 'Theme'
-import { TEL_NUMBER, COLORS } from 'Root/constants'
-import { Box, Grid } from 'components/atoms/Layout'
 import { Element as ScrollTo } from 'react-scroll'
+import { theme } from 'Theme'
+import { pxToRem } from 'helpers'
+import { LINKS, TEL_NUMBER, COLORS, CONTACT } from 'Root/constants'
+import { Box, Grid } from 'components/atoms/Layout'
 import logo from 'assets/images/logo-line.svg'
+import ieee from 'assets/images/ieee.svg'
+import fei from 'assets/images/fei.svg'
 import privacyPolicy from 'assets/pdf/privacy_policy.pdf'
 import SocialIconsLinks from './SocialIconsLinks'
 import Logo from './Logo'
@@ -40,10 +43,18 @@ const Footer = () => (
             <Title>Contact us on</Title>
             <Row>Kosice, Slovakia</Row>
             <Row>Letna 9, 04200</Row>
-            <Row>Email: isse2020@gmail.com</Row>
+            <Row>{`Email: ${CONTACT.EMAIL}`}</Row>
             <Row as="a" href={`tel:${TEL_NUMBER}`}>
               {`tel: ${TEL_NUMBER}`}
             </Row>
+          </Box>
+          <Box data-aos="fade-up">
+            <Title>Partners</Title>
+
+            <Logo img={fei} maxHeight={pxToRem(30)} href={LINKS.FEI} />
+            <Box mt="m">
+              <Logo img={ieee} maxHeight={pxToRem(25)} href={LINKS.IEEE} />
+            </Box>
           </Box>
           <Box data-aos="fade-up">
             <Title>Social media</Title>

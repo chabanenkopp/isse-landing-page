@@ -26,16 +26,16 @@ export default class RentFormSlider extends Component {
         this.setState({ packageType: 'not available' })
         break
       case value >= 900 && value < 1000:
-        this.setState({ packageType: 'PICO' })
+        this.setState({ packageType: 'KILO' })
         break
       case value >= 1000 && value < 1500:
-        this.setState({ packageType: 'NANO' })
+        this.setState({ packageType: 'MEGA' })
         break
       case value >= 1500 && value < 2500:
-        this.setState({ packageType: 'MICRO' })
+        this.setState({ packageType: 'GIGA' })
         break
       case value >= 2500:
-        this.setState({ packageType: 'MILI' })
+        this.setState({ packageType: 'TERA' })
         break
       default:
         break

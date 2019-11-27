@@ -16,7 +16,7 @@ const Hero = ({ children }) => (
   <Background>
     <Container>
       <Flex justifyContent="center">
-        <H3>{children}</H3>
+        <H3 textAlign="center">{children}</H3>
       </Flex>
     </Container>
   </Background>

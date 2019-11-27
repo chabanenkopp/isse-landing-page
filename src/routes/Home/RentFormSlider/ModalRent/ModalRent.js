@@ -19,7 +19,7 @@ const ModalTextFailure = () => (
       lineHeight={lineHeightText}
       fontFamily={modalTextFontFamily}
     >
-      Our starter package is PICO for €900
+      Our starter package is KILO for €900
     </Text>
     <Text
       fontSize={fontSizeText}

@@ -76,16 +76,40 @@ const PriceList = () => {
               color={COLORS.MAJOLICA_BLUE}
               pt="m"
             >
-              Early bird: € 530
+              Early bird: € 510
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="s"
+              color={COLORS.ROCK_BLUE}
+              pt="s"
+            >
+              (before 27th March, 2020)
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="xl"
+              color={COLORS.MAJOLICA_BLUE}
+              pt="m"
+            >
+              Late registration: € 550
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="s"
+              color={COLORS.ROCK_BLUE}
+              pt="s"
+            >
+              (after 27th March, 2020)
             </Text>
             <Text
               textAlign="center"
               fontSize="s"
               color={COLORS.MAJOLICA_BLUE}
-              pt="s"
-              pb="xxl"
+              pt="m"
+              pb="xl"
             >
-              (before 25th March, 2020)
+              Accompanying person: € 400
             </Text>
           </DetailsBox>
         </TableBox>
@@ -109,16 +133,32 @@ const PriceList = () => {
               color={COLORS.MAJOLICA_BLUE}
               pt="l"
             >
-              Early bird: € 630
+              Early bird: € 620
             </Text>
             <Text
               textAlign="center"
               fontSize="s"
+              color={COLORS.ROCK_BLUE}
+              pt="m"
+            >
+              (before 27th March, 2020)
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="xl"
               color={COLORS.MAJOLICA_BLUE}
+              pt="m"
+            >
+              Late registration: € 650
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="s"
+              color={COLORS.ROCK_BLUE}
               pt="m"
               pb="xxl"
             >
-              (before 25th March, 2020)
+              (after 27th March 2020)
             </Text>
           </DetailsBox>
         </TableBox>
@@ -147,18 +187,34 @@ const PriceList = () => {
               textAlign="center"
               fontSize="xl"
               color={COLORS.MAJOLICA_BLUE}
-              pt="m"
+              pt="l"
             >
-              Early bird: later
+              Early bird: € 510
             </Text>
             <Text
               textAlign="center"
               fontSize="s"
-              color={COLORS.MAJOLICA_BLUE}
+              color={COLORS.ROCK_BLUE}
               pt="s"
-              pb="xxl"
             >
-              (before 25th March, 2020)
+              (before 27th March, 2020)
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="xl"
+              color={COLORS.MAJOLICA_BLUE}
+              pt="m"
+            >
+              Late registration: € 550
+            </Text>
+            <Text
+              textAlign="center"
+              fontSize="s"
+              color={COLORS.ROCK_BLUE}
+              pt="m"
+              pb="xl"
+            >
+              (after 27th March, 2020)
             </Text>
           </DetailsBox>
         </TableBox>

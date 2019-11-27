@@ -64,7 +64,6 @@ const HistoryTable = () => (
       {DATA.map(({ year, venue, theme }, i) => {
         return (
           <Row
-            data-aos="fade-up"
             bg={(i + 1) % 2 === 0 ? COLORS.COTTON_BALL : COLORS.WHITE}
             lastElement={DATA.length === i + 1}
             key={year}
