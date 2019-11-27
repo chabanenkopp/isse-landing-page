@@ -9,6 +9,7 @@ import logo from 'assets/images/logo-line.svg'
 import ieee from 'assets/images/ieee.svg'
 import fei from 'assets/images/fei.svg'
 import privacyPolicy from 'assets/pdf/privacy_policy.pdf'
+import ses from 'assets/images/ses.gif'
 import SocialIconsLinks from './SocialIconsLinks'
 import Logo from './Logo'
 import Row from './Row'
@@ -49,11 +50,13 @@ const Footer = () => (
             </Row>
           </Box>
           <Box data-aos="fade-up">
-            <Title>Partners</Title>
-
-            <Logo img={fei} maxHeight={pxToRem(30)} href={LINKS.FEI} />
+            <Title>Our partners</Title>
+            <Logo img={ieee} maxHeight={pxToRem(25)} href={LINKS.IEEE} />
             <Box mt="m">
-              <Logo img={ieee} maxHeight={pxToRem(25)} href={LINKS.IEEE} />
+              <Logo img={fei} maxHeight={pxToRem(30)} href={LINKS.FEI} />
+            </Box>
+            <Box mt="m">
+              <Logo img={ses} maxHeight={pxToRem(40)} href={LINKS.SES} />
             </Box>
           </Box>
           <Box data-aos="fade-up">

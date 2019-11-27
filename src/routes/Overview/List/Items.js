@@ -6,9 +6,9 @@ import { Text } from 'components/atoms/Typography'
 import listItem from 'assets/images/list-item.svg'
 
 const OBJECTIVES = [
-  'Exchange of experiences in utilization of advanced electronics, electronics manufacturing, micro and nanoelectronics, research, development, manufacturing, testing and teaching',
+  'Exchange of experiences in the utilization of advanced electronics, electronics manufacturing, micro and nanoelectronics, research, development, manufacturing, testing and teaching',
   'International cooperation and student exchanges',
-  'Supporting a collaboration among junior and senior scientists from Europe and other continents',
+  'Supporting collaboration among junior and senior scientists from Europe and other continents',
 ]
 
 const TOPICS = [

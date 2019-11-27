@@ -30,14 +30,14 @@ const GeneralInfo = () => (
         &nbsp;“Trends in Microelectronics Packaging and Interconnection
         Technology”
       </Bb>
-      . Since almost two decades ISSE is technically co-sponsored by IEEE and
+      . For almost two decades ISSE is technically co-sponsored by IEEE and
       participating scientists can profit from getting their papers published by
       the renowned library IEEE Xplore.
     </Paragraph>
     <Paragraph>
       The main objectives of the ISSE are both, providing a forum for knowledge
       and information exchange on electronics technology, and, especially for
-      young researchers, to encouraging them in developing their interest and
+      young researchers, to encouraging them to develop their interest and
       engagement in the field of electrical engineering. ISSE provide top
       quality coverage of technological innovation in the field of electronics
       and microelectronics technology and packaging.
@@ -48,7 +48,7 @@ const GeneralInfo = () => (
       held in Wroclaw by Wroclaw University of Science and Technology (Poland,
       2019). <Bb>The ISSE 2020</Bb> will be hosted by the Technical University
       of Kosice, Faculty of Electrical Engineering and Informatics, Department
-      of Technologies in Electronics. The organization of
+      of Technologies in Electronics. The organization of the
       <Bb>&nbsp;ISSE</Bb> conference is a great honor and opportunity for the
       Technical University of Kosice to present high-level scientific research.
     </Paragraph>

@@ -1,46 +1,9 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { COLORS, DOWNLOAD } from 'Root/constants'
 import { Text } from 'components/atoms/Typography'
 import TextLink from 'components/atoms/TextLink'
 import listItem from 'assets/images/list-item.svg'
-
-// export const TEXTS = [
-//   `A concise title without subject specific abbreviations should be chosen.`,
-//   `Full first name (not abbreviated), surname (family), and affiliations, mailing address, telephone and email address. Please indicate who is intended to present the paper at the conference and who is the corresponding author.`,
-//   `Indicate which session topic your paper matches and whether you prefer to do an oral or a poster presentation. Important: Please note that this decision is not a subject of quality of the contribution. Therefore, the same high quality level is expected from both types of paper – oral and poster paper. Due to the fact that the conference will have no parallel oral sessions the regular contribution is a poster paper. Scientific discussions with technical depth are most fruitful in small groups in the vicinity of your poster. However, some papers which from their subject address a broader auditory will be selected for the oral sessions. Placement is at the Technical Program Committees discretion.`,
-//   `The peculiarities of the work to be presented should clearly be stated (e.g. by referring to work that has already been done). Only original material should be submitted, and abstracts should contain enough detail to clearly convey the approach and the results of the research. The presentation and publishing of papers require company clearance. Commercial papers purely consisting of product information with no research results are not appropriate for the ISSE Conference. Let proofread your abstract at least by one colleague who is not familiar with the particular subject of your work. Make use of spell-checking aids and clear your paper from linguistic weaknesses (e.g. by proofreading from someone who's native language is English).`,
-//   'List a maximum of five keywords.',
-//   `Maximum 50 words about affiliation, academic/scientific degree and research fields. Fill biography in the registration form.`,
-//   `Paper abstracts will be peer reviewed for technical merit, content, and clearness by an internationally composed Reviewer Committee under the leadership of the Conference Chair. Authors of accepted (Notification of acceptance: March 9th, 2020) abstracts will be invited to submit a full-length conference paper according to the conference paper template. Particularly interesting for young scientists: By contrast to other technical conferences, within ISSE this notification may contain valuable comments aiming to support authors in writing papers with high quality. Consideration of these comments by the author(s) in the full paper will be checked before publication. The accepted full-length papers will be compiled to conference proceedings which will be available on a memory stick at the conference desk.`,
-// ]
-
-// export const TITLES = [
-//   `Abstract title`,
-//   `Author listing`,
-//   `Presentation`,
-//   `Abstract text`,
-//   `Keywords`,
-//   `Brief biography`,
-//   `Peer abstract review`,
-// ]
-
-// export const HiddenText = ({ text }) => (
-//   <Text
-//     key={text}
-//     color={COLORS.MAJOLICA_BLUE}
-//     display="contents"
-//     fontSize={['s', 's', 's']}
-//     fontWeight="thin"
-//   >
-//     {text}
-//   </Text>
-// )
-
-// HiddenText.propTypes = {
-//   text: PropTypes.node.isRequired,
-// }
 
 const StyledUL = styled.ul`
   text-indent: -1em;
@@ -57,7 +20,7 @@ export const Preconditions = () => (
         fontWeight="thin"
       >
         Authors present their papers at the conference in the form of a 15 min.
-        speech in case of oral presentation or a 3 min. presentation
+        speech in the case of an oral presentation or a 3 minutes presentation
         additionally to their personal poster presentation. One Author may
         present more than one paper. However, it will not be possible to publish
         a paper without having presented it
@@ -70,8 +33,11 @@ export const Preconditions = () => (
         fontSize={['xs', 's', 's']}
         fontWeight="thin"
       >
-        Authors confirm the originality of their papers by submitting a signed
-        IEEE copyright form.
+        Authors intending to publish in the IEEE Xplore® digital library must
+        agree to transfer the ownership rights of their intellectual property to
+        IEEE. This is done using the electronic IEEE Copyright Form (eCF)
+        (Authors will be instructed directly by IEEE via email to sign an online
+        form over a secured way).
       </Text>
     </li>
     <li>
@@ -81,8 +47,8 @@ export const Preconditions = () => (
         fontSize={['xs', 's', 's']}
         fontWeight="thin"
       >
-        Papers written in accordance with the guidelines as provided in the ISSE
-        paper template.
+        Acceptance of papers requires compliance with the guidelines provided in
+        the ISSE paper template.
       </Text>
     </li>
     <li>
@@ -142,7 +108,7 @@ export const Recommendations = () => (
         fontSize={['xs', 's', 's']}
         fontWeight="thin"
       >
-        <b>Abstract title: </b> A concise title without subject specific
+        <b>Abstract title: </b> A concise title without subject-specific
         abbreviations should be chosen.
       </Text>
     </li>
@@ -170,13 +136,12 @@ export const Recommendations = () => (
         whether you prefer to do an oral or a poster presentation. Important:
         Please note that this decision is not a subject of quality of the
         contribution. Therefore, the same high quality level is expected from
-        both types of paper – oral and poster paper. Due to the fact that the
-        conference will have no parallel oral sessions the regular contribution
-        is a poster paper. Scientific discussions with technical depth are most
-        fruitful in small groups in the vicinity of your poster. However, some
-        papers which from their subject address a broader auditory will be
-        selected for the oral sessions. Placement is at the Technical Program
-        Committees discretion.
+        both types of paper – oral and poster paper. Since the conference will
+        have no parallel oral sessions the regular contribution is a poster
+        paper. Scientific discussions with technical depth are most fruitful in
+        small groups in the vicinity of your poster. However, some papers on
+        which subject addresses a broader auditory will be selected for the oral
+        sessions. Placement is at the Technical Program Committees' discretion.
       </Text>
     </li>
     <li>
@@ -216,7 +181,7 @@ export const Recommendations = () => (
         fontSize={['xs', 's', 's']}
         fontWeight="thin"
       >
-        <b>Brief biography </b>(of principal author) Maximum 50 words about
+        <b>Brief biography </b>(of the principal author) Maximum 50 words about
         affiliation, academic/scientific degree and research fields. Fill
         biography in the registration form.
       </Text>
@@ -228,7 +193,7 @@ export const Recommendations = () => (
         fontSize={['xs', 's', 's']}
         fontWeight="thin"
       >
-        <b>Peer abstract review: </b>Paper abstracts will be peer reviewed for
+        <b>Peer abstract review: </b>Paper abstracts will be peer-reviewed for
         technical merit, content, and clearness by an internationally composed
         Reviewer Committee under the leadership of the Conference Chair. Authors
         of accepted (Notification of acceptance: March 9th, 2020) abstracts will

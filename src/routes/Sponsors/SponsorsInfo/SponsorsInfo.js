@@ -120,13 +120,13 @@ const SponsorsInfo = () => (
         <b>ISSE (International Spring Seminar on Electronics Technology)</b>
       </font>
       &nbsp; is one of the largest conferences encompassing all topics around
-      the electronics technology all over the world and will be attended by 120
-      - 140 experts and young researchers from more than 13 countries. The main
-      focus of the ISSE is both directed in bringing deeper knowledge and
+      the electronics technology all over the world and will be attended by
+      120-140 experts and young researchers from more than 13 countries. The
+      main focus of the ISSE is both directed in bringing deeper knowledge and
       information of electronics technology, and, especially for young
       researchers, to increase or confirm a motivation for intensifying their
       engagement in the field of electrical engineering. The conference is an
-      effective crucial point for institutions, government officials, pioneering
+      effective meeting place for institutions, government officials, pioneering
       engineers, academics, experienced and young researchers and many other
       professionals working on relevant fields to discuss the current challenges
       and to provide up-to-date knowledge.

@@ -106,9 +106,9 @@ const Carousel = () => {
           my="xl"
         >
           Demanovska Valley, Slovakia - Demänovská Dolina, Slovensko.&nbsp;
-          <b>Hotel facilities:</b> each room is equipped with a flat screen
+          <b>Hotel facilities:</b> each room is equipped with a flat-screen
           television, a desk, a direct line telephone and free Wi-Fi access.
-          Rooms are also equipped with a bathroom with bathtub or shower and a
+          Rooms are also equipped with a bathroom with a bathtub or shower and a
           hairdryer. A complimentary tray with kettle, tea and coffee is
           available in the room.
         </Text>

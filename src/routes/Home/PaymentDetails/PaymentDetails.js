@@ -20,8 +20,8 @@ const StyledUL = styled.ul`
   padding-right: ${pxToRem(20)};
 `
 const CONFERENCE_FEE = [
-  'Conference materials (abstract book, papers on USB stick, conference bag)',
-  'Participation of all ISSE conference sessions',
+  'Conference materials (abstract book, papers on a USB stick, conference bag)',
+  'Participation in all ISSE conference sessions',
   'Accommodation',
   'Full board with coffee breaks and refreshments',
   'Social events',

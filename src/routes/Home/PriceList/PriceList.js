@@ -84,7 +84,7 @@ const PriceList = () => {
               color={COLORS.ROCK_BLUE}
               pt="s"
             >
-              (before 27th March, 2020)
+              (before April 16th, 2020)
             </Text>
             <Text
               textAlign="center"
@@ -100,7 +100,7 @@ const PriceList = () => {
               color={COLORS.ROCK_BLUE}
               pt="s"
             >
-              (after 27th March, 2020)
+              (after April 16th, 2020)
             </Text>
             <Text
               textAlign="center"
@@ -141,7 +141,7 @@ const PriceList = () => {
               color={COLORS.ROCK_BLUE}
               pt="m"
             >
-              (before 27th March, 2020)
+              (before April 16th, 2020)
             </Text>
             <Text
               textAlign="center"
@@ -158,7 +158,7 @@ const PriceList = () => {
               pt="m"
               pb="xxl"
             >
-              (after 27th March 2020)
+              (after April 16th, 2020)
             </Text>
           </DetailsBox>
         </TableBox>
@@ -197,7 +197,7 @@ const PriceList = () => {
               color={COLORS.ROCK_BLUE}
               pt="s"
             >
-              (before 27th March, 2020)
+              (before April 16th, 2020)
             </Text>
             <Text
               textAlign="center"
@@ -214,7 +214,7 @@ const PriceList = () => {
               pt="m"
               pb="xl"
             >
-              (after 27th March, 2020)
+              (after April 16th, 2020)
             </Text>
           </DetailsBox>
         </TableBox>

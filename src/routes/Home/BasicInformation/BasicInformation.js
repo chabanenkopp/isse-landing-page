@@ -62,7 +62,7 @@ const BasicInformation = () => (
               >
                 Early Bird Registration Deadline:&nbsp;
                 <font color={COLORS.AMERICAN_PINK}>
-                  <b>March 27th, 2020</b>
+                  <b>April 16th, 2020</b>
                 </font>
               </Text>
             </li>
@@ -74,19 +74,7 @@ const BasicInformation = () => (
               >
                 Full Paper Submission Deadline:&nbsp;
                 <font color={COLORS.AMERICAN_PINK}>
-                  <b>April 06th, 2020</b>
-                </font>
-              </Text>
-            </li>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                Registration Ultimate Deadline:&nbsp;
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>April 06th, 2020</b>
+                  <b>April 16th, 2020</b>
                 </font>
               </Text>
             </li>

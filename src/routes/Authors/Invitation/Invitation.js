@@ -25,7 +25,8 @@ const GeneralInfo = () => (
       all over the world can come together to discuss scientific problems and
       their teaching experiences as well as plan and organize international
       cooperations and student exchanges in a convenient and multicultural
-      atmosphere. The theme of upcoming <Bb>43rd ISSE</Bb> conference is&nbsp;
+      atmosphere. The theme of the upcoming <Bb>43rd ISSE</Bb> conference
+      is&nbsp;
       <Bb>
         “Trends in Microelectronics Packaging and Interconnection Technology”
       </Bb>
@@ -36,9 +37,9 @@ const GeneralInfo = () => (
       friendship and culture in the context of traditional Slovak hospitality.
       The 43<sup>rd</sup> ISSE conference will be hosted by the Technical
       University of Kosice, Faculty of Electrical Engineering and Informatics,
-      Department of Technologies in Electronics. The organization of{' '}
-      <Bb>ISSE</Bb> conference is a great honor and opportunity for Technical
-      University of Kosice to present high-level scientific research.
+      Department of Technologies in Electronics. The organization of the{' '}
+      <Bb>ISSE</Bb> conference is a great honor and opportunity for the
+      Technical University of Kosice to present high-level scientific research.
     </Paragraph>
   </Box>
 )

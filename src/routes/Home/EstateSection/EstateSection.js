@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { transparentize } from 'polished'
 import { fontWeights, radius } from 'Theme'
-import { scrollIntoView } from 'helpers'
-import { COLORS } from 'Root/constants'
+import { scrollIntoView, pxToRem } from 'helpers'
+import { COLORS, LINKS } from 'Root/constants'
 import { Flex, Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
+import Logo from 'components/atoms/Logo'
 import Button from 'components/atoms/Button'
 import Bb from 'components/atoms/Bb'
+import eps from 'assets/images/eps.png'
+import ieee from 'assets/images/ieee.svg'
 import AnimatedClouds from '../PriceList/AnimatedClouds'
 
 const EstateSection = () => {
@@ -18,6 +21,20 @@ const EstateSection = () => {
       justifyContent="space-between"
       backgroundImage={`linear-gradient(300deg, ${COLORS.FLAX_FLOWER_BLUE}, ${COLORS.ATHENA_BLUE})`}
     >
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+        bg={COLORS.DISTANT_HORIZON}
+        pt="s"
+      >
+        <Box mr="m">
+          <Logo img={eps} maxHeight={pxToRem(50)} href={LINKS.EPS} />
+        </Box>
+        <Box ml="m">
+          <Logo img={ieee} maxHeight={pxToRem(30)} href={LINKS.IEEE} />
+        </Box>
+      </Flex>
       <Flex
         flexDirection="column"
         alignItems="center"
