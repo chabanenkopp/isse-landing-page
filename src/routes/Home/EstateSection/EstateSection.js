@@ -25,7 +25,8 @@ const EstateSection = () => {
         justifyContent="center"
         alignItems="center"
         width="100%"
-        bg={COLORS.DISTANT_HORIZON}
+        // bg={COLORS.DISTANT_HORIZON}
+        bg={COLORS.WHITE}
         pt="s"
       >
         <Box mr="m">
