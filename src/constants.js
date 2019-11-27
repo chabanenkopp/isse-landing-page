@@ -65,7 +65,7 @@ export const PATHS = {
 
 export const DOWNLOAD = {
   REG_FORM: `https://drive.google.com/uc?authuser=0&id=1IQut2XPxboeP0bPvViU085LJC1cgYVS1&export=download`,
-  ABSTR_FORM: `https://drive.google.com/uc?authuser=0&id=1fOA9aSTCP5Hss-AqaQRNQ_hcsT751SCU&export=download`,
+  ABSTR_FORM: `https://drive.google.com/uc?authuser=0&id=1wYJmadjtwDBgJpPffmi0WN9mZHUuzwWU&export=download`,
 }
 
 export const CONTACT = {
