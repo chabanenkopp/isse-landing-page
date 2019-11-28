@@ -21,7 +21,7 @@ const EstateSection = () => {
       justifyContent="space-between"
       backgroundImage={`linear-gradient(300deg, ${COLORS.FLAX_FLOWER_BLUE}, ${COLORS.ATHENA_BLUE})`}
     >
-      <Flex
+      {/* <Flex
         justifyContent="center"
         alignItems="center"
         width="100%"
@@ -35,7 +35,7 @@ const EstateSection = () => {
         <Box ml="m">
           <Logo img={ieee} maxHeight={pxToRem(30)} href={LINKS.IEEE} />
         </Box>
-      </Flex>
+      </Flex> */}
       <Flex
         flexDirection="column"
         alignItems="center"
@@ -93,6 +93,12 @@ const EstateSection = () => {
         bg={COLORS.WHITE}
         pb="5%"
       >
+        <Flex alignItems="center" justifyContent="center" mb="l">
+          <Box mr="s">
+            <Logo img={eps} maxHeight={pxToRem(50)} href={LINKS.EPS} />
+          </Box>
+          <Logo img={ieee} maxHeight={pxToRem(30)} href={LINKS.IEEE} />
+        </Flex>
         <Text
           mx="xl"
           fontWeight="thin"
