@@ -31,7 +31,7 @@ const Footer = () => (
           justifyItems={['none', 'none', 'center']}
           gridGap={['xl', 'xl', 'xxl']}
           mt="xl"
-          mb="xl"
+          mb="l"
         >
           <Box data-aos="fade-up">
             <Logo img={logo} />

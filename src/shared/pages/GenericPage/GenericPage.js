@@ -6,6 +6,7 @@ import { Box, Flex } from 'components/atoms/Layout'
 import App from 'App'
 import Footer from 'shared/pages/GenericPage/Footer'
 import MobileMenu from 'shared/pages/GenericPage/MobileMenu'
+import Designer from 'shared/Designer'
 import Header from './Header'
 
 export default class GenericPage extends Component {
@@ -47,6 +48,9 @@ export default class GenericPage extends Component {
         </Flex>
         <Box>{children}</Box>
         <Footer />
+        <Box my="m">
+          <Designer />
+        </Box>
       </App>
     )
   }
