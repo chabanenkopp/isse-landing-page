@@ -95,9 +95,9 @@ const EstateSection = () => {
       >
         <Flex alignItems="center" justifyContent="center" mb="l">
           <Box mr="s">
-            <Logo img={eps} maxHeight={pxToRem(50)} href={LINKS.EPS} />
+            <Logo img={eps} maxHeight={pxToRem(45)} href={LINKS.EPS} />
           </Box>
-          <Logo img={ieee} maxHeight={pxToRem(30)} href={LINKS.IEEE} />
+          <Logo img={ieee} maxHeight={pxToRem(28)} href={LINKS.IEEE} />
         </Flex>
         <Text
           mx="xl"
