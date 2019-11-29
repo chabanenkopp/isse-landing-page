@@ -74,7 +74,7 @@ const Avatar = styled.img`
 
 const Slide = ({ photo, name, position, text }) => (
   <Box mt="xl" mb="m" pl={[0, 'm', 0]} pr={[0, 'm', 'l']}>
-    <Flex justifyContent="left" ml={[0, 'm', 0]}>
+    <Flex justifyContent="center" ml={[0, 'm', 0]}>
       <Avatar src={photo} />
       <Box ml="m">
         <Text fontSize="xl" color={COLORS.MAJOLICA_BLUE}>
@@ -86,8 +86,8 @@ const Slide = ({ photo, name, position, text }) => (
       </Box>
     </Flex>
     <Text
-      textAlign="left"
-      fontSize={['l', 'l', 's']}
+      textAlign="center"
+      fontSize={['l', 'l', 'm']}
       fontWeight="thin"
       mt="l"
       color={COLORS.LEAD}
@@ -120,11 +120,67 @@ const StyledSlider = styled(Slider)`
   }
 `
 
+const COMMENTS = [
+  'For many of our young researchers ISSE was their first international conference experience and it was a fruitful base for their further professional development.',
+  'The ISSE is an amazing conference that is an excellent opportunity for knowledge exchange and networking with international experts in the field. It is worth coming!',
+  'Enjoy a great ISSE conference in the beautiful nature of the Low Tatras.',
+  'The ISSE is one of my favorite conferences where I experienced a lot of fun and I learned about technology science as well.',
+  'A great opportunity to share experience at the scientific forum.',
+  'ISSE continuously contributes to my scientific development, and is also a perfect place for meeting new friends and colleagues.',
+  'ISSE is a good opportunity to meet new and active colleagues in your research field and start your first or new international cooperation.',
+  'Since 1977 the ISSE-conference is a podium especially for young scientists. It combines the possibility to meet experts in electronics production, to give the first own presetation and to publish this work in IEEE-Xplore.',
+  'ISSE is a great conference for senior and young researches with a similar focus on electronics technology. There is a possibility to obtain new information and experience and to establish new cooperation.',
+  'The main reasons why I always look forward to the ISSE are discussing new knowledge and current trends in the field of electronics technology, the opportunity to present the results of my research and meeting with friends and colleagues.',
+  'I have been attending ISSE conferences since 1997 and based on established contacts I have gained many successful projects...and also friends.',
+]
+
+const NAMES = [
+  'Johann Nicolics',
+  'Alena Pietrikova',
+  'Igor Vehec',
+  'Ondrej Kovac',
+  'Slavomir Kardos',
+  'Oliver Krammer',
+  'Balazs Illes',
+  'Heinz Wohlrabe',
+  'Tomas Blecha',
+  'Frantisek Steiner',
+  'Ivan Szendiuch',
+]
+
+const JOBS = [
+  'TU Vienna',
+  'TU Kosice',
+  'TU Kosice',
+  'TU Kosice',
+  'TU Kosice',
+  'BME Budapest',
+  'BME Budapest',
+  'TU Dresden',
+  'University of West Bohemia',
+  'University of West Bohemia',
+  'Brno University of Technology',
+]
+
+const AVATARS = [
+  johann,
+  alena,
+  igor,
+  ondrej,
+  kardos,
+  oliver,
+  balazs,
+  heinz,
+  tomas,
+  frantisek,
+  ivan,
+]
+
 const TestimonialSection = () => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     speed: 500,
     autoplay: true,
@@ -134,7 +190,6 @@ const TestimonialSection = () => {
       {
         breakpoint: 850,
         settings: {
-          slidesToShow: 1,
           nextArrow: null,
           prevArrow: null,
         },
@@ -153,72 +208,16 @@ const TestimonialSection = () => {
         Testimonials
       </Text>
       <StyledSlider {...settings}>
-        <Slide
-          photo={johann}
-          name="Johann Nicolics"
-          position="TU Vienna"
-          text="For many of our young researchers ISSE was their first international conference experience and it was a fruitful base for their further professional development."
-        />
-        <Slide
-          photo={alena}
-          name="Alena Pietrikova"
-          position="TU Kosice"
-          text="The ISSE is an amazing conference that is an excellent opportunity for knowledge exchange and networking with international experts in the field. It is worth coming!"
-        />
-        <Slide
-          photo={igor}
-          name="Igor Vehec"
-          position="TU Kosice"
-          text="Enjoy a great ISSE conference in the beautiful nature of the Low Tatras."
-        />
-        <Slide
-          photo={ondrej}
-          name="Ondrej Kovac"
-          position="TU Kosice"
-          text="The ISSE is one of my favorite conferences where I experienced a lot of fun and I learned about technology science as well."
-        />
-        <Slide
-          photo={kardos}
-          name="Slavomir Kardos"
-          position="TU Kosice"
-          text="A great opportunity to share experience at the scientific forum."
-        />
-        <Slide
-          photo={oliver}
-          name="Oliver Krammer"
-          position="BME Budapest"
-          text="ISSE continuously contributes to my scientific development, and is also a perfect place for meeting new friends and colleagues."
-        />
-        <Slide
-          photo={balazs}
-          name="Balazs Illes"
-          position="BME Budapest"
-          text="ISSE is a good opportunity to meet new and active colleagues in your research field and start your first or new international cooperation."
-        />
-        <Slide
-          photo={heinz}
-          name="Heinz Wohlrabe"
-          position="TU Dresden"
-          text="Since 1977 the ISSE-conference is a podium especially for young scientists. It combines the possibility to meet experts in electronics production, to give the first own presetation and to publish this work in IEEE-Xplore."
-        />
-        <Slide
-          photo={tomas}
-          name="Tomas Blecha"
-          position="University of West Bohemia"
-          text="ISSE is a great conference for senior and young researches with a similar focus on electronics technology. There is a possibility to obtain new information and experience and to establish new cooperation."
-        />
-        <Slide
-          photo={frantisek}
-          name="Frantisek Steiner"
-          position="University of West Bohemia"
-          text="The main reasons why I always look forward to the ISSE are discussing new knowledge and current trends in the field of electronics technology, the opportunity to present the results of my research and meeting with friends and colleagues."
-        />
-        <Slide
-          photo={ivan}
-          name="Ivan Szendiuch"
-          position="Brno University of Technology"
-          text="I have been attending ISSE conferences since 1997 and based on established contacts I have gained many successful projects...and also friends."
-        />
+        {AVATARS.map((avatar, i) => (
+          <div key={NAMES[i]}>
+            <Slide
+              photo={avatar}
+              name={NAMES[i]}
+              position={JOBS[i]}
+              text={COMMENTS[i]}
+            />
+          </div>
+        ))}
       </StyledSlider>
     </div>
   )

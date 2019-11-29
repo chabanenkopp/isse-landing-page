@@ -104,7 +104,8 @@ class Home extends Component {
           </Box>
         </Flex>
         <Flex justifyContent="center" alignItems="center">
-          <Box width={[pxToRem(310), pxToRem(400), pxToRem(830)]} mb="m">
+          {/* <Box width={[pxToRem(310), pxToRem(400), pxToRem(830)]} mb="m"> */}
+          <Box width={[pxToRem(310), pxToRem(400), pxToRem(530)]} mb="l">
             <TestimonialSection />
           </Box>
         </Flex>
