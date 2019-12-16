@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import { transparentize } from 'polished'
 import { fontWeights, radius } from 'Theme'
 import { scrollIntoView, pxToRem } from 'helpers'
@@ -12,6 +13,18 @@ import eps from 'assets/images/eps.png'
 import ieee from 'assets/images/ieee.svg'
 import AnimatedClouds from '../PriceList/AnimatedClouds'
 
+const CloudsWrapper = styled.div`
+  transform: translateY(2px);
+`
+const BottomWrapper = styled(Flex)`
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  background-color: ${COLORS.WHITE};
+  padding-bottom: 5%;
+  transform: translateY(1px);
+`
+
 const EstateSection = () => {
   const [isHovered, setIsHovered] = useState(false)
   return (
@@ -21,21 +34,6 @@ const EstateSection = () => {
       justifyContent="space-between"
       backgroundImage={`linear-gradient(300deg, ${COLORS.FLAX_FLOWER_BLUE}, ${COLORS.ATHENA_BLUE})`}
     >
-      {/* <Flex
-        justifyContent="center"
-        alignItems="center"
-        width="100%"
-        // bg={COLORS.DISTANT_HORIZON}
-        bg={COLORS.WHITE}
-        pt="s"
-      >
-        <Box mr="m">
-          <Logo img={eps} maxHeight={pxToRem(50)} href={LINKS.EPS} />
-        </Box>
-        <Box ml="m">
-          <Logo img={ieee} maxHeight={pxToRem(30)} href={LINKS.IEEE} />
-        </Box>
-      </Flex> */}
       <Flex
         flexDirection="column"
         alignItems="center"
@@ -80,19 +78,13 @@ const EstateSection = () => {
           </Flex>
         </Box>
       </Flex>
-      <div
+      <CloudsWrapper
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <AnimatedClouds isHovered={isHovered} />
-      </div>
-      <Flex
-        flex="1"
-        flexDirection="column"
-        justifyContent="center"
-        bg={COLORS.WHITE}
-        pb="5%"
-      >
+      </CloudsWrapper>
+      <BottomWrapper>
         <Flex alignItems="center" justifyContent="center" mb="l">
           <Box mr="s">
             <Logo img={eps} maxHeight={pxToRem(45)} href={LINKS.EPS} />
@@ -118,7 +110,7 @@ const EstateSection = () => {
         >
           Demanovska Valley - Slovakia, <Bb>Hotel Grand Jasna</Bb>
         </Text>
-      </Flex>
+      </BottomWrapper>
     </Flex>
   )
 }
