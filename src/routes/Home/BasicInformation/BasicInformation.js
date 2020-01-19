@@ -38,7 +38,7 @@ const BasicInformation = () => (
               >
                 Abstract Submission Deadline:&nbsp;
                 <font color={COLORS.AMERICAN_PINK}>
-                  <b>January 20th, 2020</b>
+                  <b>January 30th, 2020</b>
                 </font>
               </Text>
             </li>
