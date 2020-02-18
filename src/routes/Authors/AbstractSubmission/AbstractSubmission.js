@@ -65,12 +65,16 @@ const Paper = () => (
     your participant ID received in e-mail.
     <br />
     <br />
-    <TextLink as="a" color={COLORS.FLAX_FLOWER_BLUE}>
+    <TextLink as="a" href={DOWNLOAD.PAPER_FORM} color={COLORS.FLAX_FLOWER_BLUE}>
       Download
     </TextLink>
     &nbsp;Template for your paper
     <br />
-    <TextLink as="a" color={COLORS.FLAX_FLOWER_BLUE}>
+    <TextLink
+      as="a"
+      href={DOWNLOAD.REG_PAPER_FORM}
+      color={COLORS.FLAX_FLOWER_BLUE}
+    >
       Download
     </TextLink>
     &nbsp;Registration form

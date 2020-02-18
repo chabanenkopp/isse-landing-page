@@ -68,6 +68,8 @@ export const PATHS = {
 export const DOWNLOAD = {
   REG_FORM: `https://drive.google.com/uc?authuser=0&id=1IQut2XPxboeP0bPvViU085LJC1cgYVS1&export=download`,
   ABSTR_FORM: `https://drive.google.com/uc?authuser=0&id=1wYJmadjtwDBgJpPffmi0WN9mZHUuzwWU&export=download`,
+  PAPER_FORM: `https://drive.google.com/u/0/uc?id=1ZaLvKGy6kWU4fpeW5bSjAJryBH2dDPyA&export=download`,
+  REG_PAPER_FORM: `https://drive.google.com/u/0/uc?id=1L0llqVjC5u5haCASQBiDBlLjxwmBsBaQ&export=download`,
 }
 
 export const CONTACT = {
