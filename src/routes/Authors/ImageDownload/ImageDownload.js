@@ -7,7 +7,7 @@ import Logo from 'components/atoms/Logo'
 import uploadImage from 'assets/images/download.svg'
 
 const ImageDownload = () => (
-  <div>
+  <div data-aos="fade-up">
     <Text
       textAlign="center"
       px={[pxToRem(20), pxToRem(35), '15%']}
