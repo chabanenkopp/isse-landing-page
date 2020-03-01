@@ -103,8 +103,8 @@ const Header = ({
         <HamburgerButton
           open={isVisible}
           onClick={onMobileMenuButtonClick}
-          width={20}
-          height={15}
+          width={30}
+          height={25}
           strokeWidth={2}
           color={COLORS.MAJOLICA_BLUE}
           animationDuration={0.6}
