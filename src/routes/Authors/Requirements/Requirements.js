@@ -2,7 +2,6 @@ import React from 'react'
 import { Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import { COLORS } from 'Root/constants'
-// import { pxToRem } from 'helpers'
 
 import TablePdf from '../TablePdf'
 

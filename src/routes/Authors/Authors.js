@@ -8,6 +8,7 @@ import Invitation from './Invitation'
 import BasicInformation from './BasicInformation'
 import AbstractSubmission from './AbstractSubmission'
 import Requirements from './Requirements'
+import ImageDownload from './ImageDownload'
 
 const Authors = ({ location: { pathname } }) => (
   <GenericPage pathName={pathname}>
@@ -18,6 +19,7 @@ const Authors = ({ location: { pathname } }) => (
     <BasicInformation />
     <AbstractSubmission />
     <Requirements />
+    <ImageDownload />
   </GenericPage>
 )
 

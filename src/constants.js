@@ -70,6 +70,7 @@ export const DOWNLOAD = {
   ABSTR_FORM: `https://drive.google.com/uc?authuser=0&id=1wYJmadjtwDBgJpPffmi0WN9mZHUuzwWU&export=download`,
   PAPER_FORM: `https://drive.google.com/u/0/uc?id=1ZaLvKGy6kWU4fpeW5bSjAJryBH2dDPyA&export=download`,
   REG_PAPER_FORM: `https://drive.google.com/u/0/uc?id=1L0llqVjC5u5haCASQBiDBlLjxwmBsBaQ&export=download`,
+  LOGOS: `https://drive.google.com/u/0/uc?id=13-stiQ5DX6xj4m61r_7T9cpmxoSCJf-m&export=download`,
 }
 
 export const CONTACT = {
