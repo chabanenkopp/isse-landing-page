@@ -18,7 +18,7 @@ const ImageDownload = () => (
       Download ISSE logos in SVG and PNG formats
     </Text>
     <Flex justifyContent="center" mt="l" mb="xl">
-      <Logo img={uploadImage} maxHeight={pxToRem(100)} href={DOWNLOAD.LOGOS} />
+      <Logo img={uploadImage} maxHeight={pxToRem(60)} href={DOWNLOAD.LOGOS} />
     </Flex>
   </div>
 )

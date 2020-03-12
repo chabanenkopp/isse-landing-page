@@ -144,12 +144,6 @@ const BasicInformation = () => (
         </Flex>
       </Box>
     </Flex>
-    {/* <Text textAlign="center" my="l">
-      Participant&nbsp;
-      <TextLink as="a" href={DOWNLOAD.REG_FORM} color={COLORS.FLAX_FLOWER_BLUE}>
-        registration form
-      </TextLink>
-    </Text> */}
   </React.Fragment>
 )
 

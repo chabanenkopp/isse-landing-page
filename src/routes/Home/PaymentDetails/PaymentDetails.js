@@ -1,17 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link as GatsbyLink } from 'gatsby'
 import UnfoldTextBar from 'components/molecules/UnfoldTextBar'
 import { fontWeights } from 'Theme'
 import { pxToRem } from 'helpers'
-import { COLORS, PATHS } from 'Root/constants'
+import { COLORS, DOWNLOAD } from 'Root/constants'
 import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
-// import Bb from 'components/atoms/Bb'
-// import TextLink from 'components/atoms/TextLink'
+import TextLink from 'components/atoms/TextLink'
 import listItem from 'assets/images/list-item.svg'
-
-const { AUTHORS } = PATHS
 
 const StyledUL = styled.ul`
   text-indent: -1em;
@@ -134,18 +130,29 @@ const BankDetails = () => (
   </div>
 )
 
-const StyledLink = styled(GatsbyLink)`
-  text-decoration: none;
-  color: ${COLORS.FLAX_FLOWER_BLUE};
-  font-weight: ${fontWeights.semi_bold};
-`
-
 const PaymentDetails = () => (
   <React.Fragment>
-    <Text textAlign="center" fontSize="xl" mt="xl">
-      Submit your abstract&nbsp;
-      <StyledLink to={AUTHORS}>here</StyledLink>
+    <Text textAlign="center" fontSize="xl" mt="xl" mx="m">
+      Please, complete your conference registration until&nbsp;
+      <span
+        style={{
+          color: COLORS.FLAX_FLOWER_BLUE,
+          fontWeight: fontWeights.semi_bold,
+        }}
+      >
+        March 25, 2020.
+      </span>
     </Text>
+    <Flex justifyContent="center" alignItems="center">
+      <TextLink
+        as="a"
+        href={DOWNLOAD.REG_PAPER_FORM}
+        color={COLORS.FLAX_FLOWER_BLUE}
+      >
+        Download
+      </TextLink>
+      &nbsp;<Text>Registration form</Text>
+    </Flex>
     <Box mt="xxl">
       <Flex
         data-aos="fade-up"
