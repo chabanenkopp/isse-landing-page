@@ -85,7 +85,7 @@ const BasicInformation = () => (
           </StyledUL>
         </Flex>
       </div>
-      <Box mt={['xl', 'xl', 0]} data-aos="fade-up">
+      <Box mt={['m', 'm', 0]} data-aos="fade-up">
         <Text
           textAlign="center"
           color={COLORS.MAJOLICA_BLUE}

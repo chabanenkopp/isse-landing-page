@@ -63,7 +63,7 @@ class Home extends Component {
           message={POPUP_ADD_TEXT}
           buttonText={BUTTON_TEXT}
         />
-        <Box mt={['l', 'l', 'xl']} mb={['l', 'l', pxToRem(100)]}>
+        <Box>
           <BasicInformation />
         </Box>
         <Box my="xl">

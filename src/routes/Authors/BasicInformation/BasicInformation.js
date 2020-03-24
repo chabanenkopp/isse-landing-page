@@ -11,7 +11,6 @@ import TextLink from 'components/atoms/TextLink'
 
 const StyledTextLineThrough = styled(Text)`
   text-decoration: line-through;
-  /* text-decoration-color: ${COLORS.EVERLASTING_ICE}; */
 `
 
 const BasicInformation = () => (

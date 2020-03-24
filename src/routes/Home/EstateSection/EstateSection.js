@@ -112,8 +112,7 @@ const EstateSection = () => {
             position="LEFT"
             textAlign="left"
             iconSize={16}
-            // iconFill={COLORS.DAPHNE}
-            iconFill={COLORS.KACEYS_PINK}
+            iconFill={COLORS.DAPHNE}
             text="Due to the covid-19 pandemic the date was changed. The initial date was May 13 – 17, 2020"
           />
         </Flex>
@@ -129,7 +128,7 @@ const EstateSection = () => {
         </StyledTextLineThrough>
         <Text
           mx={['xl', 'xl', 'xxl']}
-          fontWeight="semi_bold"
+          fontWeight="thin"
           color={COLORS.KACEYS_PINK}
           textAlign="center"
           fontSize={['m', 'l', 'xl']}
