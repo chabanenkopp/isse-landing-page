@@ -33,6 +33,9 @@ export const COLORS = {
   DISTANT_HORIZON: '#f3fbff',
   WHITE_SMOKE: 'whitesmoke',
   BLACK: '000000',
+  KACEYS_PINK: '#dd4377',
+  SCAMPI: '#7660A0' /* Brand Color */,
+  VANISHING: '#230F4E' /* Dark Blue */,
 }
 
 export const REGEX = {
@@ -69,7 +72,7 @@ export const DOWNLOAD = {
   REG_FORM: `https://drive.google.com/uc?authuser=0&id=1IQut2XPxboeP0bPvViU085LJC1cgYVS1&export=download`,
   ABSTR_FORM: `https://drive.google.com/uc?authuser=0&id=1wYJmadjtwDBgJpPffmi0WN9mZHUuzwWU&export=download`,
   PAPER_FORM: `https://drive.google.com/u/0/uc?id=1ZaLvKGy6kWU4fpeW5bSjAJryBH2dDPyA&export=download`,
-  REG_PAPER_FORM: `https://drive.google.com/u/0/uc?id=1L0llqVjC5u5haCASQBiDBlLjxwmBsBaQ&export=download`,
+  REG_PAPER_FORM: `https://drive.google.com/u/2/uc?id=1jYEIeWyGoY8N4Vg_5wBqGbIQMcyFInbi&export=download`,
   LOGOS: `https://drive.google.com/u/0/uc?id=13-stiQ5DX6xj4m61r_7T9cpmxoSCJf-m&export=download`,
 }
 

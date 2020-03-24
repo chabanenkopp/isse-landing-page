@@ -16,6 +16,10 @@ const StyledUL = styled.ul`
   padding-right: ${pxToRem(20)};
 `
 
+const StyledTextLineThrough = styled(Text)`
+  text-decoration: line-through;
+`
+
 const BasicInformation = () => (
   <React.Fragment>
     <Flex justifyContent="center" flexDirection={['column', 'column', 'row']}>
@@ -125,11 +129,11 @@ const BasicInformation = () => (
                 <font color={COLORS.AMERICAN_PINK}>
                   <b>Date:</b>&nbsp;
                 </font>
-                May 13 – 17, 2020
+                May 14 – 15, 2020
               </Text>
             </li>
             <li>
-              <Text
+              <StyledTextLineThrough
                 color={COLORS.ROCK_BLUE}
                 display="contents"
                 fontSize={['xs', 's', 'm']}
@@ -138,7 +142,7 @@ const BasicInformation = () => (
                   <b>Venue:</b>&nbsp;
                 </font>
                 Demanovska Valley, Slovakia, Hotel Grand Jasna
-              </Text>
+              </StyledTextLineThrough>
             </li>
           </StyledUL>
         </Flex>

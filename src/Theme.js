@@ -16,6 +16,15 @@ export const colors = {
   white: COLORS.WHITE,
 }
 
+export const BOXSHADOWS = {
+  TOOLTIP: ` 0px 13px 38px 0px rgba(32, 32, 32, 0.1)`,
+  LIGHT: '0px -1px 2px rgba(143, 133, 165, 0.24)',
+  DARK: '0px 1px 2px rgba(13, 64, 128, 0.19)',
+  INNER: 'inset 1px 1px 4px rgba(0, 0, 0, 0.08)',
+  CARD:
+    '0px 2px 8px rgba(66, 149, 165, 0.2), 0px 2px 2px rgba(66, 149, 165, 0.25)',
+}
+
 export const space = {
   xxs: pxToRem(2),
   xs: pxToRem(4),

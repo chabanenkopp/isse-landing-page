@@ -9,6 +9,7 @@ import { Text } from 'components/atoms/Typography'
 import Logo from 'components/atoms/Logo'
 import Button from 'components/atoms/Button'
 import Bb from 'components/atoms/Bb'
+import Infotooltip from 'components/molecules/InfoTooltip'
 import eps from 'assets/images/eps.png'
 import ieee from 'assets/images/ieee.svg'
 import AnimatedClouds from '../PriceList/AnimatedClouds'
@@ -23,6 +24,11 @@ const BottomWrapper = styled(Flex)`
   background-color: ${COLORS.WHITE};
   padding-bottom: 5%;
   transform: translateY(1px);
+`
+
+const StyledTextLineThrough = styled(Text)`
+  text-decoration: line-through;
+  text-decoration-color: ${COLORS.EVERLASTING_ICE};
 `
 
 const EstateSection = () => {
@@ -85,22 +91,33 @@ const EstateSection = () => {
         <AnimatedClouds isHovered={isHovered} />
       </CloudsWrapper>
       <BottomWrapper>
-        <Flex alignItems="center" justifyContent="center" mb="l">
+        <Flex alignItems="center" justifyContent="center" mb="s">
           <Box mr="s">
             <Logo img={eps} maxHeight={pxToRem(45)} href={LINKS.EPS} />
           </Box>
           <Logo img={ieee} maxHeight={pxToRem(28)} href={LINKS.IEEE} />
         </Flex>
-        <Text
-          mx="xl"
-          fontWeight="thin"
-          color={COLORS.MAJOLICA_BLUE}
-          textAlign="center"
-          fontSize={['l', 'xxl', 'xxl']}
-        >
-          May 13 – <Bb>17, 2020</Bb>
-        </Text>
-        <Text
+        <Flex justifyContent="center" mx="xl">
+          <Text
+            mr="s"
+            fontWeight="thin"
+            color={COLORS.MAJOLICA_BLUE}
+            textAlign="center"
+            fontSize={['l', 'xxl', 'xxl']}
+          >
+            May 14 – <Bb>15, 2020</Bb>
+          </Text>
+          <Infotooltip
+            maxWidth={[pxToRem(260), pxToRem(260), pxToRem(350)]}
+            position="LEFT"
+            textAlign="left"
+            iconSize={16}
+            // iconFill={COLORS.DAPHNE}
+            iconFill={COLORS.KACEYS_PINK}
+            text="Due to the covid-19 pandemic the date was changed. The initial date was May 13 – 17, 2020"
+          />
+        </Flex>
+        <StyledTextLineThrough
           mx="xl"
           fontWeight="thin"
           color={COLORS.MAJOLICA_BLUE}
@@ -109,6 +126,18 @@ const EstateSection = () => {
           py="xs"
         >
           Demanovska Valley - Slovakia, <Bb>Hotel Grand Jasna</Bb>
+        </StyledTextLineThrough>
+        <Text
+          mx={['xl', 'xl', 'xxl']}
+          fontWeight="semi_bold"
+          color={COLORS.KACEYS_PINK}
+          textAlign="center"
+          fontSize={['m', 'l', 'xl']}
+          py="xs"
+        >
+          However, because of this extraordinary global health issue with the
+          Corona virus COVID-19, the ISSE organizing committee decided to go
+          on-line and hold ISSE 2020 as web-based conference.
         </Text>
       </BottomWrapper>
     </Flex>

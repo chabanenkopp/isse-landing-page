@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import { COLORS } from 'Root/constants'
@@ -7,6 +8,11 @@ import Bb from 'components/atoms/Bb'
 import TextLink from 'components/atoms/TextLink'
 
 // ToDo: add hrefs for downloading files :   {/* href={DOWNLOAD.REG_FORM} */}
+
+const StyledTextLineThrough = styled(Text)`
+  text-decoration: line-through;
+  /* text-decoration-color: ${COLORS.EVERLASTING_ICE}; */
+`
 
 const BasicInformation = () => (
   <Box mt="xl" data-aos="fade-up">
@@ -25,7 +31,7 @@ const BasicInformation = () => (
         here.
       </TextLink>
     </Text>
-    <Text
+    <StyledTextLineThrough
       textAlign="center"
       fontWeight="thin"
       px={[pxToRem(20), pxToRem(35), '15%']}
@@ -36,7 +42,7 @@ const BasicInformation = () => (
       <TextLink as="a" color={COLORS.FLAX_FLOWER_BLUE}>
         here.
       </TextLink>
-    </Text>
+    </StyledTextLineThrough>
     <Text
       textAlign="center"
       fontWeight="thin"

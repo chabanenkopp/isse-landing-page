@@ -132,7 +132,7 @@ const BankDetails = () => (
 
 const PaymentDetails = () => (
   <React.Fragment>
-    <Text textAlign="center" fontSize="xl" mt="xl" mx="m">
+    {/* <Text textAlign="center" fontSize="xl" mt="xl" mx="m">
       Please, complete your conference registration until&nbsp;
       <span
         style={{
@@ -142,7 +142,7 @@ const PaymentDetails = () => (
       >
         March 25, 2020.
       </span>
-    </Text>
+    </Text> */}
     <Flex justifyContent="center" alignItems="center">
       <TextLink
         as="a"

@@ -21,6 +21,15 @@ const BlueBox = styled(Box)`
     ${COLORS.FLAX_FLOWER_BLUE},
     ${COLORS.ATHENA_BLUE}
   );
+  ${({ isCanceled }) =>
+    isCanceled &&
+    `
+      background-image: linear-gradient(
+      300deg,
+      ${COLORS.KACEYS_PINK},
+      ${COLORS.LYNX_WHITE}
+    );
+  `}
 `
 
 const DetailsBox = styled(Box)`
@@ -63,9 +72,12 @@ const PriceList = () => {
           onMouseLeave={() => setIsHoveredFirst(false)}
           data-aos="fade-up"
         >
-          <BlueBox>
+          <BlueBox isCanceled>
             <Text textAlign="center" fontSize="xxl" color={COLORS.WHITE} py="l">
               DOUBLE ROOM
+            </Text>
+            <Text textAlign="center" color={COLORS.WHITE}>
+              (CANCELED)
             </Text>
             <AnimatedClouds isHovered={isHoveredFirst} />
           </BlueBox>
@@ -76,7 +88,7 @@ const PriceList = () => {
               color={COLORS.MAJOLICA_BLUE}
               pt="m"
             >
-              Early bird: € 510
+              Early bird: N/A
             </Text>
             <Text
               textAlign="center"
@@ -92,7 +104,7 @@ const PriceList = () => {
               color={COLORS.MAJOLICA_BLUE}
               pt="m"
             >
-              Late registration: € 550
+              Late registration: N/A
             </Text>
             <Text
               textAlign="center"
@@ -109,7 +121,7 @@ const PriceList = () => {
               pt="m"
               pb="xl"
             >
-              Accompanying person: € 400
+              Accompanying person: N/A
             </Text>
           </DetailsBox>
         </TableBox>
@@ -122,7 +134,7 @@ const PriceList = () => {
         >
           <BlueBox>
             <Text textAlign="center" fontSize="xxl" color={COLORS.WHITE} py="l">
-              SINGLE ROOM
+              STANDARD
             </Text>
             <AnimatedClouds isHovered={isHoveredSecond} />
           </BlueBox>
@@ -133,7 +145,7 @@ const PriceList = () => {
               color={COLORS.MAJOLICA_BLUE}
               pt="l"
             >
-              Early bird: € 620
+              Early bird: € 85
             </Text>
             <Text
               textAlign="center"
@@ -149,7 +161,7 @@ const PriceList = () => {
               color={COLORS.MAJOLICA_BLUE}
               pt="m"
             >
-              Late registration: € 650
+              Late registration: € 100
             </Text>
             <Text
               textAlign="center"
@@ -167,7 +179,7 @@ const PriceList = () => {
           onMouseLeave={() => setIsHoveredThird(false)}
           data-aos="fade-up"
         >
-          <BlueBox>
+          <BlueBox isCanceled>
             <Text
               textAlign="center"
               fontSize="xxl"
@@ -175,10 +187,10 @@ const PriceList = () => {
               pt="l"
               pb="s"
             >
-              Students
+              STUDENTS
             </Text>
             <Text textAlign="center" color={COLORS.WHITE}>
-              (double room)
+              (CANCELED)
             </Text>
             <AnimatedClouds isHovered={isHoveredThird} />
           </BlueBox>
@@ -189,7 +201,7 @@ const PriceList = () => {
               color={COLORS.MAJOLICA_BLUE}
               pt="l"
             >
-              Early bird: € 510
+              Early bird: N/A
             </Text>
             <Text
               textAlign="center"
@@ -205,7 +217,7 @@ const PriceList = () => {
               color={COLORS.MAJOLICA_BLUE}
               pt="m"
             >
-              Late registration: € 550
+              Late registration: N/A
             </Text>
             <Text
               textAlign="center"
