@@ -15,14 +15,7 @@ const StyledUL = styled.ul`
   margin-left: ${pxToRem(20)};
   padding-right: ${pxToRem(20)};
 `
-const CONFERENCE_FEE = [
-  'Conference materials (abstract book, papers on a USB stick, conference bag)',
-  'Participation in all ISSE conference sessions',
-  'Accommodation',
-  'Full board with coffee breaks and refreshments',
-  'Social events',
-  'Gala dinner',
-]
+const CONFERENCE_FEE = ['Conference materials', 'Hotel cancellation', 'Others']
 const PERSON_FEE = [
   'Accommodation in a double room',
   'Full board with coffee breaks and refreshments',
@@ -177,7 +170,7 @@ const PaymentDetails = () => (
           component={<ConferenceFeeList />}
         />
       </Flex>
-      <Flex
+      {/* <Flex
         data-aos="fade-up"
         flexDirection="column"
         maxWidth={pxToRem(800)}
@@ -189,7 +182,7 @@ const PaymentDetails = () => (
           title="Accompanying person fee details:"
           component={<PersonFeeList />}
         />
-      </Flex>
+      </Flex> */}
     </Box>
   </React.Fragment>
 )

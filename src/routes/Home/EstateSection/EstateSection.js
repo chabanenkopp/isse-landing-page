@@ -134,9 +134,9 @@ const EstateSection = () => {
           fontSize={['m', 'l', 'xl']}
           py="xs"
         >
-          However, because of this extraordinary global health issue with the
-          Corona virus COVID-19, the ISSE organizing committee decided to go
-          on-line and hold ISSE 2020 as web-based conference.
+          Because of this extraordinary global health issue with the Corona
+          virus COVID-19, the ISSE organizing committee decided to go on-line
+          and hold ISSE 2020 as web-based conference.
         </Text>
       </BottomWrapper>
     </Flex>
