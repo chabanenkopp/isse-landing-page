@@ -59,7 +59,7 @@ const BasicInformation = () => (
               </Text>
             </li>
             <li>
-              <Text
+              <StyledTextLineThrough
                 color={COLORS.ROCK_BLUE}
                 display="contents"
                 fontSize={['xs', 's', 'm']}
@@ -68,7 +68,31 @@ const BasicInformation = () => (
                 <font color={COLORS.AMERICAN_PINK}>
                   <b>April 16th, 2020</b>
                 </font>
+              </StyledTextLineThrough>
+            </li>
+            <li>
+              <Text
+                color={COLORS.ROCK_BLUE}
+                display="contents"
+                fontSize={['xs', 's', 'm']}
+              >
+                Early Bird Registration Deadline:&nbsp;
+                <font color={COLORS.AMERICAN_PINK}>
+                  <b>April 30th, 2020</b>
+                </font>
               </Text>
+            </li>
+            <li>
+              <StyledTextLineThrough
+                color={COLORS.ROCK_BLUE}
+                display="contents"
+                fontSize={['xs', 's', 'm']}
+              >
+                Full Paper Submission Deadline:&nbsp;
+                <font color={COLORS.AMERICAN_PINK}>
+                  <b>April 16th, 2020</b>
+                </font>
+              </StyledTextLineThrough>
             </li>
             <li>
               <Text
@@ -78,7 +102,7 @@ const BasicInformation = () => (
               >
                 Full Paper Submission Deadline:&nbsp;
                 <font color={COLORS.AMERICAN_PINK}>
-                  <b>April 16th, 2020</b>
+                  <b>April 30th, 2020</b>
                 </font>
               </Text>
             </li>
