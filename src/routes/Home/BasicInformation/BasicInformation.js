@@ -16,8 +16,8 @@ const StyledUL = styled.ul`
   padding-right: ${pxToRem(20)};
 `
 
-const StyledTextLineThrough = styled(Text)`
-  text-decoration: line-through;
+const StyledTextLineThrough = styled('span')`
+  text-decoration: line-through !important;
 `
 
 const BasicInformation = () => (
@@ -59,16 +59,18 @@ const BasicInformation = () => (
               </Text>
             </li>
             <li>
-              <StyledTextLineThrough
+              <Text
                 color={COLORS.ROCK_BLUE}
                 display="contents"
                 fontSize={['xs', 's', 'm']}
               >
-                Early Bird Registration Deadline:&nbsp;
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>April 16th, 2020</b>
-                </font>
-              </StyledTextLineThrough>
+                <StyledTextLineThrough>
+                  Early Bird Registration Deadline:&nbsp;
+                  <font color={COLORS.AMERICAN_PINK}>
+                    <b>April 16th, 2020</b>
+                  </font>
+                </StyledTextLineThrough>
+              </Text>
             </li>
             <li>
               <Text
@@ -83,16 +85,18 @@ const BasicInformation = () => (
               </Text>
             </li>
             <li>
-              <StyledTextLineThrough
+              <Text
                 color={COLORS.ROCK_BLUE}
                 display="contents"
                 fontSize={['xs', 's', 'm']}
               >
-                Full Paper Submission Deadline:&nbsp;
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>April 16th, 2020</b>
-                </font>
-              </StyledTextLineThrough>
+                <StyledTextLineThrough>
+                  Full Paper Submission Deadline:&nbsp;
+                  <font color={COLORS.AMERICAN_PINK}>
+                    <b>April 16th, 2020</b>
+                  </font>
+                </StyledTextLineThrough>
+              </Text>
             </li>
             <li>
               <Text
@@ -157,16 +161,18 @@ const BasicInformation = () => (
               </Text>
             </li>
             <li>
-              <StyledTextLineThrough
+              <Text
                 color={COLORS.ROCK_BLUE}
                 display="contents"
                 fontSize={['xs', 's', 'm']}
               >
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>Venue:</b>&nbsp;
-                </font>
-                Demanovska Valley, Slovakia, Hotel Grand Jasna
-              </StyledTextLineThrough>
+                <StyledTextLineThrough>
+                  <font color={COLORS.AMERICAN_PINK}>
+                    <b>Venue:</b>&nbsp;
+                  </font>
+                  Demanovska Valley, Slovakia, Hotel Grand Jasna
+                </StyledTextLineThrough>
+              </Text>
             </li>
           </StyledUL>
         </Flex>
