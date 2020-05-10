@@ -4,11 +4,17 @@ import Cookies from 'js-cookie'
 import { Element as ScrollTo } from 'react-scroll'
 import SEO from 'components/atoms/seo'
 import { pxToRem } from 'helpers'
+import { fontWeights } from 'Theme'
 import { Box, Flex } from 'components/atoms/Layout'
+import { Text } from 'components/atoms/Typography'
 import { COLORS } from 'Root/constants'
 import GenericPage from 'shared/pages/GenericPage'
 import FloatingBadge from 'shared/FloatingBadge'
 import Popup from 'components/atoms/Popup'
+import IconText from 'components/molecules/IconText'
+import mapIcon from 'assets/images/map-icon.svg'
+import program from 'assets/pdf/program.pdf'
+import Link from 'components/atoms/Link'
 import ContactForm from './ContactForm'
 import EstateSection from './EstateSection'
 import TestimonialSection from './TestimonialSection'
@@ -65,6 +71,20 @@ class Home extends Component {
         />
         <Box>
           <BasicInformation />
+        </Box>
+        <Box data-aos="fade-up" mt={['l', 'l', 'xl']} mb="xxl">
+          <Text
+            textAlign="center"
+            color={COLORS.MAJOLICA_BLUE}
+            fontWeight={fontWeights.bold}
+            fontSize={['m', 'l', 'xl']}
+            mb="l"
+          >
+            Learn More About the Conference
+          </Text>
+          <Link as="a" href={program}>
+            <IconText src={mapIcon} label="Conference program" m="0 auto" />
+          </Link>
         </Box>
         <Box my="xl">
           <ScrollTo name="price-list">
