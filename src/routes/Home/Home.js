@@ -72,7 +72,7 @@ class Home extends Component {
         <Box>
           <BasicInformation />
         </Box>
-        <Box data-aos="fade-up" mt={['l', 'l', 'xl']} mb="xxl">
+        <Box data-aos="fade-up" mt={['l', 'l', 'xl']} mb={['l', 'xl', 'xxl']}>
           <Text
             textAlign="center"
             color={COLORS.MAJOLICA_BLUE}
