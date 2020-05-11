@@ -56,10 +56,10 @@ const Footer = () => (
             <Box mt="m">
               <Logo img={fei} maxHeight={pxToRem(30)} href={LINKS.FEI} />
             </Box>
-            <Box mt="m">
+            <Box mt="s">
               <Logo
                 img={ceelabs}
-                maxHeight={pxToRem(40)}
+                maxHeight={pxToRem(26)}
                 href={LINKS.CEELABS}
               />
             </Box>
