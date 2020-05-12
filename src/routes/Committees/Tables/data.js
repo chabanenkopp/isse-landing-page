@@ -189,6 +189,11 @@ export const STEERING_COMMITTEE = [
     country: 'Serbia',
     university: 'University of Novi Sad',
   },
+  {
+    name: 'Attila Bonyar',
+    country: 'Hungary',
+    university: 'Budapest University of Technology and Economics',
+  },
 ]
 
 export const GENERAL_CHAIRMAN = [
