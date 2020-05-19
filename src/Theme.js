@@ -1,5 +1,6 @@
+/* eslint-disable prefer-destructuring */
 import { css } from 'styled-components'
-import { fluidRange } from 'polished'
+import { fluidRange, math } from 'polished'
 import { pxToRem } from 'helpers'
 import { COLORS } from 'Root/constants'
 
@@ -61,6 +62,7 @@ export const radius = {
   m: '4px',
   l: '10px',
   xl: '30px',
+  circle: '50%',
   pill: '9999px',
 }
 
@@ -83,7 +85,46 @@ export const globalStyles = css`
   }
 `
 
-export const breakpoints = ['375px', '850px']
+const devices = {
+  mobile: '0',
+  tablet: '768px',
+  desktop: '1024px',
+  tv: '1440px',
+}
+
+export const breakpoints = [
+  devices.mobile,
+  devices.tablet,
+  devices.desktop,
+  devices.tv,
+]
+
+breakpoints.mobile = breakpoints[0]
+breakpoints.tablet = breakpoints[1]
+breakpoints.desktop = breakpoints[2]
+breakpoints.desktop = breakpoints[3]
+
+const mediaQuery = ({ mobileFirst = true }) =>
+  Object.entries(devices).reduce(
+    (deviceMediaQueries, [label, breakpoint]) => ({
+      ...deviceMediaQueries,
+      [label]: (...args) => css`
+        @media screen and (${mobileFirst ? 'min-width' : 'max-width'}: ${math(
+        `${breakpoint} - 0.1px`
+      )}) {
+          ${css(...args)}
+        }
+      `,
+    }),
+    {}
+  )
+
+export const mq = {
+  to: mediaQuery({ mobileFirst: false }),
+  from: mediaQuery({ mobileFirst: true }),
+}
+
+// export const breakpoints = ['375px', '850px']
 
 export const theme = {
   colors,
