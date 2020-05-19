@@ -16,7 +16,7 @@ import mapIcon from 'assets/images/map-icon.svg'
 import program from 'assets/pdf/program.pdf'
 import Link from 'components/atoms/Link'
 import ContactForm from './ContactForm'
-import EstateSection from './EstateSection'
+import WavesSection from './WavesSection'
 import TestimonialSection from './TestimonialSection'
 import BasicInformation from './BasicInformation'
 import LogoLineSeparator from './LogoLineSeparator'
@@ -57,7 +57,7 @@ class Home extends Component {
     } = this.props
     return (
       <GenericPage
-        fitScreenImageComponent={<EstateSection />}
+        fitScreenImageComponent={<WavesSection />}
         pathName={pathname}
       >
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />

@@ -17,9 +17,7 @@ import logo from 'assets/images/logo-line.svg'
 const { HOME, OVERVIEW, SPONSORS, COMMITTEES, AUTHORS } = PATHS
 
 const HeaderFixedBox = styled(Flex)`
-  /* background-color: ${transparentize(0.3, COLORS.WHITE)}; */
   background-color: ${transparentize(0.05, COLORS.WHITE)};
-  /* backdrop-filter: saturate(180%) blur(20px); */
   border-bottom: solid 1px ${COLORS.WHITE_SMOKE};
 `
 

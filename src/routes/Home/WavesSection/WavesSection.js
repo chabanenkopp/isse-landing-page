@@ -31,7 +31,7 @@ const StyledTextLineThrough = styled(Text)`
   text-decoration-color: ${COLORS.EVERLASTING_ICE};
 `
 
-const EstateSection = () => {
+const WavesSection = () => {
   const [isHovered, setIsHovered] = useState(false)
   return (
     <Flex
@@ -143,4 +143,4 @@ const EstateSection = () => {
   )
 }
 
-export default EstateSection
+export default WavesSection

@@ -4,10 +4,8 @@ import { Flex, Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import listItem from 'assets/images/list-item.svg'
 import { fontWeights } from 'Theme'
-// import { COLORS, DOWNLOAD } from 'Root/constants'
 import { COLORS } from 'Root/constants'
 import { pxToRem } from 'helpers'
-// import TextLink from 'components/atoms/TextLink'
 
 const StyledUL = styled.ul`
   text-indent: -1em;
