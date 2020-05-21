@@ -11,10 +11,12 @@ import Requirements from './Requirements'
 import ImageDownload from './ImageDownload'
 
 const Authors = ({ location: { pathname } }) => (
-  <GenericPage pathName={pathname}>
+  <GenericPage
+    pathName={pathname}
+    fitScreenImageComponent={<SubHeader>AUTHOR SECTION</SubHeader>}
+  >
     <SEO title="sponsors" />
     <FloatingBadge />
-    <SubHeader>AUTHOR SECTION</SubHeader>
     <Invitation />
     <BasicInformation />
     <AbstractSubmission />

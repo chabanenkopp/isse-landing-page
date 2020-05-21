@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import { rem } from 'polished'
 import { radius } from 'Theme'
-import { pxToRem } from 'helpers'
 import { COLORS } from 'Root/constants'
 import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import TextLink from 'components/atoms/TextLink'
 import instructions from 'assets/pdf/instructions.pdf'
 import requirements from 'assets/pdf/requirements.pdf'
+
+const TABLE_WIDTH = rem(500)
+const TEXT_SIZE = { mobile: 'xs', tablet: 's', desktop: 'm' }
 
 const Table = styled(Flex)`
   flex-direction: column;
@@ -20,10 +23,10 @@ const Table = styled(Flex)`
 
 const Row = styled(Flex)`
   width: 100%;
-  padding-top: ${pxToRem(10)};
-  padding-bottom: ${pxToRem(10)};
-  padding-right: ${pxToRem(20)};
-  padding-left: ${pxToRem(20)};
+  padding-top: ${rem(10)};
+  padding-bottom: ${rem(10)};
+  padding-right: ${rem(20)};
+  padding-left: ${rem(20)};
   ${({ lastElement }) =>
     lastElement &&
     `border-bottom-left-radius: ${radius.l};
@@ -42,12 +45,15 @@ const TH = styled(Row)`
 `
 
 const TablePdf = () => (
-  <Box px="m" data-aos="fade-up">
-    <Table width={['unset', 'unset', pxToRem(500)]} maxWidth={pxToRem(500)}>
+  <Box data-aos="fade-up">
+    <Table
+      width={{ mobile: 'unset', desktop: TABLE_WIDTH }}
+      maxWidth={TABLE_WIDTH}
+    >
       <TH justifyContent="center">
         <Text
           textAlign="center"
-          fontSize={['s', 's', 'm']}
+          fontSize={{ mobile: 's', desktop: 'm' }}
           color={COLORS.WHITE}
         >
           Articles and Presentation Info!
@@ -55,16 +61,14 @@ const TablePdf = () => (
       </TH>
       <Row>
         <Box minWidth="70%">
-          <Text fontSize={['xs', 's', 'm']}>
-            Requirements and recommendations
-          </Text>
+          <Text fontSize={TEXT_SIZE}>Requirements and recommendations</Text>
         </Box>
         <Box minWidth="30%" textAlign="center">
           <TextLink
             as="a"
             href={requirements}
             color={`${COLORS.AMERICAN_PINK} !important`}
-            fontSize={['xs', 's', 'm']}
+            fontSize={TEXT_SIZE}
           >
             Download
           </TextLink>
@@ -72,14 +76,14 @@ const TablePdf = () => (
       </Row>
       <Row>
         <Box minWidth="70%">
-          <Text fontSize={['xs', 's', 'm']}>Instructions for presentation</Text>
+          <Text fontSize={TEXT_SIZE}>Instructions for presentation</Text>
         </Box>
         <Box minWidth="30%" textAlign="center">
           <TextLink
             as="a"
             href={instructions}
             color={`${COLORS.AMERICAN_PINK} !important`}
-            fontSize={['xs', 's', 'm']}
+            fontSize={TEXT_SIZE}
           >
             Download
           </TextLink>

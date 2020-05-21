@@ -6,7 +6,7 @@ import { COLORS } from 'Root/constants'
 import TablePdf from '../TablePdf'
 
 const Requirements = () => (
-  <Box data-aos="fade-up" mt="l" mb="xl" px="m">
+  <Box data-aos="fade-up" mt="l" mb="xl">
     <Text
       textAlign="center"
       fontWeight="bold"

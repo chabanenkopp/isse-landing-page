@@ -5,6 +5,8 @@ import { Text } from 'components/atoms/Typography'
 import TextLink from 'components/atoms/TextLink'
 import listItem from 'assets/images/list-item.svg'
 
+const TEXT_SIZE = { mobile: 'xs', tablet: 's' }
+
 const StyledUL = styled.ul`
   text-indent: -1em;
   list-style: inside url(${listItem});
@@ -16,7 +18,7 @@ export const Preconditions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         Authors present their papers at the conference in the form of a 15 min.
@@ -30,7 +32,7 @@ export const Preconditions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         Authors intending to publish in the IEEE Xplore® digital library must
@@ -44,7 +46,7 @@ export const Preconditions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         Acceptance of papers requires compliance with the guidelines provided in
@@ -55,7 +57,7 @@ export const Preconditions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         Content of paper suits the scope of&nbsp;
@@ -74,7 +76,7 @@ export const Preconditions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         Papers written in accordance with the guidelines as provided in the ISSE
@@ -85,7 +87,7 @@ export const Preconditions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         Papers will be checked for their technical merit (e.g. whether
@@ -105,7 +107,7 @@ export const Recommendations = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Abstract title: </b> A concise title without subject-specific
@@ -116,7 +118,7 @@ export const Recommendations = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Author listing</b> (principal author first): Full first name (not
@@ -129,7 +131,7 @@ export const Recommendations = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Presentation:</b> Indicate which session topic your paper matches and
@@ -148,7 +150,7 @@ export const Recommendations = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Abstract text:</b> The peculiarities of the work to be presented
@@ -168,7 +170,7 @@ export const Recommendations = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Keywords:</b> List a maximum of five keywords.
@@ -178,7 +180,7 @@ export const Recommendations = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Brief biography </b>(of the principal author) Maximum 50 words about
@@ -190,7 +192,7 @@ export const Recommendations = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Peer abstract review: </b>Paper abstracts will be peer-reviewed for
@@ -216,7 +218,7 @@ export const Instructions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Guide for Presenters:</b> Maximum size: B1, minimum size: A1. The
@@ -232,7 +234,7 @@ export const Instructions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Poster presentation hints:</b> Short PowerPoint presentation of the
@@ -248,7 +250,7 @@ export const Instructions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Poster presentation recommendation:</b> The first slide is the
@@ -264,7 +266,7 @@ export const Instructions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Oral presentation hints: </b>Oral presentations cannot exceed 20-25
@@ -278,7 +280,7 @@ export const Instructions = () => (
       <Text
         color={COLORS.MAJOLICA_BLUE}
         display="contents"
-        fontSize={['xs', 's', 's']}
+        fontSize={TEXT_SIZE}
         fontWeight="thin"
       >
         <b>Copying presentations:</b> Presenters do not have to bring their own
