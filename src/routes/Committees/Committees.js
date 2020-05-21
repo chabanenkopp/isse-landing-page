@@ -7,10 +7,12 @@ import FloatingBadge from 'shared/FloatingBadge'
 import Tables from './Tables'
 
 const Committees = ({ location: { pathname } }) => (
-  <GenericPage pathName={pathname}>
+  <GenericPage
+    pathName={pathname}
+    fitScreenImageComponent={<SubHeader>COMMITTEES</SubHeader>}
+  >
     <SEO title="About ISSE conference" />
     <FloatingBadge />
-    <SubHeader>COMMITTEES</SubHeader>
     <Tables />
   </GenericPage>
 )

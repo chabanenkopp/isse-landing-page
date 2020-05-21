@@ -1,16 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { rem } from 'polished'
 import { Link as GatsbyLink } from 'gatsby'
 import { fontWeights, getTransition } from 'Theme'
 import { COLORS, PATHS } from 'Root/constants'
-import { scrollIntoView, pxToRem } from 'helpers'
-import { Flex, Box } from 'components/atoms/Layout'
+import { scrollIntoView } from 'helpers'
 import { Text } from 'components/atoms/Typography'
+import { Flex, Box } from 'components/atoms/Layout'
 import ChangeColor from 'components/atoms/ChangeFontColorByPathName'
 import Link from 'components/atoms/Link'
 
 const { HOME, OVERVIEW, SPONSORS, COMMITTEES, AUTHORS } = PATHS
+const SPACES = { px: 'l', py: 'm' }
+const OFFSET = rem(35)
+const LINK_SIZE = 'xxxl'
 
 const MobileMenuContainer = styled(Box)`
   background-color: ${COLORS.WHITE};
@@ -31,98 +35,90 @@ const MobileMenuContainer = styled(Box)`
 
 const MobileMenu = ({ isVisible, pathName, onClick }) => {
   return (
-    <React.Fragment>
-      <MobileMenuContainer isVisible={isVisible}>
-        <Box height="100%">
-          <Flex flexDirection="column" pt="xl" px="m">
-            <Box pt={pxToRem(50)}>
-              <Link
-                to={HOME}
-                as={GatsbyLink}
-                fontSize="xxxl"
-                fontWeight={`${fontWeights.thin} !important`}
-                px="l"
-                py="m"
-              >
-                <ChangeColor pathName={pathName} targetPath={HOME}>
-                  HOME
-                </ChangeColor>
-              </Link>
-            </Box>
-            <Box pt={pxToRem(50)}>
-              <Link
-                to={OVERVIEW}
-                as={GatsbyLink}
-                fontSize="xxxl"
-                fontWeight={`${fontWeights.thin} !important`}
-                px="l"
-                py="m"
-              >
-                <ChangeColor pathName={pathName} targetPath={OVERVIEW}>
-                  Overview
-                </ChangeColor>
-              </Link>
-            </Box>
-            <Box pt={pxToRem(50)}>
-              <Link
-                to={COMMITTEES}
-                as={GatsbyLink}
-                fontSize="xxxl"
-                fontWeight={`${fontWeights.thin} !important`}
-                px="l"
-                py="m"
-              >
-                <ChangeColor pathName={pathName} targetPath={COMMITTEES}>
-                  Committees
-                </ChangeColor>
-              </Link>
-            </Box>
-            <Box pt={pxToRem(50)}>
-              <Link
-                to={AUTHORS}
-                as={GatsbyLink}
-                fontSize="xxxl"
-                fontWeight={`${fontWeights.thin} !important`}
-                px="l"
-                py="m"
-              >
-                <ChangeColor pathName={pathName} targetPath={AUTHORS}>
-                  Authors
-                </ChangeColor>
-              </Link>
-            </Box>
-            <Box pt={pxToRem(50)}>
-              <Link
-                to={SPONSORS}
-                as={GatsbyLink}
-                fontSize="xxxl"
-                fontWeight={`${fontWeights.thin} !important`}
-                px="l"
-                py="m"
-              >
-                <ChangeColor pathName={pathName} targetPath={SPONSORS}>
-                  Sponsors
-                </ChangeColor>
-              </Link>
-            </Box>
-            <Box pt={pxToRem(50)}>
-              <Text
-                onClick={() => {
-                  scrollIntoView('contact')
-                  onClick()
-                }}
-                fontSize="xxxl"
-                fontWeight={`${fontWeights.thin} !important`}
-                px="l"
-                py="m"
-              >
-                Contact
-              </Text>
-            </Box>
-          </Flex>
-        </Box>
-      </MobileMenuContainer>
-    </React.Fragment>
+    <MobileMenuContainer isVisible={isVisible}>
+      <Box height="100%">
+        <Flex flexDirection="column" pt="xl" px="m">
+          <Box pt={{ tablet: 'l' }}>
+            <Link
+              to={HOME}
+              as={GatsbyLink}
+              fontSize={LINK_SIZE}
+              fontWeight={`${fontWeights.thin} !important`}
+              {...SPACES}
+            >
+              <ChangeColor pathName={pathName} targetPath={HOME}>
+                HOME
+              </ChangeColor>
+            </Link>
+          </Box>
+          <Box pt={OFFSET}>
+            <Link
+              to={OVERVIEW}
+              as={GatsbyLink}
+              fontSize={LINK_SIZE}
+              fontWeight={`${fontWeights.thin} !important`}
+              {...SPACES}
+            >
+              <ChangeColor pathName={pathName} targetPath={OVERVIEW}>
+                Overview
+              </ChangeColor>
+            </Link>
+          </Box>
+          <Box pt={OFFSET}>
+            <Link
+              to={COMMITTEES}
+              as={GatsbyLink}
+              fontSize={LINK_SIZE}
+              fontWeight={`${fontWeights.thin} !important`}
+              {...SPACES}
+            >
+              <ChangeColor pathName={pathName} targetPath={COMMITTEES}>
+                Committees
+              </ChangeColor>
+            </Link>
+          </Box>
+          <Box pt={rem(40)}>
+            <Link
+              to={AUTHORS}
+              as={GatsbyLink}
+              fontSize="xxxl"
+              fontWeight={`${fontWeights.thin} !important`}
+              {...SPACES}
+            >
+              <ChangeColor pathName={pathName} targetPath={AUTHORS}>
+                Authors
+              </ChangeColor>
+            </Link>
+          </Box>
+          <Box pt={OFFSET}>
+            <Link
+              to={SPONSORS}
+              as={GatsbyLink}
+              fontSize={LINK_SIZE}
+              fontWeight={`${fontWeights.thin} !important`}
+              {...SPACES}
+            >
+              <ChangeColor pathName={pathName} targetPath={SPONSORS}>
+                Sponsors
+              </ChangeColor>
+            </Link>
+          </Box>
+          <Box pt={OFFSET}>
+            <Text
+              onClick={() => {
+                scrollIntoView('contact')
+                onClick()
+              }}
+              fontSize={LINK_SIZE}
+              fontWeight={`${fontWeights.thin} !important`}
+              {...SPACES}
+            >
+              Contact
+            </Text>
+          </Box>
+        </Flex>
+      </Box>
+    </MobileMenuContainer>
   )
 }
 

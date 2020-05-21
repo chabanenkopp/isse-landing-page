@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
-import { transparentize } from 'polished'
+import { transparentize, rem } from 'polished'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { HamburgerButton } from 'react-hamburger-button'
-import { theme, radius } from 'Theme'
+import { space, radius } from 'Theme'
 import { COLORS, PATHS } from 'Root/constants'
-import { scrollIntoView, pxToRem } from 'helpers'
+import { scrollIntoView } from 'helpers'
 import { Flex, Box } from 'components/atoms/Layout'
 import ChangeColor from 'components/atoms/ChangeFontColorByPathName'
 import Button from 'components/atoms/Button'
@@ -15,6 +15,7 @@ import Tooltip from 'components/molecules/Tooltip'
 import logo from 'assets/images/logo-line.svg'
 
 const { HOME, OVERVIEW, SPONSORS, COMMITTEES, AUTHORS } = PATHS
+const HEADER_HEIGHT = rem(65)
 
 const HeaderFixedBox = styled(Flex)`
   background-color: ${transparentize(0.05, COLORS.WHITE)};
@@ -22,8 +23,8 @@ const HeaderFixedBox = styled(Flex)`
 `
 
 const Logo = styled.img`
-  max-height: ${pxToRem(60)};
-  margin-left: ${theme.space.m};
+  max-height: ${rem(50)};
+  margin-left: ${space.m};
 `
 
 const HamburgerContainer = styled(Box)`
@@ -57,19 +58,19 @@ const Header = ({
   mobileMenuComp: MobileMenuComp,
   pathName,
 }) => (
-  <Box minHeight={pxToRem(80)} zIndex="1">
+  <Box minHeight={HEADER_HEIGHT} zIndex="1">
     <HeaderFixedBox
       justifyContent="space-between"
       flex="none"
       alignItems="center"
       position="fixed"
-      height={pxToRem(80)}
+      height={HEADER_HEIGHT}
       width="100%"
     >
       <GatsbyLink to={HOME}>
         <Logo src={logo} alt="ISSE" />
       </GatsbyLink>
-      <Flex alignItems="center" display={['none', 'none', 'flex']}>
+      <Flex alignItems="center" display={{ mobile: 'none', desktop: 'flex' }}>
         <Tooltip component={<Links />}>
           <Link list={1} to={OVERVIEW} as={GatsbyLink} px="l" py="m">
             About ISSE
@@ -86,26 +87,26 @@ const Header = ({
           </ChangeColor>
         </Link>
         <Button.Outlined
-          color={COLORS.ANCHORMAN}
+          onClick={() => scrollIntoView('contact')}
           borderColor={COLORS.WHITE}
+          color={COLORS.ANCHORMAN}
           borderRadius={radius.l}
+          fontSize="m"
           isShadow
           mx="m"
-          fontSize="m"
-          onClick={() => scrollIntoView('contact')}
         >
           Contact
         </Button.Outlined>
       </Flex>
-      <HamburgerContainer display={['block', 'block', 'none']} mr="l">
+      <HamburgerContainer display={{ mobile: 'block', desktop: 'none' }} mr="l">
         <HamburgerButton
           open={isVisible}
           onClick={onMobileMenuButtonClick}
           width={30}
           height={25}
           strokeWidth={2}
-          color={COLORS.MAJOLICA_BLUE}
           animationDuration={0.6}
+          color={COLORS.MAJOLICA_BLUE}
         />
       </HamburgerContainer>
       {MobileMenuComp}

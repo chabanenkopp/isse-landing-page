@@ -1,8 +1,8 @@
 import React, { useState, Component } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { fadeIn } from 'react-animations'
+import { rem } from 'polished'
 import { theme, radius, fontSizes, fontWeights } from 'Theme'
-import { pxToRem } from 'helpers'
 import { COLORS, TEL_NUMBER, CONTACT } from 'Root/constants'
 import { Flex, Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
@@ -19,14 +19,14 @@ const FloatingContainer = styled(Flex)`
   position: fixed;
   top: 40%;
   left: 0;
-  z-index: 1;
-  height: ${pxToRem(220)};
+  z-index: 2;
+  height: ${rem(220)};
   transition: width 0.4s;
-  width: ${({ isHovered }) => (isHovered ? pxToRem(200) : pxToRem(70))};
+  width: ${({ isHovered }) => (isHovered ? rem(200) : rem(70))};
   background-color: ${COLORS.WHITE};
   border-top-right-radius: ${radius.l};
   border-bottom-right-radius: ${radius.l};
-  box-shadow: 1px 1px ${pxToRem(27)} ${pxToRem(-20)} rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px ${rem(27)} ${rem(-20)} rgba(0, 0, 0, 0.75);
 `
 
 const InitialText = styled(Flex)`
@@ -57,7 +57,7 @@ class HiddenText extends Component {
     const { isComponentRendered } = this.state
     if (!isComponentRendered) return null
     return (
-      <Box>
+      <div>
         <TextLink as="a" mb="l" href={`tel:${TEL_NUMBER}`}>
           TEL: {TEL_NUMBER}
         </TextLink>
@@ -77,7 +77,7 @@ class HiddenText extends Component {
         >
           {CONTACT.EMAIL.toUpperCase()}
         </TextLink>
-      </Box>
+      </div>
     )
   }
 }
@@ -85,7 +85,7 @@ class HiddenText extends Component {
 const FloatingBadge = () => {
   const [isHovered, setIsHovered] = useState(false)
   return (
-    <FadeInBox display={['none', 'none', 'block']}>
+    <FadeInBox display={{ mobile: 'none', desktop: 'block' }}>
       <FloatingContainer
         isHovered={isHovered}
         onMouseEnter={() => setIsHovered(true)}

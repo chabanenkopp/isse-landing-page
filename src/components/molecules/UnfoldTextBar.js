@@ -44,7 +44,7 @@ ButtonLong.propTypes = {
   borderRadius: PropTypes.string,
 }
 
-const StyledBox = styled.img`
+const StyledImg = styled.img`
   height: 20px;
   margin-right: ${space.m};
   transition: transform 0.5s;
@@ -65,7 +65,7 @@ const UnfoldTextBar = ({ title, component: List }) => {
         <Text fontSize={['xs', 'm', 'xl']} mx="m" fontWeight="semi_bold">
           {title}
         </Text>
-        <StyledBox src={arrow} isClicked={isClicked} />
+        <StyledImg src={arrow} isClicked={isClicked} />
       </ButtonLong>
       {isClicked ? (
         <Box py="l" px="s">

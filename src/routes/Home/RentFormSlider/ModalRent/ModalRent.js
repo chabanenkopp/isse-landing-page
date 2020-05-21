@@ -6,13 +6,16 @@ import { Flex } from 'components/atoms/Layout'
 import { pxToRem, scrollIntoView } from 'helpers'
 import Modal from 'components/molecules/Modal'
 
-const fontSizeText = ['m', 'm', 'l']
-const fontSizeHeading = ['xxl', 'xxl', 'xxxl']
+const fontSizeText = { mobile: 'm', desktop: 'l' }
+const fontSizeHeading = { mobile: 'xl', tablet: 'xxl', desktop: 'xxxl' }
 const lineHeightText = pxToRem(30)
 const modalTextFontFamily = 'Lato'
+const ALIGN = `
+  text-align: center;
+`
 
 const ModalTextFailure = () => (
-  <Flex flexDirection="column" alignItems="center">
+  <Flex flexDirection="column" alignItems="center" css={ALIGN}>
     <Text
       fontSize={fontSizeText}
       color={COLORS.LUXURY}

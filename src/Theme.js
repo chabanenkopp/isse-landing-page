@@ -1,8 +1,9 @@
 /* eslint-disable prefer-destructuring */
 import { css } from 'styled-components'
-import { fluidRange, math } from 'polished'
-import { pxToRem } from 'helpers'
+import { fluidRange, math, rem } from 'polished'
 import { COLORS } from 'Root/constants'
+
+export const MAX_CONTENT_WIDTH = rem('1120px')
 
 export const getTransition = (property) =>
   `${property} 0.5s cubic-bezier(0.77,0.2,0.05,1.0)`
@@ -27,27 +28,27 @@ export const BOXSHADOWS = {
 }
 
 export const space = {
-  xxs: pxToRem(2),
-  xs: pxToRem(4),
-  s: pxToRem(8),
-  m: pxToRem(16),
-  l: pxToRem(32),
-  xl: pxToRem(64),
-  xxl: pxToRem(128),
-  xxxl: pxToRem(256),
-  xxxxl: pxToRem(400),
+  xxs: rem(2),
+  xs: rem(4),
+  s: rem(8),
+  m: rem(16),
+  l: rem(32),
+  xl: rem(64),
+  xxl: rem(128),
+  xxxl: rem(256),
+  xxxxl: rem(400),
 }
 
 export const fontSizes = {
-  xxs: pxToRem(10),
-  xs: pxToRem(12),
-  s: pxToRem(14),
-  m: pxToRem(16),
-  l: pxToRem(18),
-  xl: pxToRem(20),
-  xxl: pxToRem(30),
-  xxxl: pxToRem(40),
-  xxxxl: pxToRem(45),
+  xxs: rem(10),
+  xs: rem(12),
+  s: rem(14),
+  m: rem(16),
+  l: rem(18),
+  xl: rem(20),
+  xxl: rem(30),
+  xxxl: rem(40),
+  xxxxl: rem(45),
 }
 
 export const fontWeights = {
@@ -89,20 +90,13 @@ const devices = {
   mobile: '0',
   tablet: '768px',
   desktop: '1024px',
-  tv: '1440px',
 }
 
-export const breakpoints = [
-  devices.mobile,
-  devices.tablet,
-  devices.desktop,
-  devices.tv,
-]
+export const breakpoints = [devices.mobile, devices.tablet, devices.desktop]
 
 breakpoints.mobile = breakpoints[0]
 breakpoints.tablet = breakpoints[1]
 breakpoints.desktop = breakpoints[2]
-breakpoints.desktop = breakpoints[3]
 
 const mediaQuery = ({ mobileFirst = true }) =>
   Object.entries(devices).reduce(
@@ -123,8 +117,6 @@ export const mq = {
   to: mediaQuery({ mobileFirst: false }),
   from: mediaQuery({ mobileFirst: true }),
 }
-
-// export const breakpoints = ['375px', '850px']
 
 export const theme = {
   colors,

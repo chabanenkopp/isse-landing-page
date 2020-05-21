@@ -7,6 +7,8 @@ import { Text } from 'components/atoms/Typography'
 import { radius, fontWeights } from 'Theme'
 import AnimatedClouds from './AnimatedClouds'
 
+const HEADING_SIZE = { mobile: 'xxl', tablet: 'xxxl', desktop: 'xxxxl' }
+
 const TableBox = styled(Box)`
   width: ${pxToRem(300)};
   border-radius: ${radius.l};
@@ -45,25 +47,27 @@ const PriceList = () => {
   const [isHoveredThird, setIsHoveredThird] = useState(false)
   return (
     <>
-      {/* <Flex justifyContent="center" data-aos="fade-up" mb="xl"> */}
-      <Flex justifyContent="center" mb="xl">
+      <Flex justifyContent="center" flexWrap="wrap" mb="xl">
         <Text
           color={COLORS.MAJOLICA_BLUE}
           fontWeight={fontWeights.thin}
-          fontSize={['xxl', 'xxxl', 'xxxxl']}
+          fontSize={HEADING_SIZE}
         >
           Registration&nbsp;
         </Text>
         <Text
           color={COLORS.FLAX_FLOWER_BLUE}
           fontWeight={fontWeights.semi_bold}
-          fontSize={['xxl', 'xxxl', 'xxxxl']}
+          fontSize={HEADING_SIZE}
         >
           And Fees
         </Text>
       </Flex>
       <Flex
-        flexDirection={['column', 'column', 'row']}
+        flexDirection={{
+          mobile: 'column',
+          desktop: 'row',
+        }}
         justifyContent="center"
         alignItems="center"
       >
@@ -129,8 +133,8 @@ const PriceList = () => {
           onMouseEnter={() => setIsHoveredSecond(true)}
           onMouseLeave={() => setIsHoveredSecond(false)}
           data-aos="fade-up"
-          mx={[0, 0, 'l']}
-          my={['xl', 'xl', 0]}
+          mx={{ mobile: '0', desktop: 'l' }}
+          my={{ mobile: 'xl', desktop: 0 }}
         >
           <BlueBox>
             <Text textAlign="center" fontSize="xxl" color={COLORS.WHITE} py="l">

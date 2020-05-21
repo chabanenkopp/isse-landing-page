@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { Element as ScrollTo } from 'react-scroll'
 import UnfoldTextBar from 'components/molecules/UnfoldTextBar'
 import { fontWeights } from 'Theme'
 import { pxToRem } from 'helpers'
@@ -9,33 +8,14 @@ import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import listItem from 'assets/images/list-item.svg'
 import PackageTable from './PackageTable'
+import { MILI, MICRO, NANO, PICO } from './data'
 
 const StyledUL = styled.ul`
   text-indent: -1em;
   list-style: inside url(${listItem});
 `
 
-const MILI = [
-  'participation of two representatives of the sponsor in the exhibition',
-  'a stand with a desk',
-  'company profile, logo, and contact information on conference website and in conference program',
-  'participation in events – Welcome reception and Gala dinner',
-  'full board with coffee breaks and refreshments',
-  'welcome package',
-]
-
-const MICRO = [
-  'advertisment during coffee breaks',
-  'banner and company flyers',
-  'company profile, logo, and contact information on conference website and in conference program',
-]
-
-const NANO = [
-  'advertisment in conference program',
-  'company profile, logo, and contact information on conference website',
-]
-
-const PICO = ['advertisement in the abstract book']
+const TEXT_SIZE = { mobile: 'xs', tablet: 's', desktop: 'm' }
 
 const MiliList = () => (
   <StyledUL>
@@ -44,7 +24,7 @@ const MiliList = () => (
         <Text
           color={COLORS.MAJOLICA_BLUE}
           display="contents"
-          fontSize={['xs', 's', 'm']}
+          fontSize={TEXT_SIZE}
           fontWeight={fontWeights.thin}
         >
           {title}
@@ -60,7 +40,7 @@ const MicroList = () => (
         <Text
           color={COLORS.MAJOLICA_BLUE}
           display="contents"
-          fontSize={['xs', 's', 'm']}
+          fontSize={TEXT_SIZE}
           fontWeight={fontWeights.thin}
         >
           {title}
@@ -76,7 +56,7 @@ const NanoList = () => (
         <Text
           color={COLORS.MAJOLICA_BLUE}
           display="contents"
-          fontSize={['xs', 's', 'm']}
+          fontSize={TEXT_SIZE}
           fontWeight={fontWeights.thin}
         >
           {title}
@@ -92,7 +72,7 @@ const PicoList = () => (
         <Text
           color={COLORS.MAJOLICA_BLUE}
           display="contents"
-          fontSize={['xs', 's', 'm']}
+          fontSize={TEXT_SIZE}
           fontWeight={fontWeights.thin}
         >
           {title}
@@ -111,7 +91,6 @@ const SponsorsInfo = () => (
       lineHeight="1.8"
       fontSize="m"
       fontWeight={fontWeights.thin}
-      px={[pxToRem(10), pxToRem(30), pxToRem(180)]}
       mt="xl"
       mb="m"
     >
@@ -139,7 +118,6 @@ const SponsorsInfo = () => (
         maxWidth={pxToRem(800)}
         m="0 auto"
         mt="l"
-        px="m"
       >
         <UnfoldTextBar title="TERA" component={<MiliList />} />
       </Flex>
@@ -149,7 +127,6 @@ const SponsorsInfo = () => (
         maxWidth={pxToRem(800)}
         m="0 auto"
         mt="l"
-        px="m"
       >
         <UnfoldTextBar title="GIGA" component={<MicroList />} />
       </Flex>
@@ -159,9 +136,8 @@ const SponsorsInfo = () => (
         maxWidth={pxToRem(800)}
         m="0 auto"
         mt="l"
-        px="m"
       >
-        <UnfoldTextBar title="MEGA" component={<NanoList title="NANO" />} />
+        <UnfoldTextBar title="MEGA" component={<NanoList />} />
       </Flex>
       <Flex
         data-aos="fade-up"
@@ -169,9 +145,8 @@ const SponsorsInfo = () => (
         maxWidth={pxToRem(800)}
         m="0 auto"
         mt="l"
-        px="m"
       >
-        <UnfoldTextBar title="KILO" component={<PicoList title="PICO" />} />
+        <UnfoldTextBar title="KILO" component={<PicoList />} />
       </Flex>
     </Box>
   </Box>

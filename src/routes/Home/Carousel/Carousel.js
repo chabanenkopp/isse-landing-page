@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import Swiper from 'react-id-swiper'
+import 'swiper/css/swiper.css'
+import { rem } from 'polished'
 import { radius, fontWeights } from 'Theme'
 import { COLORS } from 'Root/constants'
-import { pxToRem } from 'helpers'
 import { Text } from 'components/atoms/Typography'
 import { Box } from 'components/atoms/Layout'
 import Bb from 'components/atoms/Bb'
@@ -14,49 +13,45 @@ import hotelFront from 'assets/images/hotel/hotel-front.jpg'
 import hotelGeneral from 'assets/images/hotel/hotel-general.jpg'
 import room from 'assets/images/hotel/room.jpg'
 
+const slides = [fountain, hotelFront, hotelGeneral, room]
+
+const IMAGE_GAP = 24
+const IMAGE_HEIGHT = 300
+const IMAGE_WIDTH = 357
+
 const VenueImage = styled(Box)`
-  height: auto;
-  max-width: ${pxToRem(330)};
-  min-height: ${pxToRem(290)};
+  height: ${rem(IMAGE_HEIGHT)};
   border-radius: ${radius.l};
-  border: 1px solid ${COLORS.WHITE};
-  background-size: cover;
-  background-repeat: no-repeat;
-  ${({ image }) => ` background-image: url(${image})`};
+  ${({ pictureUrl }) =>
+    `background: url("${pictureUrl}") center / cover no-repeat;`}
 `
 
-const StyledSlider = styled(Slider)`
-  .slick-slide div div {
-    outline: none;
-  }
-  .slick-dots li button:before {
-    color: ${COLORS.ATHENA_BLUE};
-    height: 10px;
-  }
-  .slick-dots li.slick-active button:before {
-    color: ${COLORS.ATHENA_BLUE};
-  }
-`
+const swiperConfig = {
+  loop: true,
+  grabCursor: true,
+  observerUpdate: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: IMAGE_GAP,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: IMAGE_GAP,
+    },
+    320: {
+      slidesPerView: 1,
+      spaceBetween: IMAGE_GAP,
+    },
+  },
+}
 
 const Carousel = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    speed: 500,
-    autoplay: true,
-    nextArrow: null,
-    prevArrow: null,
-    responsive: [
-      {
-        breakpoint: 850,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  }
+  const [, setSwiper] = React.useState(null)
   return (
     <div data-aos="fade-up">
       <Box justifyContent="center" mb="xl">
@@ -64,40 +59,29 @@ const Carousel = () => {
           textAlign="center"
           color={COLORS.MAJOLICA_BLUE}
           fontWeight={fontWeights.thin}
-          fontSize={['xxl', 'xxl', 'xxxxl']}
+          fontSize={{ mobile: 'xl', tablet: 'xxl', desktop: 'xxxxl' }}
         >
           Venue: Hotel&nbsp; <Bb>Grand Jasna</Bb>
         </Text>
       </Box>
-      <Box ml={[0, 0, 'l']}>
-        <StyledSlider {...settings}>
-          <Box mt="l" mb="m" pr={[0, 'm', 'm']}>
-            <VenueImage
-              image={fountain}
-              maxWidth={['initial', 'initial', pxToRem(400)]}
-            />
-          </Box>
-          <Box mt="l" mb="m" pr={[0, 'm', 'm']}>
-            <VenueImage
-              image={room}
-              maxWidth={['initial', 'initial', pxToRem(400)]}
-            />
-          </Box>
-          <Box mt="l" mb="m" pr={[0, 'm', 'm']}>
-            <VenueImage
-              image={hotelFront}
-              maxWidth={['initial', 'initial', pxToRem(400)]}
-            />
-          </Box>
-          <Box mt="l" mb="m" pr={[0, 'm', 'm']}>
-            <VenueImage
-              image={hotelGeneral}
-              maxWidth={['initial', 'initial', pxToRem(400)]}
-            />
-          </Box>
-        </StyledSlider>
+      <Box
+        maxWidth={{
+          mobile: '100%',
+          tablet: rem(IMAGE_WIDTH * 2 + IMAGE_GAP * 2),
+          desktop: rem(IMAGE_WIDTH * 3 + IMAGE_GAP * 3),
+        }}
+        m="0 auto"
+      >
+        <Swiper getSwiper={setSwiper} {...swiperConfig}>
+          {slides.map((slide, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <div key={i}>
+              <VenueImage pictureUrl={slide} />
+            </div>
+          ))}
+        </Swiper>
       </Box>
-      <Box my="xl" px={[pxToRem(10), pxToRem(20), pxToRem(100)]}>
+      <Box my="xl" px={{ tablet: rem(20), desktop: rem(100) }}>
         <Text
           data-aos="fade-up"
           textAlign="center"

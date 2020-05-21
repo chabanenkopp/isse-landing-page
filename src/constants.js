@@ -36,6 +36,7 @@ export const COLORS = {
   KACEYS_PINK: '#dd4377',
   SCAMPI: '#7660A0' /* Brand Color */,
   VANISHING: '#230F4E' /* Dark Blue */,
+  PALE_ORCHID: '#DFDBE7',
 }
 
 export const REGEX = {

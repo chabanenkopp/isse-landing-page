@@ -4,33 +4,9 @@ import { fontWeights } from 'Theme'
 import { COLORS } from 'Root/constants'
 import { Text } from 'components/atoms/Typography'
 import listItem from 'assets/images/list-item.svg'
+import { STRUCTURE, TOPICS, OBJECTIVES } from './data'
 
-const OBJECTIVES = [
-  'Exchange of experiences in the utilization of advanced electronics, electronics manufacturing, micro and nanoelectronics, research, development, manufacturing, testing and teaching',
-  'International cooperation and student exchanges',
-  'Supporting collaboration among junior and senior scientists from Europe and other continents',
-]
-
-const TOPICS = [
-  'New Materials, Components and Processes',
-  'Thermal Management',
-  'Advanced Packaging and Interconnection Technologies',
-  'Testing, Reliability and Quality Management',
-  'Process Modelling and Simulation',
-  'Environmental and Ecological Effects in Electronics Technology',
-  'Nanotechnology, Nanomaterials and Nanoelectronics',
-  'Signal Integrity and Electromagnetic Compatibility',
-  'Sensors, Actuators and Microsystems',
-  'Educational and Information Technologies in Electronics Manufacturing',
-  'Discrete and Integrated Components',
-]
-
-const STRUCTURE = [
-  'Plenary lectures of invited speakers',
-  'Oral sessions',
-  'Dialog (poster) sessions',
-  'Panel discussions',
-]
+const TEXT_SIZE = { mobile: 'xs', tablet: 's', desktop: 'm' }
 
 const StyledUL = styled.ul`
   text-indent: -1em;
@@ -44,7 +20,7 @@ const ObjectivesList = () => (
         <Text
           color={COLORS.MAJOLICA_BLUE}
           display="contents"
-          fontSize={['xs', 's', 'm']}
+          fontSize={TEXT_SIZE}
           fontWeight={fontWeights.thin}
         >
           {title}
@@ -61,7 +37,7 @@ const TopicsList = () => (
         <Text
           color={COLORS.MAJOLICA_BLUE}
           display="contents"
-          fontSize={['xs', 's', 'm']}
+          fontSize={TEXT_SIZE}
           fontWeight={fontWeights.thin}
         >
           {title}
@@ -78,7 +54,7 @@ const StructureList = () => (
         <Text
           color={COLORS.MAJOLICA_BLUE}
           display="contents"
-          fontSize={['xs', 's', 'm']}
+          fontSize={TEXT_SIZE}
           fontWeight={fontWeights.thin}
         >
           {title}
@@ -91,34 +67,3 @@ const StructureList = () => (
 const Items = { ObjectivesList, TopicsList, StructureList }
 
 export default Items
-
-// const GOALS = [
-//   'New Materials, Components and Processes',
-//   'Thermal Management',
-//   'Advanced Packaging and Interconnection Technologies',
-//   'Testing, Reliability and Quality Management',
-//   'Process Modelling and Simulation',
-//   'Environmental and Ecological Effects in Electronics Technology',
-//   'Nanotechnology, Nanomaterials and Nanoelectronics',
-//   'Signal Integrity and Electromagnetic Compatibility',
-//   'Sensors, Actuators and Microsystems',
-//   'Educational and Information Technologies in Electronics Manufacturing',
-//   'Discrete and Integrated Components',
-// ]
-
-// const GoalsList = () => (
-//   <StyledUL>
-//     {GOALS.map((title) => (
-//       <li key={title}>
-//         <Text
-//           color={COLORS.MAJOLICA_BLUE}
-//           display="contents"
-//           fontSize={['xs', 's', 'm']}
-//           fontWeight={fontWeights.thin}
-//         >
-//           {title}
-//         </Text>
-//       </li>
-//     ))}
-//   </StyledUL>
-// )

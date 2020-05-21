@@ -2,52 +2,54 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-import { transparentize } from 'polished'
+import { DialogOverlay, DialogContent } from '@reach/dialog'
+import { transparentize, rem } from 'polished'
 import { Box, Flex } from 'components/atoms/Layout'
 import { COLORS } from 'Root/constants'
-import { fontWeights, radius, getTransition } from 'Theme'
-import { pxToRem } from 'helpers'
+import { fontWeights, radius, space } from 'Theme'
 import Button from 'components/atoms/Button'
 import Transition from 'components/atoms/Transition'
 import iconClose from 'assets/images/icon-close-white.svg'
 
 const TRANSITION_TIMEOUT = 300
 
-const Overlay = styled(Flex)`
-  justify-content: center;
-  align-items: center;
+const Overlay = styled(DialogOverlay)`
+  overflow: auto;
+  z-index: 10;
   position: fixed;
-  overflow: scroll;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
   top: 0;
-  background-color: ${transparentize(0.35, COLORS.POT_BLACK)};
-  opacity: 0;
-  transition: ${getTransition('opacity')};
-  ${({ state }) =>
-    state === Transition.STATE.ENTERING ||
-    (state === Transition.STATE.ENTERED && `opacity: 1;`)}
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  background-color: ${transparentize(0.15, COLORS.GREY_OF_DARKNESS)} !important;
 `
+
+const CIRCLE_SIZE = rem(30)
 
 const CloseModalCircle = styled(Box)`
   cursor: pointer;
   border-radius: ${radius.pill};
-  width: ${pxToRem(30)};
-  height: ${pxToRem(30)};
+  width: ${CIRCLE_SIZE};
+  height: ${CIRCLE_SIZE};
   background-color: ${COLORS.GREY_OF_DARKNESS};
-  line-height: ${pxToRem(28)};
+  line-height: ${rem(28)};
   text-align: center;
   margin-left: 96.7%;
   margin-top: -3%;
 `
 
 const CloseModalIcon = styled.img`
-  height: ${pxToRem(14)};
+  height: ${rem(14)};
 `
-
-const ModalContainer = styled(Box)`
+const ModalContainer = styled(DialogContent)`
+  outline: none;
+  background-color: ${COLORS.WHITE};
   border-radius: ${radius.l};
+  max-width: ${rem(480)};
+  margin: 0 ${space.l};
 `
 
 const Modal = ({ onClose, onClick, isVisible, title, body, buttonLabel }) => {
@@ -65,21 +67,16 @@ const Modal = ({ onClose, onClick, isVisible, title, body, buttonLabel }) => {
       unmountOnExit
     >
       {(state) => (
-        <Overlay state={state}>
-          <ModalContainer
-            ref={targetRef}
-            bg={COLORS.WHITE}
-            width={[pxToRem(370), pxToRem(420), pxToRem(480)]}
-            mt="50px"
-          >
+        <Overlay state={state} onClick={onClose}>
+          <ModalContainer ref={targetRef}>
             <CloseModalCircle onClick={onClose}>
               <CloseModalIcon src={iconClose} alt="closeModal" />
             </CloseModalCircle>
             <Flex flexDirection="column" py="l" px="l" justifyContent="center">
               <Box mb="l">{title}</Box>
               <Box
-                width={pxToRem(120)}
-                height={pxToRem(3)}
+                width={rem(120)}
+                height={rem(3)}
                 bg={COLORS.AMERICAN_PINK}
                 m="0 auto"
               />

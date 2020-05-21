@@ -7,10 +7,12 @@ import FloatingBadge from 'shared/FloatingBadge'
 import SponsorsInfo from './SponsorsInfo'
 
 const Sponsors = ({ location: { pathname } }) => (
-  <GenericPage pathName={pathname}>
+  <GenericPage
+    pathName={pathname}
+    fitScreenImageComponent={<SubHeader>SPONSORSHIP OFFER</SubHeader>}
+  >
     <SEO title="sponsors" />
     <FloatingBadge />
-    <SubHeader>SPONSORSHIP OFFER</SubHeader>
     <SponsorsInfo />
   </GenericPage>
 )

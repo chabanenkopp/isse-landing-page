@@ -7,13 +7,16 @@ import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import { DATA } from './data'
 
+const HEADING_SIZE = { mobile: 's', desktop: 'm' }
+const ROW_SIZE = { mobile: 'xs', tablet: 's', desktop: 'm' }
+const TABLE_RADIUS = radius.l
+
 const Table = styled(Flex)`
   flex-direction: column;
   align-items: center;
-  max-width: 1080px;
   margin: 0 auto;
-  border-bottom-left-radius: ${radius.l};
-  border-bottom-right-radius: ${radius.l};
+  border-bottom-left-radius: ${TABLE_RADIUS};
+  border-bottom-right-radius: ${TABLE_RADIUS};
   box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 40px 5px;
 `
 
@@ -22,8 +25,8 @@ const Row = styled(Flex)`
   padding: ${pxToRem(20)};
   ${({ lastElement }) =>
     lastElement &&
-    `border-bottom-left-radius: ${radius.l};
-     border-bottom-right-radius: ${radius.l};
+    `border-bottom-left-radius: ${TABLE_RADIUS};
+     border-bottom-right-radius: ${TABLE_RADIUS};
     `}
 `
 
@@ -33,8 +36,8 @@ const TH = styled(Row)`
     ${COLORS.FLAX_FLOWER_BLUE},
     ${COLORS.ATHENA_BLUE}
   );
-  border-top-left-radius: ${radius.l};
-  border-top-right-radius: ${radius.l};
+  border-top-left-radius: ${TABLE_RADIUS};
+  border-top-right-radius: ${TABLE_RADIUS};
 `
 
 const Column = styled(Flex)`
@@ -42,21 +45,21 @@ const Column = styled(Flex)`
 `
 
 const HistoryTable = () => (
-  <Box my="xl" px="m" data-aos="fade-up">
+  <Box my="xl" data-aos="fade-up">
     <Table>
       <TH>
         <Column minWidth="15%" justifyContent="center">
-          <Text fontSize={['s', 's', 'm']} color={COLORS.WHITE}>
+          <Text fontSize={HEADING_SIZE} color={COLORS.WHITE}>
             Year
           </Text>
         </Column>
         <Column minWidth="35%" justifyContent="center">
-          <Text fontSize={['s', 's', 'm']} color={COLORS.WHITE}>
+          <Text fontSize={HEADING_SIZE} color={COLORS.WHITE}>
             Venue
           </Text>
         </Column>
         <Column minWidth="50%" justifyContent="center">
-          <Text fontSize={['s', 's', 'm']} color={COLORS.WHITE}>
+          <Text fontSize={HEADING_SIZE} color={COLORS.WHITE}>
             Theme
           </Text>
         </Column>
@@ -69,15 +72,15 @@ const HistoryTable = () => (
             key={year}
           >
             <Column minWidth="15%" justifyContent="center">
-              <Text fontSize={['xs', 's', 'm']}>{year}</Text>
+              <Text fontSize={ROW_SIZE}>{year}</Text>
             </Column>
             <Column minWidth="35%" justifyContent="center">
-              <Text fontSize={['xs', 's', 'm']} ml="m">
+              <Text fontSize={ROW_SIZE} ml="m">
                 {venue}
               </Text>
             </Column>
             <Column minWidth="50%" justifyContent="left">
-              <Text fontSize={['xs', 's', 'm']} ml="m">
+              <Text fontSize={ROW_SIZE} ml="m">
                 {theme}
               </Text>
             </Column>

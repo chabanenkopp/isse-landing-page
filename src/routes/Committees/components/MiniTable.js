@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { rem } from 'polished'
 import { radius } from 'Theme'
-import { pxToRem } from 'helpers'
 import { COLORS } from 'Root/constants'
 import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
@@ -10,11 +10,13 @@ import listItem from 'assets/images/list-item.svg'
 import { LOCAL } from '../Tables/data'
 
 const { people } = LOCAL[0]
+const TEXT_SIZE = { mobile: 'xs', tablet: 's', desktop: 'm' }
+const MINI_TABLE_WIDTH = rem(420)
+const LIST_WIDTH = rem(500)
 
 const Table = styled(Flex)`
   flex-direction: column;
   align-items: center;
-  /* max-width: ${pxToRem(420)}; */
   margin: 0 auto;
   border-bottom-left-radius: ${radius.l};
   border-bottom-right-radius: ${radius.l};
@@ -23,10 +25,10 @@ const Table = styled(Flex)`
 
 const Row = styled(Flex)`
   width: 100%;
-  padding-top: ${pxToRem(10)};
-  padding-bottom: ${pxToRem(10)};
-  padding-right: ${pxToRem(20)};
-  padding-left: ${pxToRem(20)};
+  padding-top: ${rem(10)};
+  padding-bottom: ${rem(10)};
+  padding-right: ${rem(20)};
+  padding-left: ${rem(20)};
   ${({ lastElement }) =>
     lastElement &&
     `border-bottom-left-radius: ${radius.l};
@@ -47,7 +49,7 @@ const TH = styled(Row)`
 const StyledUL = styled.ul`
   text-indent: -1em;
   list-style: inside url(${listItem});
-  margin-top: ${pxToRem(-2)};
+  margin-top: ${rem(-2)};
 `
 
 const Organizers = () => (
@@ -57,7 +59,7 @@ const Organizers = () => (
         <Text
           color={COLORS.MAJOLICA_BLUE}
           display="contents"
-          fontSize={['xs', 's', 'm']}
+          fontSize={TEXT_SIZE}
           fontWeight="thin"
         >
           {person}
@@ -68,12 +70,15 @@ const Organizers = () => (
 )
 
 const MiniTable = ({ data, title }) => (
-  <Box px="m" data-aos="fade-up">
-    <Table width={['unset', 'unset', pxToRem(420)]} maxWidth={pxToRem(420)}>
+  <Box px={{ mobile: 0, table: 'm', desktop: 'm' }} data-aos="fade-up">
+    <Table
+      width={{ mobile: 'unset', desktop: MINI_TABLE_WIDTH }}
+      maxWidth={MINI_TABLE_WIDTH}
+    >
       <TH justifyContent="center">
         <Text
           textAlign="center"
-          fontSize={['s', 's', 'm']}
+          fontSize={{ mobile: 's', desktop: 'm' }}
           color={COLORS.WHITE}
         >
           {title}
@@ -84,26 +89,26 @@ const MiniTable = ({ data, title }) => (
           <React.Fragment key={name + country}>
             <Row>
               <Box minWidth="30%">
-                <Text fontSize={['xs', 's', 'm']}>Name:</Text>
+                <Text fontSize={TEXT_SIZE}>Name:</Text>
               </Box>
               <Box minWidth="70%">
-                <Text fontSize={['xs', 's', 'm']}>{name}</Text>
+                <Text fontSize={TEXT_SIZE}>{name}</Text>
               </Box>
             </Row>
             <Row bg={COLORS.COTTON_BALL}>
               <Box minWidth="30%">
-                <Text fontSize={['xs', 's', 'm']}>Country:</Text>
+                <Text fontSize={TEXT_SIZE}>Country:</Text>
               </Box>
               <Box minWidth="70%">
-                <Text fontSize={['xs', 's', 'm']}>{country}</Text>
+                <Text fontSize={TEXT_SIZE}>{country}</Text>
               </Box>
             </Row>
             <Row lastElement>
               <Box minWidth="30%">
-                <Text fontSize={['xs', 's', 'm']}>University:</Text>
+                <Text fontSize={TEXT_SIZE}>University:</Text>
               </Box>
               <Box minWidth="70%">
-                <Text fontSize={['xs', 's', 'm']}>{university}</Text>
+                <Text fontSize={TEXT_SIZE}>{university}</Text>
               </Box>
             </Row>
           </React.Fragment>
@@ -119,12 +124,15 @@ MiniTable.propTypes = {
 }
 
 const List = ({ data, title, position, board }) => (
-  <Box px="m" data-aos="fade-up">
-    <Table width={['unset', 'unset', pxToRem(500)]} maxWidth={pxToRem(500)}>
+  <Box data-aos="fade-up">
+    <Table
+      width={{ mibile: 'unset', desktop: LIST_WIDTH }}
+      maxWidth={LIST_WIDTH}
+    >
       <TH justifyContent="center">
         <Text
           textAlign="center"
-          fontSize={['s', 's', 'm']}
+          fontSize={{ mobile: 's', desktop: 'm' }}
           color={COLORS.WHITE}
         >
           {title}
@@ -135,18 +143,17 @@ const List = ({ data, title, position, board }) => (
           <React.Fragment key={name}>
             <Row>
               <Box minWidth="45%">
-                <Text fontSize={['xs', 's', 'm']}>{position}</Text>
+                <Text fontSize={TEXT_SIZE}>{position}</Text>
               </Box>
               <Box minWidth="55%">
-                <Text fontSize={['xs', 's', 'm']}>{name}</Text>
+                <Text fontSize={TEXT_SIZE}>{name}</Text>
               </Box>
             </Row>
             <Row>
               <Box minWidth="40%">
-                <Text fontSize={['xs', 's', 'm']}>{board}</Text>
+                <Text fontSize={TEXT_SIZE}>{board}</Text>
               </Box>
               <Box minWidth="60%">
-                {/* <Text fontSize={['xs', 's', 'm']}>{country}</Text> */}
                 <Organizers />
               </Box>
             </Row>

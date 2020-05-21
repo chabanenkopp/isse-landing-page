@@ -7,7 +7,7 @@ import Items from './Items'
 const { ObjectivesList, TopicsList, StructureList } = Items
 
 const List = () => (
-  <Flex flexDirection="column" maxWidth={pxToRem(800)} m="0 auto" px="m">
+  <Flex flexDirection="column" maxWidth={pxToRem(800)} m="0 auto">
     <Box data-aos="fade-up" mt="xl">
       <UnfoldTextBar
         title="Conference objectives"

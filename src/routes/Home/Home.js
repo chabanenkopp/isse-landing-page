@@ -72,12 +72,20 @@ class Home extends Component {
         <Box>
           <BasicInformation />
         </Box>
-        <Box data-aos="fade-up" mt={['l', 'l', 'xl']} mb={['l', 'xl', 'xxl']}>
+        <Box
+          data-aos="fade-up"
+          mt={{ mobile: 'l', desktop: 'xl' }}
+          mb={{
+            mobile: 'l',
+            tablet: 'xl',
+            desktop: 'xxl',
+          }}
+        >
           <Text
             textAlign="center"
             color={COLORS.MAJOLICA_BLUE}
             fontWeight={fontWeights.bold}
-            fontSize={['m', 'l', 'xl']}
+            fontSize={{ mobile: 'm', tablet: 'l', desktop: 'xl' }}
             mb="l"
           >
             Learn More About the Conference
@@ -109,13 +117,7 @@ class Home extends Component {
           backgroundRepeat="no-repeat"
           backgroundImage={`linear-gradient(180deg, ${COLORS.WHITE}, ${COLORS.LYNX_WHITE})`}
         >
-          <Box
-            width={['80vw', '85vw', pxToRem(1000)]}
-            mb={pxToRem(100)}
-            margin="0 auto"
-          >
-            <Carousel />
-          </Box>
+          <Carousel />
           <Box mb="xl">
             <GoogleMap />
           </Box>
@@ -124,10 +126,7 @@ class Home extends Component {
           </Box>
         </Flex>
         <Flex justifyContent="center" alignItems="center">
-          {/* <Box width={[pxToRem(310), pxToRem(400), pxToRem(830)]} mb="m"> */}
-          <Box width={[pxToRem(310), pxToRem(400), pxToRem(530)]} mb="l">
-            <TestimonialSection />
-          </Box>
+          <TestimonialSection />
         </Flex>
       </GenericPage>
     )

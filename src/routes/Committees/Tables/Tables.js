@@ -17,13 +17,17 @@ import {
 import Bb from '../components/BlueBold'
 import MiniTable from '../components/MiniTable'
 
+const TABLE_RADIUS = radius.l
+const TABLE_FONT_SIZE = { mobile: 's', desktop: 'm' }
+const COMMITTEE_FONT_SIZE = { mobile: 'xs', tablet: 's', desktop: 'm' }
+
 const Table = styled(Flex)`
   flex-direction: column;
   align-items: center;
   max-width: 1080px;
   margin: 0 auto;
-  border-bottom-left-radius: ${radius.l};
-  border-bottom-right-radius: ${radius.l};
+  border-bottom-left-radius: ${TABLE_RADIUS};
+  border-bottom-right-radius: ${TABLE_RADIUS};
   box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 40px 5px;
 `
 
@@ -32,8 +36,8 @@ const Row = styled(Flex)`
   padding: ${pxToRem(20)};
   ${({ lastElement }) =>
     lastElement &&
-    `border-bottom-left-radius: ${radius.l};
-     border-bottom-right-radius: ${radius.l};
+    `border-bottom-left-radius: ${TABLE_RADIUS};
+     border-bottom-right-radius: ${TABLE_RADIUS};
     `}
 `
 
@@ -43,8 +47,8 @@ const TH = styled(Row)`
     ${COLORS.FLAX_FLOWER_BLUE},
     ${COLORS.ATHENA_BLUE}
   );
-  border-top-left-radius: ${radius.l};
-  border-top-right-radius: ${radius.l};
+  border-top-left-radius: ${TABLE_RADIUS};
+  border-top-right-radius: ${TABLE_RADIUS};
 `
 
 const Column = styled(Flex)`
@@ -52,21 +56,21 @@ const Column = styled(Flex)`
 `
 
 const SteeringCommitteeTable = () => (
-  <Box px="m" data-aos="fade-up">
+  <Box data-aos="fade-up">
     <Table>
       <TH>
         <Column minWidth="30%" justifyContent="center">
-          <Text fontSize={['s', 's', 'm']} color={COLORS.WHITE}>
+          <Text fontSize={TABLE_FONT_SIZE} color={COLORS.WHITE}>
             Name
           </Text>
         </Column>
         <Column minWidth="30%" justifyContent="center">
-          <Text fontSize={['s', 's', 'm']} color={COLORS.WHITE}>
+          <Text fontSize={TABLE_FONT_SIZE} color={COLORS.WHITE}>
             Country
           </Text>
         </Column>
         <Column minWidth="40%" justifyContent="center">
-          <Text fontSize={['s', 's', 'm']} color={COLORS.WHITE}>
+          <Text fontSize={TABLE_FONT_SIZE} color={COLORS.WHITE}>
             University
           </Text>
         </Column>
@@ -79,17 +83,17 @@ const SteeringCommitteeTable = () => (
             key={name}
           >
             <Column minWidth="30%" justifyContent="center">
-              <Text textAlign="center" fontSize={['xs', 's', 'm']}>
+              <Text textAlign="center" fontSize={COMMITTEE_FONT_SIZE}>
                 {name}
               </Text>
             </Column>
             <Column minWidth="30%" justifyContent="center">
-              <Text textAlign="center" fontSize={['xs', 's', 'm']}>
+              <Text textAlign="center" fontSize={COMMITTEE_FONT_SIZE}>
                 {country}
               </Text>
             </Column>
             <Column minWidth="40%" justifyContent="left">
-              <Text fontSize={['xs', 's', 'm']} ml="m">
+              <Text fontSize={COMMITTEE_FONT_SIZE} ml="m">
                 {university}
               </Text>
             </Column>
@@ -102,7 +106,10 @@ const SteeringCommitteeTable = () => (
 
 const Tables = () => (
   <Box my="xxl">
-    <Flex flexDirection={['column', 'column', 'row']} justifyContent="center">
+    <Flex
+      flexDirection={{ mobile: 'column', desktop: 'row' }}
+      justifyContent="center"
+    >
       <Box mb="xl">
         <MiniTable data={GENERAL_CHAIRMAN} title="General Chairman of ISSE" />
       </Box>
@@ -110,7 +117,10 @@ const Tables = () => (
         <MiniTable data={SECRETARY} title="Secretary of ISSE" />
       </Box>
     </Flex>
-    <Flex flexDirection={['column', 'column', 'row']} justifyContent="center">
+    <Flex
+      flexDirection={{ mobile: 'column', desktop: 'row' }}
+      justifyContent="center"
+    >
       <Box mb="xl">
         <MiniTable data={CONFERENCE_CHAIRMAN} title="Conference Chairman" />
       </Box>

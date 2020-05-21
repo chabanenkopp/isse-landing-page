@@ -7,7 +7,6 @@ import { Flex } from 'components/atoms/Layout'
 import { H3 } from 'components/atoms/Typography'
 
 const Background = styled.div`
-  /* background-image: linear-gradient(#caece9, #ffffff); */
   padding-top: ${theme.space.l};
   padding-bottom: ${theme.space.l};
 `

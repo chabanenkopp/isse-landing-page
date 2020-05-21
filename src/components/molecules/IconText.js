@@ -8,9 +8,9 @@ import { Text } from 'components/atoms/Typography'
 import { COLORS } from 'Root/constants'
 
 const StyledFlex = styled(Flex)`
-  max-width: ${rem(264)};
   width: 100%;
   height: ${rem(104)};
+  max-width: ${rem(264)};
   border-radius: ${radius.l};
   box-shadow: ${BOXSHADOWS.CARD};
   background-color: ${COLORS.WHITE};
@@ -22,15 +22,11 @@ const StyledIMG = styled('img')`
 
 const IconText = ({ src, label, ...props }) => (
   <StyledFlex {...props}>
-    <Flex
-      alignItems={{ mobile: 'flex-end', tablet: 'center' }}
-      px={{ tablet: 'm', desktop: 'l' }}
-    >
+    <Flex alignItems="center" justifyContent="center" m="0 auto">
       <StyledIMG src={src} />
       <Text
-        as="p"
         lineHeight={rem(24)}
-        fontSize={{ mobile: 'm', tablet: 's', desktop: 'm' }}
+        fontSize={{ mobile: 's', tablet: 's', desktop: 'm' }}
         fontWeight="semi_bold"
         color={COLORS.MAJOLICA_BLUE}
         ml="m"

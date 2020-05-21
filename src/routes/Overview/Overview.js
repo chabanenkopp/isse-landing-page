@@ -7,13 +7,14 @@ import FloatingBadge from 'shared/FloatingBadge'
 import GeneralInfo from './GeneralInfo'
 import List from './List'
 import HistoryTable from './IsseHistory/HistoryTable'
-// import IsseHistory from './IsseHistory'x
 
 const Overview = ({ location: { pathname } }) => (
-  <GenericPage pathName={pathname}>
+  <GenericPage
+    pathName={pathname}
+    fitScreenImageComponent={<SubHeader>ISSE OVERVIEW</SubHeader>}
+  >
     <SEO title="About ISSE conference" />
     <FloatingBadge />
-    <SubHeader>ISSE OVERVIEW</SubHeader>
     <GeneralInfo />
     <List />
     <HistoryTable />

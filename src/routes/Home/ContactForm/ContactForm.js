@@ -10,10 +10,11 @@ import Button from 'components/atoms/Button'
 import Popup from 'components/atoms/Popup'
 import { Element as ScrollTo } from 'react-scroll'
 import { db } from 'firebase-config'
+import { rem } from 'polished'
 import RelatedText from './RelatedText'
 import ModalContact from './ModalContact'
 
-const INPUT_WIDTH = [pxToRem(350), pxToRem(400), pxToRem(460)]
+const INPUT_WIDTH = '100%'
 
 const WARNING_TEXT = 'You have to enter either a phone number, or an email.'
 const SERVER_ERROR_TEXT = 'An unknown network error has occurred'
@@ -158,14 +159,21 @@ class ContactForm extends Component {
       <Box>
         <Box data-aos="fade-up">
           <Flex
-            flexDirection={['column-reverse', 'column-reverse', 'row']}
+            flexDirection={{
+              mobile: 'column-reverse',
+              desktop: 'row',
+            }}
             alignItems="center"
             justifyContent="center"
           >
-            <Box mr={['0', '0', 'xl']}>
+            <Box
+              mr={{ mobile: 0, desktop: 'xl' }}
+              maxWidth={rem(500)}
+              width="100%"
+            >
               <ScrollTo name="contact-form">
                 <Form onSubmit={this.handleSubmitForm}>
-                  <Box p={['10px', 'm', 'l']}>
+                  <Box p={{ mobile: '10px', tablet: 'm', desktop: 'l' }}>
                     <Label>
                       <Flex justifyContent="space-between">
                         FULL NAME

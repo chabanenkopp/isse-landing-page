@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { rem } from 'polished'
 import { Text } from 'components/atoms/Typography'
 import { COLORS, TEL_NUMBER } from 'Root/constants'
 import { Flex } from 'components/atoms/Layout'
-import { pxToRem } from 'helpers'
 import Modal from 'components/molecules/Modal'
 
-const fontSizeText = ['xs', 's', 'l']
-const fontSizeHeading = ['xxl', 'xxl', 'xxxl']
-const lineHeightText = pxToRem(30)
+const fontSizeText = { mobile: 'xs', tablet: 's', desktop: 'l' }
+const fontSizeHeading = { mobile: 'xxl', desktop: 'xxxl' }
+const lineHeightText = rem(30)
 const modalTextFontFamily = 'Lato'
 
 const ModalTitle = () => (
@@ -17,7 +17,7 @@ const ModalTitle = () => (
     color={COLORS.MAJOLICA_BLUE}
     textAlign="center"
     fontWeight="bold"
-    lineHeight={pxToRem(44)}
+    lineHeight={rem(44)}
   >
     Thank You For Your Interest!
   </Text>

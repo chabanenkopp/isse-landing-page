@@ -1,15 +1,29 @@
 import React, { Component } from 'react'
+import { rem } from 'polished'
 import { Flex, Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
-import { fontWeights, radius } from 'Theme'
+import { fontWeights, radius, space } from 'Theme'
 import { COLORS } from 'Root/constants'
-import { pxToRem } from 'helpers'
 import Button from 'components/atoms/Button'
 import InputRange from 'components/molecules/InputRange'
 import ModalRent from './ModalRent'
 
-const CONTAINER_WIDTH = [pxToRem(390), pxToRem(450), pxToRem(790)]
-const INPUT_WIDTH = [pxToRem(390), pxToRem(450), pxToRem(600)]
+const CONTAINER_WIDTH = {
+  mobile: `calc(100vw - ${space.m} * 2)`,
+  tablet: rem(450),
+  desktop: rem(790),
+}
+const INPUT_WIDTH = {
+  mobile: `calc(100vw - ${space.m} * 2)`,
+  tablet: rem(450),
+  dsktop: rem(600),
+}
+
+const HEADING_SIZE = {
+  mobile: 'xxl',
+  tablet: 'xxxl',
+  desktop: 'xxxxl',
+}
 
 export default class RentFormSlider extends Component {
   state = {
@@ -62,18 +76,18 @@ export default class RentFormSlider extends Component {
     return (
       <Box>
         <Box data-aos="fade-up">
-          <Flex justifyContent="center" mb="xl">
+          <Flex justifyContent="center" flexWrap="wrap" mb="xl">
             <Text
               color={COLORS.MAJOLICA_BLUE}
               fontWeight={fontWeights.thin}
-              fontSize={['xxl', 'xxxl', 'xxxxl']}
+              fontSize={HEADING_SIZE}
             >
               Sponsorship&nbsp;
             </Text>
             <Text
               color={COLORS.FLAX_FLOWER_BLUE}
               fontWeight={fontWeights.semi_bold}
-              fontSize={['xxl', 'xxxl', 'xxxxl']}
+              fontSize={HEADING_SIZE}
             >
               Packages
             </Text>
@@ -85,8 +99,8 @@ export default class RentFormSlider extends Component {
               alignItems="center"
             >
               <Flex
-                flexDirection={['column', 'column', 'row']}
-                alignItems={['initial', 'initial', 'center']}
+                flexDirection={{ mobile: 'column', desktop: 'row' }}
+                alignItems={{ mobile: 'initial', desktop: 'center' }}
               >
                 <InputRange
                   type="range"
@@ -99,8 +113,8 @@ export default class RentFormSlider extends Component {
                 />
                 <Flex
                   flexDirection="column"
-                  ml={[0, 0, 'm']}
-                  mt={['m', 'm', '0']}
+                  ml={{ mobile: 0, desktop: 'm' }}
+                  mt={{ mobile: 'm', desktop: 0 }}
                 >
                   <Button.Filled
                     type="submit"
@@ -109,15 +123,15 @@ export default class RentFormSlider extends Component {
                     borderRadius={radius.pill}
                     isShadow
                     fontSize="m"
-                    height={pxToRem(56)}
-                    px={(0, 0, [pxToRem(50)])}
+                    height={rem(56)}
+                    px={{ mobile: 0, desktop: rem(50) }}
                   >
                     CONTINUE
                   </Button.Filled>
                 </Flex>
               </Flex>
               <Flex
-                justifyContent={['center', 'center', 'flex-start']}
+                justifyContent={{ mobile: 'center', desktop: 'flex-start' }}
                 width={CONTAINER_WIDTH}
                 mt="m"
               >
@@ -136,8 +150,8 @@ export default class RentFormSlider extends Component {
                 </Text>
               </Flex>
               <Flex
-                flexDirection={['column', 'column', 'row']}
-                alignItems={['center', 'center', 'initial']}
+                flexDirection={{ mobile: 'column', desktop: 'row' }}
+                alignItems={{ mobile: 'center', desktop: 'initial' }}
                 width={CONTAINER_WIDTH}
                 mt="m"
               >
@@ -150,7 +164,7 @@ export default class RentFormSlider extends Component {
                 <Text
                   fontWeight={fontWeights.semi_bold}
                   color={COLORS.AMERICAN_PINK}
-                  ml={[0, 0, 'm']}
+                  ml={{ mobile: 0, desktop: 'm' }}
                 >
                   {packageType}
                 </Text>

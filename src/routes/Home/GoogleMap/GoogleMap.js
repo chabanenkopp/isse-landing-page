@@ -1,10 +1,9 @@
 import React from 'react'
-// import { Text } from 'components/atoms/Typography'
 import styled from 'styled-components'
+import { rem } from 'polished'
 import { Box } from 'components/atoms/Layout'
 import { LINKS } from 'Root/constants'
 import { radius } from 'Theme'
-import { pxToRem } from 'helpers'
 import { Text } from 'components/atoms/Typography'
 import Bb from 'components/atoms/Bb'
 
@@ -28,7 +27,7 @@ const MapIframe = styled.iframe`
 `
 
 const GoogleMap = () => (
-  <Box px={['4%', '8%', '18%']} data-aos="fade-up">
+  <Box data-aos="fade-up">
     <MapContainer>
       <MapIframe
         title="g"
@@ -39,7 +38,7 @@ const GoogleMap = () => (
         allowfullscreen=""
       />
     </MapContainer>
-    <Box mt="xl" px={[pxToRem(10), pxToRem(20), pxToRem(100)]}>
+    <Box mt="xl" px={{ tablet: rem(20), desktop: rem(100) }}>
       <Text textAlign="center" fontSize="xl" mb="l">
         How to arrive to the hotel
       </Text>

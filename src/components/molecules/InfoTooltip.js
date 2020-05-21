@@ -50,7 +50,6 @@ const Content = styled(Flex)`
   position: absolute;
   width: max-content;
   min-width: ${rem(100)};
-  /* max-width: ${({ maxWidth }) => maxWidth || rem(250)}; */
   background-color: ${COLORS.WHITE};
   border-radius: ${radius.m};
   box-shadow: ${BOXSHADOWS.TOOLTIP};

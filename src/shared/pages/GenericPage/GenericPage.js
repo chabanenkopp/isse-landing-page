@@ -1,13 +1,24 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { PATHS } from 'Root/constants'
 import { Box, Flex } from 'components/atoms/Layout'
+import { maxWidthStyle } from 'components/atoms/mixins'
 import App from 'App'
 import Footer from 'shared/pages/GenericPage/Footer'
 import MobileMenu from 'shared/pages/GenericPage/MobileMenu'
 import Designer from 'shared/Designer'
 import Header from './Header'
+
+const { HOME } = PATHS
+
+const Content = styled('div')`
+  z-index: 0;
+  position: relative;
+  ${maxWidthStyle}
+`
 
 export default class GenericPage extends Component {
   state = {
@@ -29,7 +40,9 @@ export default class GenericPage extends Component {
     return (
       <App>
         <Flex
-          minHeight={fitScreenImageComponent ? '100vh' : 'unset'}
+          minHeight={
+            fitScreenImageComponent && pathName === HOME ? '100vh' : 'unset'
+          }
           flexDirection="column"
         >
           <Header
@@ -46,7 +59,7 @@ export default class GenericPage extends Component {
           />
           {fitScreenImageComponent}
         </Flex>
-        <Box>{children}</Box>
+        <Content>{children}</Content>
         <Footer />
         <Box my="m">
           <Designer />

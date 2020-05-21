@@ -1,182 +1,136 @@
 import React from 'react'
 import styled from 'styled-components'
+import { rem } from 'polished'
 import { Flex, Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
-import listItem from 'assets/images/list-item.svg'
-import { fontWeights } from 'Theme'
+import { mq, fontWeights } from 'Theme'
 import { COLORS } from 'Root/constants'
-import { pxToRem } from 'helpers'
+import listItem from 'assets/images/list-item.svg'
+
+const TEXT_FONT_SIZE = { mobile: 'xs', tablet: 's', desktop: 'm' }
+const MAX_COLUMN_WIDTH = rem(500)
 
 const StyledUL = styled.ul`
   text-indent: -1em;
   list-style: inside url(${listItem});
-  margin-left: ${pxToRem(20)};
-  padding-right: ${pxToRem(20)};
+  ${mq.from.desktop`
+     margin-left: ${rem(20)};
+     padding-right: ${rem(20)};
+  `}
 `
 
-const StyledTextLineThrough = styled('span')`
-  text-decoration: line-through !important;
+const StyledSpan = styled('span')`
+  color: ${COLORS.AMERICAN_PINK};
+  font-weight: ${fontWeights.semi_bold};
 `
 
 const BasicInformation = () => (
-  <React.Fragment>
-    <Flex justifyContent="center" flexDirection={['column', 'column', 'row']}>
-      <div data-aos="fade-up">
-        <Text
-          textAlign="center"
-          color={COLORS.MAJOLICA_BLUE}
-          fontWeight={fontWeights.bold}
-          fontSize={['m', 'l', 'xl']}
-        >
-          Important dates
-        </Text>
-        <Flex maxWidth="500px" margin="0 auto">
-          <StyledUL>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                Abstract Submission Deadline:&nbsp;
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>January 30th, 2020</b>
-                </font>
-              </Text>
-            </li>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                Abstract Acceptance Notice:&nbsp;
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>March 9th, 2020</b>
-                </font>
-              </Text>
-            </li>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                <StyledTextLineThrough>
-                  Early Bird Registration Deadline:&nbsp;
-                  <font color={COLORS.AMERICAN_PINK}>
-                    <b>April 16th, 2020</b>
-                  </font>
-                </StyledTextLineThrough>
-              </Text>
-            </li>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                Early Bird Registration Deadline:&nbsp;
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>April 30th, 2020</b>
-                </font>
-              </Text>
-            </li>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                <StyledTextLineThrough>
-                  Full Paper Submission Deadline:&nbsp;
-                  <font color={COLORS.AMERICAN_PINK}>
-                    <b>April 16th, 2020</b>
-                  </font>
-                </StyledTextLineThrough>
-              </Text>
-            </li>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                Full Paper Submission Deadline:&nbsp;
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>April 30th, 2020</b>
-                </font>
-              </Text>
-            </li>
-          </StyledUL>
-        </Flex>
-      </div>
-      <Box mt={['m', 'm', 0]} data-aos="fade-up">
-        <Text
-          textAlign="center"
-          color={COLORS.MAJOLICA_BLUE}
-          fontWeight={fontWeights.bold}
-          fontSize={['m', 'l', 'xl']}
-        >
-          Basic Conference Informations
-        </Text>
-        <Flex maxWidth="500px" margin="0 auto">
-          <StyledUL>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-                fontWeight={fontWeights.bold}
-              >
-                43<sup>rd</sup> International Spring Seminar on Electronics
-                Technology
-              </Text>
-            </li>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>Title:</b>&nbsp;
-                </font>
-                Trends in Microelectronics Packaging and Interconnection
-                Technology
-              </Text>
-            </li>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                <font color={COLORS.AMERICAN_PINK}>
-                  <b>Date:</b>&nbsp;
-                </font>
-                May 14 – 15, 2020
-              </Text>
-            </li>
-            <li>
-              <Text
-                color={COLORS.ROCK_BLUE}
-                display="contents"
-                fontSize={['xs', 's', 'm']}
-              >
-                <StyledTextLineThrough>
-                  <font color={COLORS.AMERICAN_PINK}>
-                    <b>Venue:</b>&nbsp;
-                  </font>
-                  Demanovska Valley, Slovakia, Hotel Grand Jasna
-                </StyledTextLineThrough>
-              </Text>
-            </li>
-          </StyledUL>
-        </Flex>
-      </Box>
-    </Flex>
-  </React.Fragment>
+  <Flex
+    data-aos="fade-up"
+    justifyContent="center"
+    flexDirection={{ mobile: 'column', desktop: 'row' }}
+  >
+    <div>
+      <Text
+        textAlign="center"
+        color={COLORS.MAJOLICA_BLUE}
+        fontWeight={fontWeights.bold}
+        fontSize={{ mobile: 'm', tablet: 'l', desktop: 'xl' }}
+      >
+        Important dates
+      </Text>
+      <Flex maxWidth={MAX_COLUMN_WIDTH} margin="0 auto">
+        <StyledUL>
+          <li>
+            <Text
+              color={COLORS.ROCK_BLUE}
+              display="contents"
+              fontSize={TEXT_FONT_SIZE}
+            >
+              Abstract Submission Deadline:{' '}
+              <StyledSpan>January 30th, 2020</StyledSpan>
+            </Text>
+          </li>
+          <li>
+            <Text
+              color={COLORS.ROCK_BLUE}
+              display="contents"
+              fontSize={TEXT_FONT_SIZE}
+            >
+              Abstract Acceptance Notice:{' '}
+              <StyledSpan>March 9th, 2020</StyledSpan>
+            </Text>
+          </li>
+          <li>
+            <Text
+              color={COLORS.ROCK_BLUE}
+              display="contents"
+              fontSize={TEXT_FONT_SIZE}
+            >
+              Early Bird Registration Deadline:{' '}
+              <StyledSpan>April 30th, 2020</StyledSpan>
+            </Text>
+          </li>
+          <li>
+            <Text
+              color={COLORS.ROCK_BLUE}
+              display="contents"
+              fontSize={TEXT_FONT_SIZE}
+            >
+              Full Paper Submission Deadline:{' '}
+              <StyledSpan>April 30th, 2020</StyledSpan>
+            </Text>
+          </li>
+        </StyledUL>
+      </Flex>
+    </div>
+    <Box mt={{ mobile: 'm', desktop: 0 }}>
+      <Text
+        textAlign="center"
+        color={COLORS.MAJOLICA_BLUE}
+        fontWeight={fontWeights.bold}
+        fontSize={{ mobile: 'm', tablet: 'l', desktop: 'xl' }}
+      >
+        Basic Conference Informations
+      </Text>
+      <Flex maxWidth={MAX_COLUMN_WIDTH} margin="0 auto">
+        <StyledUL>
+          <li>
+            <Text
+              color={COLORS.ROCK_BLUE}
+              display="contents"
+              fontSize={{ mobile: 'xs', tablet: 's', desktop: 'm' }}
+              fontWeight={fontWeights.bold}
+            >
+              43<sup>rd</sup> International Spring Seminar on Electronics
+              Technology
+            </Text>
+          </li>
+          <li>
+            <Text
+              color={COLORS.ROCK_BLUE}
+              display="contents"
+              fontSize={TEXT_FONT_SIZE}
+            >
+              <StyledSpan>Title </StyledSpan>
+              Trends in Microelectronics Packaging and Interconnection
+              Technology
+            </Text>
+          </li>
+          <li>
+            <Text
+              color={COLORS.ROCK_BLUE}
+              display="contents"
+              fontSize={TEXT_FONT_SIZE}
+            >
+              <StyledSpan>Date: </StyledSpan>
+              May 14 – 15, 2020
+            </Text>
+          </li>
+        </StyledUL>
+      </Flex>
+    </Box>
+  </Flex>
 )
 
 export default BasicInformation

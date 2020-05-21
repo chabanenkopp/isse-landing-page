@@ -6,8 +6,11 @@ import { Text } from 'components/atoms/Typography'
 const HEADING_FONT_SIZE = 'xxl'
 
 const RelatedText = () => (
-  <Box mb={['xl', 'xl', 0]}>
-    <Box mt={['l', 'l', 'xl']} textAlign={['center', 'center', 'left']}>
+  <Box mb={{ mobile: 'xl', desktop: 0 }}>
+    <Box
+      mt={{ mobile: 'l', desktop: 'xl' }}
+      textAlign={{ mobile: 'center', desktop: 'left' }}
+    >
       <Text
         color={COLORS.MAJOLICA_BLUE}
         fontWeight="bold"
@@ -30,7 +33,7 @@ const RelatedText = () => (
         Please, Contact Us
       </Text>
     </Box>
-    <Box mt={['m', 'm', 'l']} pr={[0, 0, 'xl']}>
+    <Box mt={{ mobile: 'm', desktop: 'l' }} pr={{ mobile: 0, desktop: 'xl' }}>
       <Text color={COLORS.LUXURY} fontSize="l">
         If you'd like, you can call us directly at:
       </Text>

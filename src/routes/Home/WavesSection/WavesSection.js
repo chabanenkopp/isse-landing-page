@@ -12,11 +12,13 @@ import Bb from 'components/atoms/Bb'
 import Infotooltip from 'components/molecules/InfoTooltip'
 import eps from 'assets/images/eps.png'
 import ieee from 'assets/images/ieee.svg'
+import { maxWidthStyle } from 'components/atoms/mixins'
 import AnimatedClouds from '../PriceList/AnimatedClouds'
 
 const CloudsWrapper = styled.div`
   transform: translateY(2px);
 `
+
 const BottomWrapper = styled(Flex)`
   flex: 1;
   flex-direction: column;
@@ -24,11 +26,6 @@ const BottomWrapper = styled(Flex)`
   background-color: ${COLORS.WHITE};
   padding-bottom: 5%;
   transform: translateY(1px);
-`
-
-const StyledTextLineThrough = styled(Text)`
-  text-decoration: line-through;
-  text-decoration-color: ${COLORS.EVERLASTING_ICE};
 `
 
 const WavesSection = () => {
@@ -45,25 +42,23 @@ const WavesSection = () => {
         alignItems="center"
         flex="1"
         justifyContent="center"
+        css={maxWidthStyle}
       >
         <Box data-aos="fade-up">
           <Text
-            mx="xl"
             color={COLORS.WHITE}
             fontWeight={fontWeights.extra_thin}
             my="l"
             textAlign="center"
-            fontSize={['xl', 'xxl', 'xxxxl']}
-            px={[0, 0, '50px']}
+            fontSize={{ mobile: 'xxl', desktop: 'xxxxl' }}
           >
             43<sup>rd</sup> International Spring Seminar on Electronics
             Technology
           </Text>
           <Text
-            mx="xl"
             color={COLORS.WHITE}
             textAlign="center"
-            fontSize={['l', 'xl', 'xxl']}
+            fontSize={{ mobile: 'l', tablet: 'xl', desktop: 'xxl' }}
             fontWeight="extra_thin"
           >
             Trends in Microelectronics Packaging and Interconnection Technology
@@ -75,8 +70,7 @@ const WavesSection = () => {
               backgroundColor={transparentize(0.75, COLORS.WHITE)}
               isShadow
               color={COLORS.WHITE}
-              mt={['m', 'l', 'l']}
-              mx="xl"
+              mt={{ mobile: 'm', tablet: 'l' }}
               fontSize="l"
             >
               REGISTRATION
@@ -91,19 +85,13 @@ const WavesSection = () => {
         <AnimatedClouds isHovered={isHovered} />
       </CloudsWrapper>
       <BottomWrapper>
-        <Flex alignItems="center" justifyContent="center" mb="s">
-          <Box mr="s">
-            <Logo img={eps} maxHeight={pxToRem(45)} href={LINKS.EPS} />
-          </Box>
-          <Logo img={ieee} maxHeight={pxToRem(28)} href={LINKS.IEEE} />
-        </Flex>
         <Flex justifyContent="center" mx="xl">
           <Text
             mr="s"
             fontWeight="thin"
             color={COLORS.MAJOLICA_BLUE}
             textAlign="center"
-            fontSize={['l', 'xxl', 'xxl']}
+            fontSize={{ mobile: 'l', tablet: 'xxl' }}
           >
             May 14 – <Bb>15, 2020</Bb>
           </Text>
@@ -116,22 +104,21 @@ const WavesSection = () => {
             text="Due to the covid-19 pandemic the date was changed. The initial date was May 13 – 17, 2020"
           />
         </Flex>
-        <StyledTextLineThrough
-          mx="xl"
+        <Text
           fontWeight="thin"
           color={COLORS.MAJOLICA_BLUE}
           textAlign="center"
-          fontSize={['l', 'xl', 'xxl']}
+          fontSize={{ mobile: 'l', tablet: 'xl', desktop: 'xxl' }}
           py="xs"
         >
           Demanovska Valley - Slovakia, <Bb>Hotel Grand Jasna</Bb>
-        </StyledTextLineThrough>
+        </Text>
         <Text
-          mx={['xl', 'xl', 'xxl']}
+          css={maxWidthStyle}
           fontWeight="thin"
           color={COLORS.KACEYS_PINK}
           textAlign="center"
-          fontSize={['m', 'l', 'xl']}
+          fontSize={{ mobile: 'm', tablet: 'l', desktop: 'xl' }}
           py="xs"
         >
           Because of this extraordinary global health issue with the Corona
