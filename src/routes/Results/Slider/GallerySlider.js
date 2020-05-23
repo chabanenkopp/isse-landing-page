@@ -15,7 +15,6 @@ import Card from './Card'
 
 const CARD_OFFSET = rem(60)
 const DESKTOP_WIDTH = rem(990)
-// const DESKTOP_WIDTH = rem(900)
 const SLIDE_EVENT = 'slideChange'
 
 const Thumbnail = styled(Img)`
