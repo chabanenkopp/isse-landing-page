@@ -3,14 +3,25 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { rem } from 'polished'
-// import { useMedia } from 'useMedia'
 import { COLORS } from 'Root/constants'
-import { space, radius, fontSizes, fontWeights } from 'Theme'
+import { space, radius, fontSizes, fontWeights, mq } from 'Theme'
 import { Flex, Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import Wave from 'assets/images/wave-grey.inline.svg'
 
 const SIZE = rem(64)
+
+const StyledContainer = styled('div')`
+  background-color: ${COLORS.LYNX_WHITE};
+  ${mq.to.tablet`
+    width: 100%;
+  `}
+  ${mq.from.tablet`
+    width: ${rem(455)};
+    overflow: hidden;
+    border-radius: ${radius.m};
+  `}
+`
 
 const Avatar = styled(Img)`
   border-radius: ${radius.circle};
@@ -48,7 +59,7 @@ const GoalsBox = styled('div')`
 
 const Card = ({ goals, review, authorImage, authorName, position }) => {
   return (
-    <Box width={{ mobile: '100%', tablet: rem(455) }} bg={COLORS.LYNX_WHITE}>
+    <StyledContainer>
       <Box position="relative" px="m" pt="m" pb="l">
         <Flex alignItems={{ mobile: 'flex-start', tablet: 'center' }}>
           <Avatar fluid={authorImage.asset.fluid} />
@@ -93,7 +104,7 @@ const Card = ({ goals, review, authorImage, authorName, position }) => {
           ))}
         </GoalsBox>
       </StyledBox>
-    </Box>
+    </StyledContainer>
   )
 }
 
