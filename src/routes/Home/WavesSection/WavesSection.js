@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { transparentize } from 'polished'
+import { transparentize, rem } from 'polished'
 import { fontWeights, radius } from 'Theme'
-import { scrollIntoView, pxToRem } from 'helpers'
-import { COLORS, LINKS } from 'Root/constants'
+import { scrollIntoView } from 'helpers'
+import { COLORS } from 'Root/constants'
 import { Flex, Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
-import Logo from 'components/atoms/Logo'
 import Button from 'components/atoms/Button'
 import Bb from 'components/atoms/Bb'
 import Infotooltip from 'components/molecules/InfoTooltip'
-import eps from 'assets/images/eps.png'
-import ieee from 'assets/images/ieee.svg'
 import { maxWidthStyle } from 'components/atoms/mixins'
 import AnimatedClouds from '../PriceList/AnimatedClouds'
 
@@ -96,7 +93,7 @@ const WavesSection = () => {
             May 14 – <Bb>15, 2020</Bb>
           </Text>
           <Infotooltip
-            maxWidth={[pxToRem(260), pxToRem(260), pxToRem(350)]}
+            maxWidth={{ mobile: rem(250), desktop: rem(350) }}
             position="LEFT"
             textAlign="left"
             iconSize={16}

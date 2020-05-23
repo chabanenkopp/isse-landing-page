@@ -104,9 +104,11 @@ const MapContainer = ({ venues, hoveredVenueId }) => {
 MapContainer.propTypes = {
   venues: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      lat: PropTypes.number.isRequired,
-      lon: PropTypes.number.isRequired,
+      node: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        lat: PropTypes.number.isRequired,
+        lon: PropTypes.number.isRequired,
+      }).isRequired,
     }).isRequired
   ).isRequired,
   hoveredVenueId: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),

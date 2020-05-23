@@ -29,7 +29,7 @@ const IconText = ({ year }) => (
       </Text>
     </Text>
     <InfoTootip
-      maxWidth={170}
+      maxWidth={rem(170)}
       position="LEFT"
       textAlign="left"
       iconSize={14}
@@ -109,7 +109,7 @@ Card.propTypes = {
   topic: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
-  pictureUrl: PropTypes.string.isRequired,
+  pictureUrl: PropTypes.object.isRequired,
 }
 
 export default Card

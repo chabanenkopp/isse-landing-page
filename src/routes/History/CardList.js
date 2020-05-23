@@ -36,7 +36,7 @@ CardList.propTypes = {
   destinations: PropTypes.arrayOf(
     PropTypes.shape({
       node: PropTypes.shape({
-        _id: PropTypes.number.isRequired,
+        _id: PropTypes.string.isRequired,
       }).isRequired,
     })
   ).isRequired,
