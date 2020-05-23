@@ -9,6 +9,7 @@ export const getTransition = (property) =>
   `${property} 0.5s cubic-bezier(0.77,0.2,0.05,1.0)`
 
 export const fontStack = `"Montserrat", sans-serif;`
+export const BORDER_WIDTH = '0.5px'
 
 export const colors = {
   text: COLORS.SHADOWED_STEEL,

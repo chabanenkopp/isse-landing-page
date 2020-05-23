@@ -1,3 +1,5 @@
+import { rem } from 'polished'
+
 export const COLORS = {
   LEAD: '#202020',
   SHADOWED_STEEL: '#4A4A4A',
@@ -39,6 +41,10 @@ export const COLORS = {
   PALE_ORCHID: '#DFDBE7',
   RIVER_BED: '#465061',
   BLUE_ZODIAC: '#0F264E',
+  DAYBREAK: '#8F85A5' /* 60 Grey */,
+  VIOLET_BOUQUET: '#BBB2CC' /* 20 Grey */,
+  ROMAN_PURPLE: '#4F4661' /* 80 Grey */,
+  EXPLORATION_GREEN: '#58A55D',
 }
 
 export const REGEX = {
@@ -95,4 +101,64 @@ export const DEVICE = {
   MOBILE: `(max-width: ${SIZE.MOBILE})`,
   TABLET: `(max-width: ${SIZE.TABLET})`,
   DESKTOP: `(min-width: ${SIZE.TABLET})`,
+}
+
+// const REACT_APP_GOOGLE_KEY = 'AIzaSyBlttIW61oVIPbwa3iThGgNy6eI0PvyMZ0'
+const REACT_APP_GOOGLE_KEY = 'AIzaSyBlttIW61oVIPbwa3iThGgNy6eI0PvyMZ0'
+
+export const GOOGLE_MAP_URL = `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${REACT_APP_GOOGLE_KEY}`
+
+export const TOPBAR_HEIGHT = rem('60px')
+
+export const MAP_SETTINGS = {
+  DEFAULT_MAP_OPTIONS: {
+    scrollwheel: false,
+    mapTypeControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+  },
+  DEFAULT_CENTER: { lat: 57, lng: 20 },
+  DEFAULT_ZOOM: 4,
+  MARKER_SIZE: {
+    EXTRA_SMALL: 10,
+    SMALL: 30,
+    MEDIUM: 40,
+  },
+  PIXEL_OFFSET: {
+    MARKER: {
+      X: 0,
+      Y: -35,
+    },
+    LINE: {
+      X: 0,
+      Y: 20,
+    },
+  },
+  POLYLINE_OPTIONS: {
+    DASHED: {
+      geodesic: true,
+      strokeOpacity: 0,
+      strokeWeight: 2,
+      strokeColor: COLORS.DAYBREAK,
+      icons: [
+        {
+          icon: {
+            path: 'M 0,0 0,1',
+            strokeOpacity: 1,
+            strokeWeight: 2,
+            scale: 3,
+          },
+          offset: '0',
+          repeat: '10px',
+        },
+      ],
+    },
+    REGULAR: {
+      geodesic: true,
+      strokeOpacity: 1,
+      strokeWeight: 2,
+      strokeColor: COLORS.EXPLORATION_GREEN,
+    },
+  },
+  DIRECTIONS_OPTIONS: { suppressMarkers: true, preserveViewport: true },
 }

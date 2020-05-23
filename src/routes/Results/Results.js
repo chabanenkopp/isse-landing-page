@@ -1,5 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import MobileMenuProvider from 'MobileMenuContext'
 import PropTypes from 'prop-types'
 import { Box } from 'components/atoms/Layout'
 import GenericPage from 'shared/pages/GenericPage'
@@ -49,24 +50,26 @@ const Results = ({ location: { pathname } }) => (
     query={SANITY_CARDS_QUERY}
     render={({ allSanityGalleryCard }) => {
       return (
-        <GenericPage
-          pathName={pathname}
-          fitScreenImageComponent={<SubHeader>Results</SubHeader>}
-        >
-          <SEO title="About ISSE conference" />
-          {allSanityGalleryCard.edges.map(
-            ({ node: { galleryImages, ...props } }, i) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <Box key={i} my="xl">
-                <Slider
-                  slides={galleryImages}
-                  align={i % 2 === 0 ? 'left' : 'right'}
-                  {...props}
-                />
-              </Box>
-            )
-          )}
-        </GenericPage>
+        <MobileMenuProvider>
+          <GenericPage
+            pathName={pathname}
+            fitScreenImageComponent={<SubHeader>Conference Results</SubHeader>}
+          >
+            <SEO title="About ISSE conference" />
+            {allSanityGalleryCard.edges.map(
+              ({ node: { galleryImages, ...props } }, i) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <Box key={i} my="xl">
+                  <Slider
+                    slides={galleryImages}
+                    align={i % 2 === 0 ? 'left' : 'right'}
+                    {...props}
+                  />
+                </Box>
+              )
+            )}
+          </GenericPage>
+        </MobileMenuProvider>
       )
     }}
   />

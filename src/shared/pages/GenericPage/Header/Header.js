@@ -58,7 +58,7 @@ const Header = ({
   mobileMenuComp: MobileMenuComp,
   pathName,
 }) => (
-  <Box minHeight={HEADER_HEIGHT} zIndex="1">
+  <Box minHeight={HEADER_HEIGHT} zIndex="2">
     <HeaderFixedBox
       justifyContent="space-between"
       flex="none"

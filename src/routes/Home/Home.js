@@ -15,6 +15,7 @@ import IconText from 'components/molecules/IconText'
 import mapIcon from 'assets/images/map-icon.svg'
 import program from 'assets/pdf/program.pdf'
 import Link from 'components/atoms/Link'
+import MobileMenuProvider from 'MobileMenuContext'
 import ContactForm from './ContactForm'
 import WavesSection from './WavesSection'
 import TestimonialSection from './TestimonialSection'
@@ -56,79 +57,81 @@ class Home extends Component {
       location: { pathname },
     } = this.props
     return (
-      <GenericPage
-        fitScreenImageComponent={<WavesSection />}
-        pathName={pathname}
-      >
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <FloatingBadge />
-        <Popup
-          isVisible={isPopupVisible}
-          onClose={this.handleShowPopup}
-          isInfo
-          message={POPUP_ADD_TEXT}
-          buttonText={BUTTON_TEXT}
-        />
-        <Box>
-          <BasicInformation />
-        </Box>
-        <Box
-          data-aos="fade-up"
-          mt={{ mobile: 'l', desktop: 'xl' }}
-          mb={{
-            mobile: 'l',
-            tablet: 'xl',
-            desktop: 'xxl',
-          }}
+      <MobileMenuProvider>
+        <GenericPage
+          fitScreenImageComponent={<WavesSection />}
+          pathName={pathname}
         >
-          <Text
-            textAlign="center"
-            color={COLORS.MAJOLICA_BLUE}
-            fontWeight={fontWeights.bold}
-            fontSize={{ mobile: 'm', tablet: 'l', desktop: 'xl' }}
-            mb="l"
+          <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+          <FloatingBadge />
+          <Popup
+            isVisible={isPopupVisible}
+            onClose={this.handleShowPopup}
+            isInfo
+            message={POPUP_ADD_TEXT}
+            buttonText={BUTTON_TEXT}
+          />
+          <Box>
+            <BasicInformation />
+          </Box>
+          <Box
+            data-aos="fade-up"
+            mt={{ mobile: 'l', desktop: 'xl' }}
+            mb={{
+              mobile: 'l',
+              tablet: 'xl',
+              desktop: 'xxl',
+            }}
           >
-            Learn More About the Conference
-          </Text>
-          <Link as="a" href={program}>
-            <IconText src={mapIcon} label="Conference program" m="0 auto" />
-          </Link>
-        </Box>
-        <Box my="xl">
-          <ScrollTo name="price-list">
-            <PriceList />
-          </ScrollTo>
-        </Box>
-        <Box mb="xl">
-          <PaymentDetails />
-        </Box>
-        <Box my="xxl">
-          <ScrollTo name="rent-form">
-            <RentFormSlider />
-          </ScrollTo>
-        </Box>
-        <Box mb={['xl', 'xl', pxToRem(100)]}>
-          <LogoLineSeparator />
-        </Box>
-        <Flex
-          flexDirection="column"
-          backgroundSize={['contain', 'contain', 'cover']}
-          backgroundPosition="center bottom"
-          backgroundRepeat="no-repeat"
-          backgroundImage={`linear-gradient(180deg, ${COLORS.WHITE}, ${COLORS.LYNX_WHITE})`}
-        >
-          <Carousel />
+            <Text
+              textAlign="center"
+              color={COLORS.MAJOLICA_BLUE}
+              fontWeight={fontWeights.bold}
+              fontSize={{ mobile: 'm', tablet: 'l', desktop: 'xl' }}
+              mb="l"
+            >
+              Learn More About the Conference
+            </Text>
+            <Link as="a" href={program}>
+              <IconText src={mapIcon} label="Conference program" m="0 auto" />
+            </Link>
+          </Box>
+          <Box my="xl">
+            <ScrollTo name="price-list">
+              <PriceList />
+            </ScrollTo>
+          </Box>
           <Box mb="xl">
-            <GoogleMap />
+            <PaymentDetails />
           </Box>
-          <Box mt={[0, 0, 'xxl']} mb={pxToRem(150)}>
-            <ContactForm />
+          <Box my="xxl">
+            <ScrollTo name="rent-form">
+              <RentFormSlider />
+            </ScrollTo>
           </Box>
-        </Flex>
-        <Flex justifyContent="center" alignItems="center">
-          <TestimonialSection />
-        </Flex>
-      </GenericPage>
+          <Box mb={['xl', 'xl', pxToRem(100)]}>
+            <LogoLineSeparator />
+          </Box>
+          <Flex
+            flexDirection="column"
+            backgroundSize={['contain', 'contain', 'cover']}
+            backgroundPosition="center bottom"
+            backgroundRepeat="no-repeat"
+            backgroundImage={`linear-gradient(180deg, ${COLORS.WHITE}, ${COLORS.LYNX_WHITE})`}
+          >
+            <Carousel />
+            <Box mb="xl">
+              <GoogleMap />
+            </Box>
+            <Box mt={[0, 0, 'xxl']} mb={pxToRem(150)}>
+              <ContactForm />
+            </Box>
+          </Flex>
+          <Flex justifyContent="center" alignItems="center">
+            <TestimonialSection />
+          </Flex>
+        </GenericPage>
+      </MobileMenuProvider>
     )
   }
 }
