@@ -1,13 +1,10 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { Box } from 'components/atoms/Layout'
 import GenericPage from 'shared/pages/GenericPage'
 import SEO from 'components/atoms/seo'
 import SubHeader from 'components/organisms/SubHeader'
-import FloatingBadge from 'shared/FloatingBadge'
 import Slider from './Slider'
 
 const SANITY_CARDS_QUERY = graphql`
