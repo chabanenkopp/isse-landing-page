@@ -70,19 +70,97 @@ export const radius = {
 export const border = `1px solid ${COLORS.ROCK_BLUE}`
 
 export const globalStyles = css`
+  :root {
+    --reach-dialog: 1; /* https://reacttraining.com/reach-ui/styling/#skip-including-styles */
+  }
+  html,
+  body {
+    min-width: 320px;
+    margin: 0;
+  }
   html {
-    ${fluidRange({
-      prop: 'font-size',
-      fromSize: '14px',
-      toSize: '18px',
-    })}
+    ${fluidRange(
+      {
+        prop: 'font-size',
+        fromSize: '13px',
+        toSize: '18px',
+      },
+      '320px',
+      '2200px'
+    )}
+    cursor: initial;
   }
   body {
     font-family: ${fontStack};
-    color: ${colors.text};
+    letter-spacing: -${1 / 32}em;
+    color: ${COLORS.BLUE_ZODIAC};
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: auto;
-    min-width: 320px;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 0.5em 0;
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.3;
+  }
+  h4,
+  h5,
+  h6 {
+    line-height: 1.5;
+  }
+  p {
+    margin: 0;
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+  input,
+  textarea,
+  button {
+    font-family: inherit;
+    font-size: ${fontSizes.m};
+    letter-spacing: inherit;
+    box-sizing: border-box;
+  }
+  input::placeholder {
+    font-size: inherit;
+  }
+  button {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  input[type='number'] {
+    appearance: textfield;
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 1em;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  :focus {
+    outline: none;
   }
 `
 
@@ -90,13 +168,20 @@ const devices = {
   mobile: '0',
   tablet: '768px',
   desktop: '1024px',
+  tv: '1440px',
 }
 
-export const breakpoints = [devices.mobile, devices.tablet, devices.desktop]
+export const breakpoints = [
+  devices.mobile,
+  devices.tablet,
+  devices.desktop,
+  devices.tv,
+]
 
 breakpoints.mobile = breakpoints[0]
 breakpoints.tablet = breakpoints[1]
 breakpoints.desktop = breakpoints[2]
+breakpoints.tv = breakpoints[3]
 
 const mediaQuery = ({ mobileFirst = true }) =>
   Object.entries(devices).reduce(

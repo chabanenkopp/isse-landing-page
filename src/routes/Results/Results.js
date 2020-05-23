@@ -3,10 +3,12 @@ import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { Box } from 'components/atoms/Layout'
 import GenericPage from 'shared/pages/GenericPage'
 import SEO from 'components/atoms/seo'
 import SubHeader from 'components/organisms/SubHeader'
 import FloatingBadge from 'shared/FloatingBadge'
+import Slider from './Slider'
 
 const SANITY_CARDS_QUERY = graphql`
   {
@@ -45,11 +47,6 @@ const SANITY_CARDS_QUERY = graphql`
   }
 `
 
-const StyledImg = styled(Img)`
-  height: 50px;
-  width: 50px;
-`
-
 const Results = ({ location: { pathname } }) => (
   <StaticQuery
     query={SANITY_CARDS_QUERY}
@@ -60,13 +57,16 @@ const Results = ({ location: { pathname } }) => (
           fitScreenImageComponent={<SubHeader>Results</SubHeader>}
         >
           <SEO title="About ISSE conference" />
-          <FloatingBadge />
           {allSanityGalleryCard.edges.map(
-            ({ node: { title, _id, authorImage } }) => (
-              <div key={_id}>
-                {title}
-                <StyledImg fluid={authorImage.asset.fluid} />
-              </div>
+            ({ node: { galleryImages, ...props } }, i) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <Box key={i} my="xl">
+                <Slider
+                  slides={galleryImages}
+                  align={i % 2 === 0 ? 'left' : 'right'}
+                  {...props}
+                />
+              </Box>
             )
           )}
         </GenericPage>

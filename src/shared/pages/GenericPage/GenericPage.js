@@ -12,7 +12,7 @@ import MobileMenu from 'shared/pages/GenericPage/MobileMenu'
 import Designer from 'shared/Designer'
 import Header from './Header'
 
-const { HOME } = PATHS
+const { HOME, RESULTS } = PATHS
 
 const Content = styled('div')`
   z-index: 0;
@@ -59,7 +59,9 @@ export default class GenericPage extends Component {
           />
           {fitScreenImageComponent}
         </Flex>
-        <Content>{children}</Content>
+        <Box overflow={pathName === RESULTS ? 'hidden' : 'visible'}>
+          <Content pathName={pathName}>{children}</Content>
+        </Box>
         <Footer />
         <Box my="m">
           <Designer />

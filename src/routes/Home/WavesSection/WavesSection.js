@@ -100,7 +100,7 @@ const WavesSection = () => {
             position="LEFT"
             textAlign="left"
             iconSize={16}
-            iconFill={COLORS.DAPHNE}
+            iconFill={COLORS.FLAX_FLOWER_BLUE}
             text="Due to the covid-19 pandemic the date was changed. The initial date was May 13 – 17, 2020"
           />
         </Flex>

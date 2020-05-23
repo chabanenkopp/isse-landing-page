@@ -37,6 +37,8 @@ export const COLORS = {
   SCAMPI: '#7660A0' /* Brand Color */,
   VANISHING: '#230F4E' /* Dark Blue */,
   PALE_ORCHID: '#DFDBE7',
+  RIVER_BED: '#465061',
+  BLUE_ZODIAC: '#0F264E',
 }
 
 export const REGEX = {
@@ -68,6 +70,7 @@ export const PATHS = {
   SPONSORS: '/sponsors',
   COMMITTEES: '/committees',
   AUTHORS: '/authors',
+  RESULTS: '/results',
 }
 
 export const DOWNLOAD = {
