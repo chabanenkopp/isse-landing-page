@@ -49,9 +49,9 @@ const GenericPage = ({ children, fitScreenImageComponent, pathName }) => {
       </Flex>
       {children}
       {/* <Footer /> */}
-      <Box my="m">
-        <Designer />
-      </Box>
+      {/* <Box my="m"> */}
+      <Designer />
+      {/* </Box> */}
     </App>
   )
 }
