@@ -19,3 +19,32 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     },
   })
 }
+
+// exports.createPages = async ({ graphql, actions }) => {
+//   const { createPage } = actions
+//   const blogPosts = await graphql(`
+//     {
+//       allSanityBlogPost {
+//         edges {
+//           node {
+//             slug {
+//               current
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `)
+//   const {
+//     data: { allSanityBlogPost },
+//   } = blogPosts
+//   allSanityBlogPost.edges.forEach(({ node: { slug: { current } } }) => {
+//     createPage({
+//       path: `blog/${current}`,
+//       component: path.resolve(`./src/components/BlogPostPage.js`),
+//       context: {
+//         slug: current,
+//       },
+//     })
+//   })
+// }

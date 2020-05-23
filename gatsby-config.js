@@ -49,7 +49,19 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
     },
     `gatsby-transformer-sharp`,
+    `gatsby-source-sanity-transform-images`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'v2y5kzcg',
+        dataset: 'production',
+        overlayDrafts: true,
+        watchMode: true,
+        token: '', // TODO add token from console
+        graphqlTag: 'default',
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
