@@ -74,9 +74,6 @@ const Venues = ({ location: { pathname } }) => {
           setNextPage(currentPage === lastPage ? null : currentPage + 1)
         })
 
-        console.log('firstPage', firstPage)
-        console.log('lastPage', lastPage)
-
         return (
           <MobileMenuProvider>
             <GenericPageMap pathName={pathname}>
