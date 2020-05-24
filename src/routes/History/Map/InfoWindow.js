@@ -15,7 +15,7 @@ const LocationImage = styled('img')`
   width: 100%;
 `
 
-const InfoWindow = ({ _id, country, thumbnailUrls, city, topic }) => (
+const InfoWindow = ({ _id, country, thumbnailUrls, city, year }) => (
   <Box maxWidth={MAX_WIDTH}>
     <Slider
       id={_id}
@@ -27,6 +27,7 @@ const InfoWindow = ({ _id, country, thumbnailUrls, city, topic }) => (
       <Text display="block" fontSize="s" color={COLORS.VANISHING} my="s">
         {country}
         <Text as="span" fontSize="xs" color={COLORS.VIOLET_BOUQUET}>
+          {' '}
           • {city}
         </Text>
       </Text>
@@ -37,7 +38,7 @@ const InfoWindow = ({ _id, country, thumbnailUrls, city, topic }) => (
         color={COLORS.VANISHING}
         my="s"
       >
-        {topic}
+        {year}
       </Text>
     </Box>
   </Box>
@@ -46,7 +47,7 @@ const InfoWindow = ({ _id, country, thumbnailUrls, city, topic }) => (
 InfoWindow.propTypes = {
   _id: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
-  topic: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   thumbnailUrls: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 }
