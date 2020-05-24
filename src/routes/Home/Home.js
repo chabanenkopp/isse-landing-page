@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import Cookies from 'js-cookie'
 import { Element as ScrollTo } from 'react-scroll'
 import { rem } from 'polished'
@@ -8,6 +9,7 @@ import { fontWeights } from 'Theme'
 import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import { COLORS } from 'Root/constants'
+import { fullWidthStyle, maxWidthStyle } from 'components/atoms/mixins'
 import GenericPage from 'shared/pages/GenericPage'
 import FloatingBadge from 'shared/FloatingBadge'
 import Popup from 'components/atoms/Popup'
@@ -34,6 +36,14 @@ const BUTTON_TEXT = `GET REGISTERED`
 
 const IS_INFO_POPUP_SHOWN_BEFORE = 'isInfoPopupShownBefore'
 const COOKIE_EXPIRATION_DAYS = 365
+
+const StyledBox = styled(Box)`
+  ${fullWidthStyle};
+`
+
+const StyledFlex = styled(Flex)`
+  ${maxWidthStyle};
+`
 
 class Home extends Component {
   state = {
@@ -112,21 +122,24 @@ class Home extends Component {
           <Box mb={{ mobile: 'xl', desktop: rem(100) }}>
             <LogoLineSeparator />
           </Box>
-          <Flex
-            flexDirection="column"
-            backgroundSize={{ mobile: 'contain', desktop: 'cover' }}
-            backgroundPosition="center bottom"
-            backgroundRepeat="no-repeat"
+          <StyledBox
             backgroundImage={`linear-gradient(180deg, ${COLORS.WHITE}, ${COLORS.LYNX_WHITE})`}
           >
-            <Carousel />
-            <Box mb="xl">
-              <GoogleMap />
-            </Box>
-            <Box mt={{ mobile: 0, desktop: 'xxl' }} mb={rem(150)}>
-              <ContactForm />
-            </Box>
-          </Flex>
+            <StyledFlex
+              flexDirection="column"
+              backgroundSize={{ mobile: 'contain', desktop: 'cover' }}
+              backgroundPosition="center bottom"
+              backgroundRepeat="no-repeat"
+            >
+              <Carousel />
+              <Box mb="xl">
+                <GoogleMap />
+              </Box>
+              <Box mt={{ mobile: 0, desktop: 'xxl' }} mb={rem(150)}>
+                <ContactForm />
+              </Box>
+            </StyledFlex>
+          </StyledBox>
           <Flex justifyContent="center" alignItems="center">
             <TestimonialSection />
           </Flex>
