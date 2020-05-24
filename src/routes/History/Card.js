@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import { rem } from 'polished'
 import { COLORS } from 'Root/constants'
 import { space, radius } from 'Theme'
+import { useMedia } from 'useMedia'
 import { Text } from 'components/atoms/Typography'
 import { Flex, Box } from 'components/atoms/Layout'
 import Badge from 'components/atoms/Badge'
@@ -12,32 +13,40 @@ import InfoTootip from 'components/molecules/InfoTooltip'
 
 const CARD_PADDING_VALUE = 'm'
 
-const IconText = ({ year }) => (
-  <Flex alignItems="center">
-    <Text pl="m" pr="s" fontSize="l" color={COLORS.VANISHING}>
-      <Text as="span" pl="xs" fontWeight="semi_bold" color={COLORS.DAYBREAK}>
-        Year:{' '}
-      </Text>
+const IconText = ({ year }) => {
+  const matches = useMedia()
+  return (
+    <Flex alignItems="center">
       <Text
-        as="span"
-        fontSize="m"
-        fontWeight="normal"
+        fontSize="l"
         color={COLORS.VANISHING}
-        pl="xxs"
+        pl={{ mobile: 0, desktop: 'm' }}
+        pr="s"
       >
-        {year}
+        <Text as="span" pl="xs" fontWeight="semi_bold" color={COLORS.DAYBREAK}>
+          Year:{' '}
+        </Text>
+        <Text
+          as="span"
+          fontSize="m"
+          fontWeight="normal"
+          color={COLORS.VANISHING}
+          pl="xxs"
+        >
+          {year}
+        </Text>
       </Text>
-    </Text>
-    <InfoTootip
-      maxWidth={rem(170)}
-      position="LEFT"
-      textAlign="left"
-      iconSize={14}
-      iconFill={COLORS.VANISHING}
-      text="Conference was attended by over 100 participants"
-    />
-  </Flex>
-)
+      <InfoTootip
+        maxWidth={rem(170)}
+        position={matches.tablet || matches.mobile ? 'RIGHT' : 'LEFT'}
+        textAlign="left"
+        iconSize={14}
+        iconFill={COLORS.VANISHING}
+        text="Conference was attended by over 100 participants"
+      />
+    </Flex>
+  )
+}
 
 IconText.propTypes = {
   year: PropTypes.string.isRequired,
@@ -60,12 +69,6 @@ const Card = ({ year, city, country, pictureUrl, topic, ...props }) => {
         <Box position="absolute" top={rem(16)} right={rem(16)}>
           <Badge.Success>SUCCESSFULLY ORGANISED!</Badge.Success>
         </Box>
-        <Flex
-          alignItems="center"
-          position="absolute"
-          bottom={rem(-10)}
-          left={rem(16)}
-        />
       </Box>
       <Box px={space[CARD_PADDING_VALUE]} py="m">
         <Flex

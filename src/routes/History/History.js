@@ -59,7 +59,7 @@ const Venues = ({ location: { pathname } }) => {
               <SEO title="About ISSE conference" />
               <Layout
                 contentWidth={rem('675px')}
-                ratio={2}
+                ratio={1}
                 listContent={
                   <Layout.List>
                     <Text

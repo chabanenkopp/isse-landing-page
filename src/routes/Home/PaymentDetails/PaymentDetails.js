@@ -1,27 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
+import { rem } from 'polished'
 import UnfoldTextBar from 'components/molecules/UnfoldTextBar'
 import { fontWeights } from 'Theme'
-import { pxToRem } from 'helpers'
 import { COLORS, DOWNLOAD } from 'Root/constants'
 import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import TextLink from 'components/atoms/TextLink'
 import listItem from 'assets/images/list-item.svg'
 
+const STYLED_TEXT = { mobile: 'xs', tablet: 's', desktop: 'm' }
+const HEADER_TEXT_SIZE = { mobile: 's', tablet: 'm', desktop: 'l' }
+const PADDING = rem(20)
+const MAX_WIDTH = rem(800)
+
 const StyledUL = styled.ul`
   text-indent: -1em;
   list-style: inside url(${listItem});
-  margin-left: ${pxToRem(20)};
-  padding-right: ${pxToRem(20)};
+  margin-left: ${PADDING};
+  padding-right: ${PADDING};
 `
 const CONFERENCE_FEE = ['Conference materials', 'Hotel cancellation', 'Others']
-const PERSON_FEE = [
-  'Accommodation in a double room',
-  'Full board with coffee breaks and refreshments',
-  'Social events',
-  'Gala dinner',
-]
 
 const ACCOUNT_HOLDER_DETAILS = [
   'Slovenská elektrotechnická spoločnosť, Branch FEI TU Košice',
@@ -47,7 +46,7 @@ const ConferenceFeeList = () => (
         <Text
           color={COLORS.MAJOLICA_BLUE}
           display="contents"
-          fontSize={['xs', 's', 'm']}
+          fontSize={STYLED_TEXT}
           fontWeight={fontWeights.thin}
         >
           {title}
@@ -56,27 +55,11 @@ const ConferenceFeeList = () => (
     ))}
   </StyledUL>
 )
-const PersonFeeList = () => (
-  <StyledUL>
-    {PERSON_FEE.map((title) => (
-      <li key={title}>
-        <Text
-          color={COLORS.MAJOLICA_BLUE}
-          display="contents"
-          fontSize={['xs', 's', 'm']}
-          fontWeight={fontWeights.thin}
-        >
-          {title}
-        </Text>
-      </li>
-    ))}
-  </StyledUL>
-)
-const BankDetails = () => (
+const BankDetailsList = () => (
   <div>
     <Text
       color={COLORS.MAJOLICA_BLUE}
-      fontSize={['s', 'm', 'l']}
+      fontSize={HEADER_TEXT_SIZE}
       fontWeight="normal"
       ml="m"
       mb="m"
@@ -89,7 +72,7 @@ const BankDetails = () => (
           <Text
             color={COLORS.MAJOLICA_BLUE}
             display="contents"
-            fontSize={['xs', 's', 'm']}
+            fontSize={STYLED_TEXT}
             fontWeight="thin"
           >
             {title}
@@ -99,7 +82,7 @@ const BankDetails = () => (
     </StyledUL>
     <Text
       color={COLORS.MAJOLICA_BLUE}
-      fontSize={['s', 'm', 'l']}
+      fontSize={HEADER_TEXT_SIZE}
       fontWeight="normal"
       ml="m"
       mb="s"
@@ -112,7 +95,7 @@ const BankDetails = () => (
           <Text
             color={COLORS.MAJOLICA_BLUE}
             display="contents"
-            fontSize={['xs', 's', 'm']}
+            fontSize={STYLED_TEXT}
             fontWeight="thin"
           >
             {title}
@@ -125,17 +108,6 @@ const BankDetails = () => (
 
 const PaymentDetails = () => (
   <React.Fragment>
-    {/* <Text textAlign="center" fontSize="xl" mt="xl" mx="m">
-      Please, complete your conference registration until&nbsp;
-      <span
-        style={{
-          color: COLORS.FLAX_FLOWER_BLUE,
-          fontWeight: fontWeights.semi_bold,
-        }}
-      >
-        March 25, 2020.
-      </span>
-    </Text> */}
     <Flex justifyContent="center" alignItems="center">
       <TextLink
         as="a"
@@ -147,42 +119,15 @@ const PaymentDetails = () => (
       &nbsp;<Text>Registration form</Text>
     </Flex>
     <Box mt="xxl">
-      <Flex
-        data-aos="fade-up"
-        flexDirection="column"
-        maxWidth={pxToRem(800)}
-        m="0 auto"
-        mt="l"
-        px="m"
-      >
-        <UnfoldTextBar title="Bank account:" component={<BankDetails />} />
-      </Flex>
-      <Flex
-        data-aos="fade-up"
-        flexDirection="column"
-        maxWidth={pxToRem(800)}
-        m="0 auto"
-        mt="l"
-        px="m"
-      >
+      <Box data-aos="fade-up" maxWidth={MAX_WIDTH} m="0 auto" mt="l">
+        <UnfoldTextBar title="Bank account:" component={<BankDetailsList />} />
+      </Box>
+      <Box data-aos="fade-up" maxWidth={MAX_WIDTH} m="0 auto" mt="l">
         <UnfoldTextBar
           title="The conference fee includes:"
           component={<ConferenceFeeList />}
         />
-      </Flex>
-      {/* <Flex
-        data-aos="fade-up"
-        flexDirection="column"
-        maxWidth={pxToRem(800)}
-        m="0 auto"
-        mt="l"
-        px="m"
-      >
-        <UnfoldTextBar
-          title="Accompanying person fee details:"
-          component={<PersonFeeList />}
-        />
-      </Flex> */}
+      </Box>
     </Box>
   </React.Fragment>
 )
