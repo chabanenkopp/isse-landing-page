@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import { rem } from 'polished'
 import MobileMenuProvider from 'MobileMenuContext'
-// import { COLORS } from 'Root/constants'
+import { COLORS } from 'Root/constants'
 // import { Flex } from 'components/atoms/Layout'
-// import { Text } from 'components/atoms/Typography'
+import { Text } from 'components/atoms/Typography'
 // import Pagination from 'components/organisms/Pagination'
 import GenericPageMap from 'shared/pages/GenericPageMap'
 import SEO from 'components/atoms/seo'
@@ -53,16 +53,33 @@ const Venues = ({ location: { pathname } }) => {
     <StaticQuery
       query={HISTORY_CARDS_QUERY}
       render={({ allSanityMapCard }) => {
-        console.log('allSanityMapCard', allSanityMapCard)
         return (
           <MobileMenuProvider>
             <GenericPageMap pathName={pathname}>
               <SEO title="About ISSE conference" />
               <Layout
                 contentWidth={rem('675px')}
-                ratio={1}
+                ratio={2}
                 listContent={
                   <Layout.List>
+                    <Text
+                      textAlign="center"
+                      fontSize="xxxl"
+                      fontWeight="thin"
+                      color={COLORS.VANISHING}
+                      mt="l"
+                    >
+                      All Venues and Topics
+                    </Text>
+                    <Text
+                      textAlign="center"
+                      fontSize="xl"
+                      fontWeight="thin"
+                      color={COLORS.DAYBREAK}
+                      mb="l"
+                    >
+                      From 1977 and up to this day
+                    </Text>
                     <CardList
                       destinations={allSanityMapCard.edges}
                       onHover={setHoveredVenueId}

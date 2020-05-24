@@ -70,7 +70,7 @@ const MapContainer = ({ venues, hoveredVenueId }) => {
           }}
           onClick={() => {
             setSelectedVenueId(_id)
-            scrollIntoView(getScrollName(_id), -100)
+            scrollIntoView(getScrollName(_id), -80)
           }}
         />
       ))}
