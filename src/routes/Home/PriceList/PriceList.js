@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { pxToRem } from 'helpers'
+import { rem } from 'polished'
 import { Box, Flex } from 'components/atoms/Layout'
 import { COLORS } from 'Root/constants'
 import { Text } from 'components/atoms/Typography'
@@ -10,7 +10,7 @@ import AnimatedClouds from './AnimatedClouds'
 const HEADING_SIZE = { mobile: 'xxl', tablet: 'xxxl', desktop: 'xxxxl' }
 
 const TableBox = styled(Box)`
-  width: ${pxToRem(300)};
+  width: ${rem(300)};
   border-radius: ${radius.l};
   background-color: ${COLORS.WHITE};
   box-shadow: rgba(46, 59, 125, 0.23) 0 10px 16px -8px;

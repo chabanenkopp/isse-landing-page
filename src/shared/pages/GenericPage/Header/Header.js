@@ -14,7 +14,7 @@ import Link from 'components/atoms/Link'
 import Tooltip from 'components/molecules/Tooltip'
 import logo from 'assets/images/logo-line.svg'
 
-const { HOME, OVERVIEW, SPONSORS, COMMITTEES, AUTHORS } = PATHS
+const { HOME, OVERVIEW, SPONSORS, COMMITTEES, AUTHORS, HISTORY } = PATHS
 const HEADER_HEIGHT = rem(65)
 
 const HeaderFixedBox = styled(Flex)`
@@ -71,6 +71,11 @@ const Header = ({
         <Logo src={logo} alt="ISSE" />
       </GatsbyLink>
       <Flex alignItems="center" display={{ mobile: 'none', desktop: 'flex' }}>
+        <Link to={HISTORY} as={GatsbyLink} px="l" py="m">
+          <ChangeColor pathName={pathName} targetPath={HISTORY}>
+            History
+          </ChangeColor>
+        </Link>
         <Tooltip component={<Links />}>
           <Link list={1} to={OVERVIEW} as={GatsbyLink} px="l" py="m">
             About ISSE

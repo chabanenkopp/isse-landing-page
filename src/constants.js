@@ -77,6 +77,7 @@ export const PATHS = {
   COMMITTEES: '/committees',
   AUTHORS: '/authors',
   RESULTS: '/results',
+  HISTORY: '/history',
 }
 
 export const DOWNLOAD = {

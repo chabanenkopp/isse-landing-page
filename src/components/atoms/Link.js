@@ -9,7 +9,7 @@ const Link = styled(Text)`
   text-decoration: none;
   color: inherit;
   font-size: ${({ fontSize }) => fontSize};
-  font-weight: ${theme.fontWeights.bold};
+  font-weight: ${theme.fontWeights.thin};
   :hover {
     color: ${COLORS.FLAX_FLOWER_BLUE};
   }

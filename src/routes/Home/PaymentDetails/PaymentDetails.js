@@ -4,7 +4,7 @@ import { rem } from 'polished'
 import UnfoldTextBar from 'components/molecules/UnfoldTextBar'
 import { fontWeights } from 'Theme'
 import { COLORS, DOWNLOAD } from 'Root/constants'
-import { Box, Flex } from 'components/atoms/Layout'
+import { Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
 import TextLink from 'components/atoms/TextLink'
 import listItem from 'assets/images/list-item.svg'
@@ -108,16 +108,19 @@ const BankDetailsList = () => (
 
 const PaymentDetails = () => (
   <React.Fragment>
-    <Flex justifyContent="center" alignItems="center">
+    <Text textAlign="center">
       <TextLink
         as="a"
         href={DOWNLOAD.REG_PAPER_FORM}
         color={COLORS.FLAX_FLOWER_BLUE}
+        fontSize="xl"
       >
         Download
-      </TextLink>
-      &nbsp;<Text>Registration form</Text>
-    </Flex>
+      </TextLink>{' '}
+      <Text as="span" fontSize="xl" fontWeight="thin">
+        Registration form
+      </Text>
+    </Text>
     <Box mt="xxl">
       <Box data-aos="fade-up" maxWidth={MAX_WIDTH} m="0 auto" mt="l">
         <UnfoldTextBar title="Bank account:" component={<BankDetailsList />} />

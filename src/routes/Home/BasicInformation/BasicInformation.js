@@ -11,6 +11,7 @@ import listItem from 'assets/images/list-item.svg'
 
 const STYLED_TEXT = { mobile: 'xs', tablet: 's', desktop: 'm' }
 const MAX_WIDTH = rem(800)
+const SPACE = rem(20)
 
 const IMPORTANT_DATES = [
   'Abstract Submission Deadline: January 30th, 2020',
@@ -28,8 +29,8 @@ const StyledUL = styled.ul`
   text-indent: -1em;
   list-style: inside url(${listItem});
   ${mq.from.desktop`
-     margin-left: ${rem(20)};
-     padding-right: ${rem(20)};
+     margin-left: ${SPACE};
+     padding-right: ${SPACE};
   `}
 `
 const List = ({ items }) => (

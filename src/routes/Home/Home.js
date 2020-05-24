@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Cookies from 'js-cookie'
 import { Element as ScrollTo } from 'react-scroll'
+import { rem } from 'polished'
 import SEO from 'components/atoms/seo'
-import { pxToRem } from 'helpers'
 import { fontWeights } from 'Theme'
 import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
@@ -86,8 +86,8 @@ class Home extends Component {
             <Text
               textAlign="center"
               color={COLORS.MAJOLICA_BLUE}
-              fontWeight={fontWeights.bold}
-              fontSize={{ mobile: 'm', tablet: 'l', desktop: 'xl' }}
+              fontWeight={fontWeights.thin}
+              fontSize="xl"
               mb="l"
             >
               Learn More About the Conference
@@ -109,12 +109,12 @@ class Home extends Component {
               <RentFormSlider />
             </ScrollTo>
           </Box>
-          <Box mb={['xl', 'xl', pxToRem(100)]}>
+          <Box mb={{ mobile: 'xl', desktop: rem(100) }}>
             <LogoLineSeparator />
           </Box>
           <Flex
             flexDirection="column"
-            backgroundSize={['contain', 'contain', 'cover']}
+            backgroundSize={{ mobile: 'contain', desktop: 'cover' }}
             backgroundPosition="center bottom"
             backgroundRepeat="no-repeat"
             backgroundImage={`linear-gradient(180deg, ${COLORS.WHITE}, ${COLORS.LYNX_WHITE})`}
@@ -123,7 +123,7 @@ class Home extends Component {
             <Box mb="xl">
               <GoogleMap />
             </Box>
-            <Box mt={[0, 0, 'xxl']} mb={pxToRem(150)}>
+            <Box mt={{ mobile: 0, desktop: 'xxl' }} mb={rem(150)}>
               <ContactForm />
             </Box>
           </Flex>
