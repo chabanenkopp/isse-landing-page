@@ -5,9 +5,9 @@ import { StaticQuery, graphql } from 'gatsby'
 import { rem } from 'polished'
 import MobileMenuProvider from 'MobileMenuContext'
 import { COLORS } from 'Root/constants'
-// import { Flex } from 'components/atoms/Layout'
+import { Box } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
-// import Pagination from 'components/organisms/Pagination'
+import Pagination from 'components/molecules/Pagination'
 import GenericPageMap from 'shared/pages/GenericPageMap'
 import SEO from 'components/atoms/seo'
 import Layout from 'shared/Layout'
@@ -84,6 +84,19 @@ const Venues = ({ location: { pathname } }) => {
                       destinations={allSanityMapCard.edges}
                       onHover={setHoveredVenueId}
                     />
+                    <Box mt={{ mobile: 'm', desktop: 'l' }}>
+                      <Pagination
+                        firstPage={1}
+                        lastPage={4}
+                        currentPage={1}
+                        previousPage={null}
+                        nextPage={2}
+                        onNextClick={() => {}}
+                        onPrevClick={() => {}}
+                        onPageClick={() => {}}
+                        mb={{ mobile: 's', desktop: 'l' }}
+                      />
+                    </Box>
                   </Layout.List>
                 }
                 mapContent={

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import { rem } from 'polished'
 import { Text } from 'components/atoms/Typography'
-import { Flex, Box } from 'components/atoms/Layout'
+import { Box } from 'components/atoms/Layout'
 import { COLORS } from 'Root/constants'
 import Slider from './Slider'
 
