@@ -1,8 +1,9 @@
 /* eslint-disable radix */
 import useMediaHook from 'use-media'
 import { breakpoints } from 'Theme'
+import fromEntries from 'object.fromentries'
 
-const queries = Object.fromEntries(
+const queries = fromEntries(
   Object.entries(breakpoints).map(([breakpoint, width], index, array) => [
     breakpoint,
     {
