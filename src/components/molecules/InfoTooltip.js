@@ -122,7 +122,7 @@ InfoTooltip.propTypes = {
   iconSize: PropTypes.number,
   iconFill: PropTypes.string,
   position: PropTypes.string,
-  maxWidth: PropTypes.number,
+  maxWidth: PropTypes.string,
   contentComp: PropTypes.node,
   textAlign: PropTypes.string,
 }

@@ -119,7 +119,7 @@ const VenueSlider = ({ slide: Slide, thumbnailUrls, sliderMaxWidth }) => {
       <SliderWrapper>
         <Swiper getSwiper={setSwiper} {...params}>
           {thumbnailUrls.map((image) => (
-            <div key={image}>
+            <div key={image.asset.fluid.src}>
               <Slide src={image.asset.fluid.src} />
             </div>
           ))}
@@ -137,10 +137,8 @@ const VenueSlider = ({ slide: Slide, thumbnailUrls, sliderMaxWidth }) => {
 }
 
 VenueSlider.propTypes = {
-  id: PropTypes.string.isRequired,
   slide: PropTypes.object.isRequired,
-  getDetailUrlByVenueId: PropTypes.func.isRequired,
-  thumbnailUrls: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  thumbnailUrls: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   sliderMaxWidth: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 }
 

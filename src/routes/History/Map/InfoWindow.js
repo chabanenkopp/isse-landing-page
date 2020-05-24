@@ -48,7 +48,7 @@ InfoWindow.propTypes = {
   city: PropTypes.string.isRequired,
   topic: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
-  thumbnailUrls: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  thumbnailUrls: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 }
 
 export default InfoWindow

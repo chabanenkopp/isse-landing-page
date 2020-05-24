@@ -11,12 +11,8 @@ import MobileMenuProvider from 'MobileMenuContext'
 import GenericPageMap from 'shared/pages/GenericPageMap'
 import SEO from 'components/atoms/seo'
 import Layout from 'shared/Layout'
-import Card from './Card'
 import Map from './Map'
 import CardList from './CardList'
-
-// const PAGINATION_LIMIT = 10
-// const MIN_TEAM_SIZE = 5
 
 const HISTORY_CARDS_QUERY = graphql`
   {
@@ -53,20 +49,16 @@ const HISTORY_CARDS_QUERY = graphql`
 
 const Venues = ({ location: { pathname } }) => {
   const [hoveredVenueId, setHoveredVenueId] = React.useState(null)
-  const [isMapOpen, setIsMapOpen] = React.useState(false)
-
-  const toggleMap = () => setIsMapOpen(!isMapOpen)
-
   return (
     <StaticQuery
       query={HISTORY_CARDS_QUERY}
       render={({ allSanityMapCard }) => {
+        console.log('allSanityMapCard', allSanityMapCard)
         return (
           <MobileMenuProvider>
             <GenericPageMap pathName={pathname}>
               <SEO title="About ISSE conference" />
               <Layout
-                isMapOpen={isMapOpen}
                 contentWidth={rem('675px')}
                 ratio={1}
                 listContent={
@@ -74,13 +66,7 @@ const Venues = ({ location: { pathname } }) => {
                     <CardList
                       destinations={allSanityMapCard.edges}
                       onHover={setHoveredVenueId}
-                      isMapOpen={isMapOpen}
                     />
-                    {/* {allSanityMapCard.edges.map(
-                      ({ node: { galleryImages, _id, ...props } }, i) => (
-                        <Card key={i} onHover={setHoveredVenueId} {...props} />
-                      )
-                    )} */}
                   </Layout.List>
                 }
                 mapContent={
@@ -88,8 +74,6 @@ const Venues = ({ location: { pathname } }) => {
                     <Map
                       venues={allSanityMapCard.edges}
                       hoveredVenueId={hoveredVenueId}
-                      // isMapOpen={isMapOpen}
-                      isMapOpen={isMapOpen}
                     />
                   </Layout.Map>
                 }

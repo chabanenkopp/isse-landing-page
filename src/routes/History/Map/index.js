@@ -34,19 +34,10 @@ const StyledBox = styled(Box)`
   top: ${TOPBAR_HEIGHT};
 
   height: calc(100vh - ${TOPBAR_HEIGHT});
-
-  ${({ isMapOpen }) =>
-    isMapOpen &&
-    `
-      z-index: 2;
-      position: fixed;
-      left: 0;
-      right: 0;
-  `}
 `
 
-const Map = ({ isMapOpen, ...props }) => (
-  <StyledBox isMapOpen={isMapOpen} key={isMapOpen}>
+const Map = ({ ...props }) => (
+  <StyledBox key="reload">
     <MapContainer
       googleMapURL={GOOGLE_MAP_URL}
       loadingElement={<Box height="100%" />}
@@ -56,9 +47,5 @@ const Map = ({ isMapOpen, ...props }) => (
     />
   </StyledBox>
 )
-
-Map.propTypes = {
-  isMapOpen: PropTypes.bool.isRequired,
-}
 
 export default Map

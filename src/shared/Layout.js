@@ -39,22 +39,16 @@ const Map = styled('aside')`
   flex: 1;
 
   ${mq.to.tablet`
-    ${({ isMapOpen }) => !isMapOpen && `display: none;`}
+    display: none;
   `}
 `
 
-const Layout = ({
-  ratio,
-  isMapOpen,
-  mapContent,
-  listContent,
-  contentWidth,
-}) => (
+const Layout = ({ ratio, mapContent, listContent, contentWidth }) => (
   <StyledLayout>
     <ListWrapper ratio={ratio} contentWidth={contentWidth}>
       {React.cloneElement(listContent, { contentWidth })}
     </ListWrapper>
-    {React.cloneElement(mapContent, { isMapOpen })}
+    {mapContent}
   </StyledLayout>
 )
 
@@ -65,7 +59,6 @@ Layout.defaultProps = {
 
 Layout.propTypes = {
   ratio: PropTypes.number,
-  isMapOpen: PropTypes.bool,
   contentWidth: PropTypes.string,
   mapContent: PropTypes.node.isRequired,
   listContent: PropTypes.node.isRequired,
