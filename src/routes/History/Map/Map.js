@@ -23,7 +23,7 @@ const {
   PIXEL_OFFSET,
 } = MAP_SETTINGS
 
-const MapContainer = ({ venues, hoveredVenueId }) => {
+const MapContainer = ({ venues = [], hoveredVenueId }) => {
   const [selectedVenueId, setSelectedVenueId] = React.useState(null)
   const [isClickOutsideDisabled, setIsClickOutsideDisabled] = React.useState(
     false
@@ -31,10 +31,31 @@ const MapContainer = ({ venues, hoveredVenueId }) => {
   const mapRef = React.useRef(null)
   React.useEffect(() => {
     const bounds = new window.google.maps.LatLngBounds()
-    venues.forEach(({ node: { lat, lon } }) => {
-      bounds.extend(new window.google.maps.LatLng(lat, lon))
-    })
-    mapRef.current.fitBounds(bounds)
+    if (venues.length > 0) {
+      venues.forEach(({ node: { lat, lon } }) => {
+        bounds.extend(new window.google.maps.LatLng(lat, lon))
+      })
+      if (venues.length === 1) {
+        // Prevent maximum zoom for 1 item selected
+        const center = bounds.getCenter()
+        const offset = 1.5
+        const northEast = new window.google.maps.LatLng(
+          center.lat() + offset,
+          center.lng() + offset
+        )
+        const southWest = new window.google.maps.LatLng(
+          center.lat() - offset,
+          center.lng() - offset
+        )
+        const extendedBounds = new window.google.maps.LatLngBounds(
+          southWest,
+          northEast
+        )
+        mapRef.current.fitBounds(bounds.union(extendedBounds))
+      } else {
+        mapRef.current.fitBounds(bounds)
+      }
+    }
   }, [venues])
   React.useEffect(() => {
     if (hoveredVenueId) {

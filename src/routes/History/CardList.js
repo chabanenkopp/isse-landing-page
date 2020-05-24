@@ -16,7 +16,7 @@ const CardWrapper = styled(Box)`
   }
 `
 
-const CardList = ({ onHover, destinations }) => (
+const CardList = ({ onHover, destinations = [] }) => (
   <Box mb="s">
     {destinations.map(({ node }) => (
       <CardWrapper
