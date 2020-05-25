@@ -41,7 +41,7 @@ const Footer = () => (
             </Row>
             <Row>ISSE 2020 is organised by TUKE</Row>
           </Box>
-          <Box data-aos="fade-up">
+          <Box data-aos="fade-up" zIndex="-1">
             <Title>Contact us on</Title>
             <Row>Kosice, Slovakia</Row>
             <Row>Letna 9, 04200</Row>
@@ -50,7 +50,7 @@ const Footer = () => (
               {`tel: ${TEL_NUMBER}`}
             </Row>
           </Box>
-          <Box data-aos="fade-up">
+          <Box data-aos="fade-up" zIndex="-1">
             <Title>Our partners</Title>
             <Logo img={ieee} maxHeight={rem(25)} href={LINKS.IEEE} />
             <Box mt="m">
@@ -63,7 +63,7 @@ const Footer = () => (
               <Logo img={ses} maxHeight={rem(40)} href={LINKS.SES} />
             </Box>
           </Box>
-          <Box data-aos="fade-up">
+          <Box data-aos="fade-up" zIndex="-1">
             <Title>Social media</Title>
             <SocialIconsLinks />
           </Box>
