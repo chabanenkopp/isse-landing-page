@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import isRequiredIf from 'react-proptype-conditional-require'
 import { rem } from 'polished'
 import { fontWeights } from 'Theme'
-import { COLORS } from 'Root/constants'
 import Circle from 'components/atoms/Circle'
-import ArrowIcon from 'assets/images/arrow.inline.svg'
+import arrowIcon from 'assets/images/arrow.svg'
+import { COLORS } from '../../../constants'
 
 const invisibleStyle = `
   background: none;
@@ -14,7 +14,7 @@ const invisibleStyle = `
   border: none;
 `
 
-const StyledArrowIcon = styled(ArrowIcon)`
+const StyledArrowIcon = styled('img')`
   height: ${rem('12px')};
 
   color: ${COLORS.DAYBREAK};
@@ -47,7 +47,7 @@ PageButton.propTypes = {
 
 const ArrowButton = ({ onClick, disabled, rotate }) => (
   <StyledPageButton onClick={onClick} disabled={disabled}>
-    <StyledArrowIcon rotate={rotate} />
+    <StyledArrowIcon rotate={rotate} src={arrowIcon} />
   </StyledPageButton>
 )
 

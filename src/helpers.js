@@ -16,3 +16,11 @@ export const getScrollName = (name) => `scroll-to-${name}`
 
 export const initializeArrayWithRange = (end, start = 0) =>
   Array.from({ length: end + 1 - start }).map((v, i) => i + start)
+
+export const createStoryName = ({ base, filename }) => {
+  const trimmedBase = base.replace(/^\/+|\/+$/g, '') // trim leading and/or trailing slashes
+  return `${trimmedBase.replace('src/components/', '')}/${filename.replace(
+    '.stories',
+    ''
+  )}`
+}

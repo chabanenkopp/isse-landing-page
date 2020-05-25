@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { rem } from 'polished'
 import { fontSizes, space, BOXSHADOWS, radius } from 'Theme'
-import { COLORS } from 'Root/constants'
+import { COLORS } from '../../constants'
 
 const borderOnHover = `0.5px solid ${COLORS.SCAMPI}`
 const borderDisabled = `0.5px solid ${COLORS.PALE_ORCHID}`

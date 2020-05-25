@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 import { css } from 'styled-components'
 import { fluidRange, math, rem } from 'polished'
-import { COLORS } from 'Root/constants'
+import { COLORS } from './constants'
 
 export const MAX_CONTENT_WIDTH = rem('1120px')
 

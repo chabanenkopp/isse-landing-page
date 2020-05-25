@@ -115,7 +115,9 @@ const PaymentDetails = () => (
         color={COLORS.FLAX_FLOWER_BLUE}
         fontSize="xl"
       >
-        Download
+        <Text fontSize="xl" color={COLORS.FLAX_FLOWER_BLUE}>
+          Download
+        </Text>
       </TextLink>{' '}
       <Text as="span" fontSize="xl" fontWeight="thin">
         Registration form
