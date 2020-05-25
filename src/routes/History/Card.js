@@ -37,7 +37,7 @@ const IconText = ({ year }) => {
         </Text>
       </Text>
       <InfoTootip
-        maxWidth={rem(170)}
+        maxWidth={rem(165)}
         position={matches.tablet || matches.mobile ? 'RIGHT' : 'LEFT'}
         textAlign="left"
         iconSize={14}
