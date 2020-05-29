@@ -59,31 +59,31 @@ const Results = ({ location: { pathname } }) => (
             fitScreenImageComponent={<SubHeader>Conference Results</SubHeader>}
           >
             <SEO title="About ISSE conference" />
+            <Box maxWidth={{ tablet: rem(800) }} m="0 auto">
+              <Text
+                textAlign="center"
+                fontSize="xxxl"
+                fontWeight="thin"
+                color={COLORS.VANISHING}
+              >
+                Reviews from the participants of the ISSE 2020
+              </Text>
+              <Text
+                as="p"
+                textAlign="center"
+                fontSize="xl"
+                fontWeight="thin"
+                color={COLORS.DAYBREAK}
+                mb="xxl"
+              >
+                How ISSE 2020 played a unique role in connecting people, sharing
+                and getting great ideas and experience
+              </Text>
+            </Box>
             {allSanityGalleryCard.edges.map(
               ({ node: { galleryImages, ...props } }, i) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <Box key={i} my="l">
-                  <Box maxWidth={{ tablet: rem(800) }} m="0 auto">
-                    <Text
-                      textAlign="center"
-                      fontSize="xxxl"
-                      fontWeight="thin"
-                      color={COLORS.VANISHING}
-                    >
-                      Reviews from the participants of the ISSE 2020
-                    </Text>
-                    <Text
-                      as="p"
-                      textAlign="center"
-                      fontSize="xl"
-                      fontWeight="thin"
-                      color={COLORS.DAYBREAK}
-                      mb="xxl"
-                    >
-                      How ISSE 2020 played a unique role in connecting people,
-                      sharing and getting great ideas and experience
-                    </Text>
-                  </Box>
                   <Slider
                     slides={galleryImages}
                     align={i % 2 === 0 ? 'left' : 'right'}
