@@ -32,7 +32,7 @@ const ButtonLong = styled(Box)`
     border-radius: ${borderRadius}
     ${getShadow(COLORS.ANCHORMAN, isShadow)}}
   `}
-    :focus {
+  :focus {
     outline: 0;
   }
 `

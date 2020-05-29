@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { BOXSHADOWS, radius } from 'Theme'
 import { TOPBAR_HEIGHT, GOOGLE_MAP_URL } from 'Root/constants'

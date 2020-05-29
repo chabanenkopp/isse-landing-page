@@ -11,9 +11,9 @@ import { Flex, Box } from 'components/atoms/Layout'
 import ChangeColor from 'components/atoms/ChangeFontColorByPathName'
 import Link from 'components/atoms/Link'
 
-const { HOME, OVERVIEW, SPONSORS, COMMITTEES, AUTHORS } = PATHS
+const { HOME, OVERVIEW, SPONSORS, COMMITTEES, AUTHORS, HISTORY } = PATHS
 const SPACES = { px: 'l', py: 'm' }
-const OFFSET = rem(35)
+const OFFSET = rem(20)
 const LINK_SIZE = 'xxxl'
 
 const MobileMenuContainer = styled(Box)`
@@ -66,6 +66,19 @@ const MobileMenu = ({ isVisible, pathName, onClick }) => {
           </Box>
           <Box pt={OFFSET}>
             <Link
+              to={HISTORY}
+              as={GatsbyLink}
+              fontSize={LINK_SIZE}
+              fontWeight={`${fontWeights.thin} !important`}
+              {...SPACES}
+            >
+              <ChangeColor pathName={pathName} targetPath={HISTORY}>
+                History
+              </ChangeColor>
+            </Link>
+          </Box>
+          <Box pt={OFFSET}>
+            <Link
               to={COMMITTEES}
               as={GatsbyLink}
               fontSize={LINK_SIZE}
@@ -77,7 +90,7 @@ const MobileMenu = ({ isVisible, pathName, onClick }) => {
               </ChangeColor>
             </Link>
           </Box>
-          <Box pt={rem(40)}>
+          <Box pt={OFFSET}>
             <Link
               to={AUTHORS}
               as={GatsbyLink}
