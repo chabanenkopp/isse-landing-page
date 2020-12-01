@@ -39,7 +39,10 @@ const Map = styled('aside')`
   flex: 1;
 
   ${mq.to.tablet`
-    display: none;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
   `}
 `
 

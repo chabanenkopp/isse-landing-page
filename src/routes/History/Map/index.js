@@ -36,7 +36,7 @@ const StyledBox = styled(Box)`
 `
 
 const Map = ({ ...props }) => (
-  <StyledBox key="reload">
+  <StyledBox>
     <MapContainer
       googleMapURL={GOOGLE_MAP_URL}
       loadingElement={<Box height="100%" />}
