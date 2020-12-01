@@ -40,9 +40,9 @@ const Map = styled('aside')`
 
   ${mq.to.tablet`
     z-index: -1;
+    visibility: hidden;
     position: absolute;
     width: 100%;
-    visibility: hidden;
   `}
 `
 
